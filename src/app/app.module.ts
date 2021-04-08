@@ -16,6 +16,9 @@ import { HomeComponent } from './components/home/home.component';
 
 import { AuthService } from './components/shared/services/auth.service';
 import { BlablablaComponent } from './components/blablabla/blablabla.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NavbarComponent } from './components/shared/navbar/navbar.component';
+import { ModalComponent } from './components/shared/modal/modal.component';
 
 
 @NgModule({
@@ -24,7 +27,9 @@ import { BlablablaComponent } from './components/blablabla/blablabla.component';
     SignInComponent,
     SignUpComponent,
     HomeComponent,
-    BlablablaComponent
+    BlablablaComponent,
+    NavbarComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +37,7 @@ import { BlablablaComponent } from './components/blablabla/blablabla.component';
     AngularFireModule.initializeApp(environment.firebaseConfig), // Required for everything
     AngularFirestoreModule, // Only required for database features
     AngularFireAuthModule, // Only required for auth features,
-    AngularFireStorageModule // Only required for storage features
+    AngularFireStorageModule, NgbModule // Only required for storage features
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

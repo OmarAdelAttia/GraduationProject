@@ -1,0 +1,42 @@
+<div class="container-fluid">
+    <ul ngbNav #nav="ngbNav" class="nav-tabs">
+        <li ngbNavItem>
+            <a ngbNavLink>Home</a>
+            <ng-template ngbNavContent>Home</ng-template>
+        </li>
+        <li ngbNavItem>
+            <a ngbNavLink>Courses</a>
+            <ng-template ngbNavContent>Courses</ng-template>
+        </li>
+        <li ngbNavItem>
+            <a ngbNavLink>Health Plans</a>
+            <ng-template ngbNavContent>Health Plans</ng-template>
+        </li>
+        <li ngbNavItem>
+            <a ngbNavLink>Courses</a>
+            <ng-template ngbNavContent>Courses</ng-template>
+        </li>
+        <li ngbNavItem>
+            <ng-template #content let-modal>
+                <app-modal></app-modal>
+            </ng-template>
+            <a class="btn btn-outline-primary mb-2 mr-2" (click)="openVerticallyCentered(content)">Login</a>
+        </li>
+        <li ngbNavItem>
+            <div class="row">
+                <div class="col">
+                    <div ngbDropdown class="d-inline-block">
+                        <button class="btn btn-outline-primary" id="dropdownForm1" ngbDropdownToggle>languages</button>
+                        <div ngbDropdownMenu aria-labelledby="dropdownForm1">
+                            <div class="dropdown-divider"></div>
+                            <button ngbDropdownItem>English</button>
+                            <button ngbDropdownItem>Arabic</button>
+                            <button ngbDropdownItem>German</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+<div [ngbNavOutlet]="nav"></div>
