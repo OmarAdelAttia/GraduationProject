@@ -15,6 +15,7 @@ import { SignUpComponent } from './components/authentication/sign-up/sign-up.com
 import { HomeComponent } from './components/home/home.component';
 
 import { AuthService } from './components/shared/services/auth.service';
+import { BlablablaComponent } from './components/blablabla/blablabla.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { AuthService } from './components/shared/services/auth.service';
     AppComponent,
     SignInComponent,
     SignUpComponent,
-    HomeComponent
+    HomeComponent,
+    BlablablaComponent
   ],
   imports: [
     BrowserModule,

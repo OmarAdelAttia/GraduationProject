@@ -1,7 +1,8 @@
-<input type="text" placeholder="enter your name">
-<input type="email" placeholder="enter your email">
-<input type="password" placeholder="enter your password">
-<input type="password" placeholder="re-enter your password">
-<button>submit</button>
+<input type="text" placeholder="enter your name" #nameSignUp />
+<input type="email" placeholder="enter your email" #emailSignUp />
+<input type="password" placeholder="enter your password" #passwordSignUp />
+<input type="password" placeholder="re-enter your password" #repasswordSignUp />
+<button
+    (click)="authService.SignUp(nameSignUp.value,emailSignUp.value,passwordSignUp.value,repasswordSignUp.value)">submit</button>
 
 <a [routerLink]="'/sign-in'">I have an account</a>

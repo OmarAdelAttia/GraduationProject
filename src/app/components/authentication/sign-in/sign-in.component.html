@@ -1,5 +1,5 @@
-<input type="email" placeholder="enter your email">
-<input type="password" placeholder="enter your password">
-<button>submit</button>
+<input type="email" placeholder="enter your email" #email />
+<input type="password" placeholder="enter your password" #password />
+<button (click)="authService.SignIn(email.value,password.value)">Submit</button>
 
-<a [routerLink]="'/sign-up'">don't have an account</a>
+<a [routerLink]="'/sign-up'">I don't have an account</a>
