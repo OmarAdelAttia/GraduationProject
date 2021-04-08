@@ -1,4 +1,42 @@
-<div class="container-fluid">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="'/'">Health Plans</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="'/'">Courses</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="'/sign-in'">LogIn</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          languages
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">English</a>
+          <a class="dropdown-item" href="#">Arabic</a>
+          <a class="dropdown-item" href="#">German</a>
+        </div>
+      </li>
+
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+<!-- <div class="container-fluid">
     <ul ngbNav #nav="ngbNav" class="nav-tabs">
         <li ngbNavItem>
             <a ngbNavLink>Home</a>
@@ -17,10 +55,8 @@
             <ng-template ngbNavContent>Courses</ng-template>
         </li>
         <li ngbNavItem>
-            <ng-template #content let-modal>
-                <app-modal></app-modal>
-            </ng-template>
-            <a class="btn btn-outline-primary mb-2 mr-2" (click)="openVerticallyCentered(content)">Login</a>
+          <a ngbNavLink>LogIn</a>
+          <ng-template ngbNavContent><app-sign-in></app-sign-in></ng-template>
         </li>
         <li ngbNavItem>
             <div class="row">
@@ -39,4 +75,4 @@
         </li>
     </ul>
 </div>
-<div [ngbNavOutlet]="nav"></div>
+<div [ngbNavOutlet]="nav"></div> -->

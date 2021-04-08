@@ -1,3 +1,7 @@
 <input type="email" placeholder="enter your email" #email />
 <input type="password" placeholder="enter your password" #password />
 <button (click)="authService.SignIn(email.value,password.value)">Submit</button>
+<a [routerLink]="'/sign-up'">don not have an account</a>
+
+
+

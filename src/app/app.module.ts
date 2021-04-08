@@ -9,16 +9,26 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+
+
+// environment
 import { environment } from '../environments/environment';
+
+// Services
+import { AuthService } from './components/shared/services/auth.service';
+
+// bootstrap
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+// Components
 import { SignInComponent } from './components/authentication/sign-in/sign-in.component';
 import { SignUpComponent } from './components/authentication/sign-up/sign-up.component';
 import { HomeComponent } from './components/home/home.component';
-
-import { AuthService } from './components/shared/services/auth.service';
 import { BlablablaComponent } from './components/blablabla/blablabla.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+// modules
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
-import { ModalComponent } from './components/shared/modal/modal.component';
+import { FooterComponent } from './components/shared/footer/footer.component';
 
 
 @NgModule({
@@ -29,7 +39,7 @@ import { ModalComponent } from './components/shared/modal/modal.component';
     HomeComponent,
     BlablablaComponent,
     NavbarComponent,
-    ModalComponent
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

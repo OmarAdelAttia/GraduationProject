@@ -1,11 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+// AuthGuard
+import { AuthGuard } from './components/shared/guard/auth.guard';
+
+// Components
 import { HomeComponent } from './components/home/home.component';
 import { SignInComponent } from './components/authentication/sign-in/sign-in.component';
 import { SignUpComponent } from './components/authentication/sign-up/sign-up.component';
 import { BlablablaComponent } from './components/blablabla/blablabla.component';
-import { AuthGuard } from './components/shared/guard/auth.guard';
+
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
