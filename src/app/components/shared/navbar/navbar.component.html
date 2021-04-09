@@ -1,78 +1,67 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+  <!-- *ngIf="authService.isLoggedIn" -->
+  <div class="container">
+    <a class="navbar-brand" routerLink="/">Navbar</a>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="'/'">Health Plans</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="'/'">Courses</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="'/sign-in'">LogIn</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          languages
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">English</a>
-          <a class="dropdown-item" href="#">Arabic</a>
-          <a class="dropdown-item" href="#">German</a>
-        </div>
-      </li>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/">Home</a>
+        </li>
+
+        <li class="nav-item active">
+          <a class="nav-link" *ngIf="authService.isLoggedIn" [routerLink]="'/client'">Profile</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="'/plan'">Health Plans</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="'/course'">Courses</a>
+        </li>
+
+
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            languages
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">English</a>
+            <a class="dropdown-item" href="#">Arabic</a>
+            <a class="dropdown-item" href="#">German</a>
+          </div>
+        </li>
+      </ul>
+
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+
+      <a class="nav-link" *ngIf="authService.isLoggedIn !== true" [routerLink]="'/sign-in'">Log in</a>
+
+      <a class="nav-link"  *ngIf="authService.isLoggedIn">
+        <div class="btn-group mr-3">
+          <button type="button" [routerLink]="'/client'" class="btn btn-primary">USER</button>
+          <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
+            <button class="btn btn-primary dropdown-toggle-split" ngbDropdownToggle></button>
+            <div class="dropdown-menu" ngbDropdownMenu>
+              <button ngbDropdownItem>One</button>
+              <button ngbDropdownItem>Two</button>
+              <button ngbDropdownItem (click)="authService.SignOut()">Log Out</button>
+            </div>
+          </div>
+        </div></a>
+
+    </div>
   </div>
 </nav>
-<!-- <div class="container-fluid">
-    <ul ngbNav #nav="ngbNav" class="nav-tabs">
-        <li ngbNavItem>
-            <a ngbNavLink>Home</a>
-            <ng-template ngbNavContent>Home</ng-template>
-        </li>
-        <li ngbNavItem>
-            <a ngbNavLink>Courses</a>
-            <ng-template ngbNavContent>Courses</ng-template>
-        </li>
-        <li ngbNavItem>
-            <a ngbNavLink>Health Plans</a>
-            <ng-template ngbNavContent>Health Plans</ng-template>
-        </li>
-        <li ngbNavItem>
-            <a ngbNavLink>Courses</a>
-            <ng-template ngbNavContent>Courses</ng-template>
-        </li>
-        <li ngbNavItem>
-          <a ngbNavLink>LogIn</a>
-          <ng-template ngbNavContent><app-sign-in></app-sign-in></ng-template>
-        </li>
-        <li ngbNavItem>
-            <div class="row">
-                <div class="col">
-                    <div ngbDropdown class="d-inline-block">
-                        <button class="btn btn-outline-primary" id="dropdownForm1" ngbDropdownToggle>languages</button>
-                        <div ngbDropdownMenu aria-labelledby="dropdownForm1">
-                            <div class="dropdown-divider"></div>
-                            <button ngbDropdownItem>English</button>
-                            <button ngbDropdownItem>Arabic</button>
-                            <button ngbDropdownItem>German</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </li>
-    </ul>
-</div>
-<div [ngbNavOutlet]="nav"></div> -->

@@ -4,6 +4,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+// Modules
+import { AuthModuleModule } from './components/authentication/auth-module.module';
+import { ClientModuleModule } from './profiles/clientModule/client-module.module';
+import { MintorModuleModule } from './profiles/mintorModule/mintor-module.module';
+
 // Firebase modules
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
@@ -20,30 +25,38 @@ import { AuthService } from './components/shared/services/auth.service';
 // bootstrap
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-// Components
-import { SignInComponent } from './components/authentication/sign-in/sign-in.component';
-import { SignUpComponent } from './components/authentication/sign-up/sign-up.component';
-import { HomeComponent } from './components/home/home.component';
-import { BlablablaComponent } from './components/blablabla/blablabla.component';
 
-// modules
+// pages
+import { HomeComponent } from './pages/home/home.component';
+import { PlanComponent } from './pages/plan/plan.component';
+import { CourseComponent } from './pages/course/course.component';
+import { NotFoundComponent } from './components/shared/not-found/not-found.component';
+
+// Components
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
+import { HeaderComponent } from './components/reusable-components/header/header.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    SignInComponent,
-    SignUpComponent,
     HomeComponent,
-    BlablablaComponent,
     NavbarComponent,
     FooterComponent,
+    PlanComponent,
+    CourseComponent,
+    NotFoundComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+
+    AuthModuleModule,
+    ClientModuleModule,
+    MintorModuleModule,
+
     AngularFireModule.initializeApp(environment.firebaseConfig), // Required for everything
     AngularFirestoreModule, // Only required for database features
     AngularFireAuthModule, // Only required for auth features,

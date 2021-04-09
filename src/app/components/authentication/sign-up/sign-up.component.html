@@ -1,7 +1,74 @@
-<!-- <input type="text" placeholder="enter your name" #nameSignUp /> -->
-<input type="email" placeholder="enter your email" #emailSignUp />
-<input type="password" placeholder="enter your password" #passwordSignUp />
-<!-- <input type="password" placeholder="re-enter your password" #repasswordSignUp /> -->
-<button (click)="authService.SignUp(emailSignUp.value,passwordSignUp.value)">submit</button>
+<div class="card my-5" style="width: 30rem;">
+  <div class="card-body">
+    <form [formGroup]="signUpForm" (ngSubmit)="userSignUpForm()" >
+      <!-- (ngSubmit)="userSignUpForm()" -->
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" formControlName="name" class="form-control" />
+      </div>
+        <div *ngIf="signUpControls.name.errors">
+          <div *ngIf="signUpControls.name.errors.required  && signUpForm.submitted">
+            <div class="alert alert-danger">This Field Is Required</div>
+          </div>
+        </div>
 
-<a [routerLink]="'/sign-in'">I have an account</a>
+
+      <div class="form-group">
+        <label for="username">User Name</label>
+        <input type="text" formControlName="username" class="form-control" />
+      </div>
+        <div *ngIf="signUpControls.username.errors">
+          <div *ngIf="signUpControls.username.errors.required && signUpForm.submitted">
+            <div class="alert alert-danger">This Field Is Required</div>
+          </div>
+
+        </div>
+
+
+      <div class="form-group">
+        <label for="email">Email address</label>
+        <input type="text" formControlName="email" class="form-control" #emailSignUp />
+      </div>
+        <div *ngIf="signUpControls.email.errors">
+          <div *ngIf="signUpControls.email.errors.required && signUpForm.submitted">
+            <div class="alert alert-danger">This Field Is Required</div>
+          </div>
+          <div *ngIf="signUpControls.email.errors.pattern && signUpForm.submitted">
+            <div class="alert alert-danger">Invalid Email</div>
+          </div>
+        </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" formControlName="password" class="form-control" #passwordSignUp />
+      </div>
+        <div *ngIf="signUpControls.password.errors">
+          <div *ngIf="signUpControls.password.errors.required && signUpForm.submitted">
+            <div class="alert alert-danger">This Field Is Required</div>
+          </div>
+
+          <div *ngIf="signUpControls.password.errors.minlength && signUpForm.submitted">
+            <div class="alert alert-danger"> Must contain at least 8 Character!</div>
+          </div>
+        </div>
+
+
+      <div class="form-group">
+        <label for="confirmPassword">Confirm password</label>
+        <input type="password" formControlName="confirmPassword" class="form-control" />
+      </div>
+        <div *ngIf="signUpControls.confirmPassword.errors">
+          <div *ngIf="signUpControls.confirmPassword.errors.required && signUpForm.submitted">
+            <div class="alert alert-danger">This Field Is Required</div>
+          </div>
+
+        </div>
+
+
+      <button class="btn btn-primary btn-lg btn-block" (click)="authService.SignUp(emailSignUp.value,passwordSignUp.value)">submit</button>
+
+      <a [routerLink]="'/sign-in'">I have an account</a>
+
+    </form>
+  </div>
+</div>

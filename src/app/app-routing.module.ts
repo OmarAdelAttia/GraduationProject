@@ -1,22 +1,33 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-// AuthGuard
+// Guard
 import { AuthGuard } from './components/shared/guard/auth.guard';
 
+// pages
+import { HomeComponent } from './pages/home/home.component';
+import { PlanComponent } from './pages/plan/plan.component';
+import { CourseComponent } from './pages/course/course.component';
+import { NotFoundComponent } from './components/shared/not-found/not-found.component';
+
+import { ClientComponent } from './profiles/clientModule/client/client.component';
+
 // Components
-import { HomeComponent } from './components/home/home.component';
 import { SignInComponent } from './components/authentication/sign-in/sign-in.component';
 import { SignUpComponent } from './components/authentication/sign-up/sign-up.component';
-import { BlablablaComponent } from './components/blablabla/blablabla.component';
+
 
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'sign-in', component: SignInComponent },
   { path: 'sign-up', component: SignUpComponent },
-  // { path: 'blablabla', component: BlablablaComponent, canActivate: [AuthGuard] }
-  { path: 'blablabla', component: BlablablaComponent }
+  { path: 'plan', component: PlanComponent, canActivate: [AuthGuard] },
+  { path: 'course', component: CourseComponent, canActivate: [AuthGuard] },
+  { path: 'client', component: ClientComponent },
+  { path: "**", component: NotFoundComponent },
+
+
 ];
 
 @NgModule({

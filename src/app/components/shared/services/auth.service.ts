@@ -3,9 +3,10 @@ import { Injectable } from '@angular/core';
 // interfaces
 import { User } from './user';
 
+import { Router } from '@angular/router';
+
 // firebase
 // import auth from 'firebase/app';
-import { Router } from '@angular/router';
 import { AngularFireAuth } from "@angular/fire/auth";
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 
@@ -18,7 +19,9 @@ export class AuthService {
 
   userData: any;
 
-  constructor(public angularFireAuth: AngularFireAuth, public angularFirestore: AngularFirestore, public router: Router) {
+  constructor(public angularFireAuth: AngularFireAuth,
+              public angularFirestore: AngularFirestore,
+              public router: Router) {
 
     /* Saving user data in localstorage when
     logged in and setting up null when logged out */
@@ -40,10 +43,12 @@ export class AuthService {
     return this.angularFireAuth.signInWithEmailAndPassword(email, password)
       .then((result) => {
         // this.ngZone.run(() => {
-          this.router.navigate(['blablabla']);
+          this.router.navigate(['']);
+          console.log("n");
+
         // });
         this.SetUserData(result.user);
-        console.log(result.user);
+        // console.log(result.user);
       }).catch((error) => {
         window.alert(error.message)
       })
@@ -53,11 +58,13 @@ export class AuthService {
   SignUp(email, password) {
     return this.angularFireAuth.createUserWithEmailAndPassword(email, password)
       .then((result) => {
+        this.router.navigate(['']);
+        console.log("m");
         /* Call the SendVerificaitonMail() function when new user sign
         up and returns promise */
         // this.SendVerificationMail();
         this.SetUserData(result.user);
-        console.log(result.user);
+        // console.log(result.user);
       }).catch((error) => {
         window.alert(error.message)
       })
@@ -66,7 +73,7 @@ export class AuthService {
   // Returns true when user is looged in and email is verified
   get isLoggedIn(): boolean {
     const user = JSON.parse(localStorage.getItem('user'));
-    return (user !== null && user.emailVerified !== false) ? true : false;
+    return (user !== null ) ? true : false;
   }
 
   /* Setting up user data when sign in with username/password,
@@ -90,7 +97,7 @@ provider in Firestore database using AngularFirestore + AngularFirestoreDocument
   SignOut() {
     return this.angularFireAuth.signOut().then(() => {
       localStorage.removeItem('user');
-      this.router.navigate(['blablabla']);
+      this.router.navigate(['sign-in']);
     })
   }
 
