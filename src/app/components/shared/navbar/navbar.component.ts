@@ -22,10 +22,10 @@ export class NavbarComponent implements OnInit {
   }
 
 
-  fun() {
-    debugger
-    const role = localStorage.getItem('role')
-    if(role === "client") {
+  navigateToProfile() {
+    const roles = JSON.parse(localStorage.getItem('roles'))
+    const userRole = roles.find( role => role.userId === JSON.parse(localStorage.getItem('user')).uid).role;
+    if(userRole === "client") {
       this.router.navigate(['./client'])
     } else {
       this.router.navigate(['./mentor'])

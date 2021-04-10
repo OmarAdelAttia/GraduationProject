@@ -39,7 +39,7 @@ export class AuthService {
   }
 
   // Sign in with email/password
-  SignIn(email, password, role) {
+  SignIn(email, password) {
     return this.angularFireAuth.signInWithEmailAndPassword(email, password)
       .then((result) => {
         // this.ngZone.run(() => {
@@ -60,7 +60,11 @@ export class AuthService {
       .then((result) => {
         this.router.navigate(['']);
         console.log("m");
-        localStorage.setItem('role', role)
+        // get users roles if exist push on it, if not create new array
+        const roles = JSON.parse(localStorage.getItem('roles'))||[];
+        const currentUser = {userId:result.user.uid,role};
+        roles.push(currentUser);
+        localStorage.setItem('roles', JSON.stringify(roles))
         /* Call the SendVerificaitonMail() function when new user sign
         up and returns promise */
         // this.SendVerificationMail();
