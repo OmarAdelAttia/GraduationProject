@@ -1,7 +1,9 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg  navbar-dark bg-dark">
   <!-- *ngIf="authService.isLoggedIn" -->
   <div class="container">
-    <a class="navbar-brand" routerLink="/">Navbar</a>
+    <a class="navbar-brand" routerLink="/">
+      <h3><i class="fas fa-running"></i>NeoFit</h3>
+    </a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,29 +29,32 @@
           <a class="nav-link" [routerLink]="'/course'">Courses</a>
         </li>
 
-
-
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
+        <li class="nav-item" ngbDropdown>
+          <a class="nav-link" tabindex="0" ngbDropdownToggle id="navbarDropdown1" role="button">
             languages
           </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">English</a>
-            <a class="dropdown-item" href="#">Arabic</a>
-            <a class="dropdown-item" href="#">German</a>
+          <div ngbDropdownMenu aria-labelledby="navbarDropdown1" class="dropdown-menu">
+            <a ngbDropdownItem href="#" (click)="$event.preventDefault()">English</a>
+            <a ngbDropdownItem href="#" (click)="$event.preventDefault()">Arabic</a>
+            <a ngbDropdownItem href="#" (click)="$event.preventDefault()">German</a>
           </div>
         </li>
+
       </ul>
 
-      <form class="form-inline my-2 my-lg-0">
+      <form action="" class="form-inline my-2 my-lg-0">
+        <input type="search" class="mr-sm-2">
+        <i class="fa fa-search"></i>
+      </form>
+
+      <!-- <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
+      </form> -->
 
       <a class="nav-link" *ngIf="authService.isLoggedIn !== true" [routerLink]="'/sign-in'">Log in</a>
 
-      <a class="nav-link"  *ngIf="authService.isLoggedIn">
+      <a class="nav-link" *ngIf="authService.isLoggedIn">
         <div class="btn-group mr-3">
           <button type="button" [routerLink]="'/client'" class="btn btn-primary">USER</button>
           <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
@@ -60,7 +65,8 @@
               <button ngbDropdownItem (click)="authService.SignOut()">Log Out</button>
             </div>
           </div>
-        </div></a>
+        </div>
+      </a>
 
     </div>
   </div>
