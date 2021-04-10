@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 // Modules
 import { AuthModuleModule } from './components/authentication/auth-module.module';
 import { ClientModuleModule } from './profiles/clientModule/client-module.module';
-import { MintorModuleModule } from './profiles/mintorModule/mintor-module.module';
+import { MentorModuleModule } from './profiles/mentorModule/mentor-module.module';
 
 // Firebase modules
 import { AngularFireModule } from '@angular/fire';
@@ -55,7 +55,7 @@ import { HeaderComponent } from './components/reusable-components/header/header.
 
     AuthModuleModule,
     ClientModuleModule,
-    MintorModuleModule,
+    MentorModuleModule,
 
     AngularFireModule.initializeApp(environment.firebaseConfig), // Required for everything
     AngularFirestoreModule, // Only required for database features

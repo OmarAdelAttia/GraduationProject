@@ -64,8 +64,17 @@
 
         </div>
 
+        <div class="custom-control custom-radio">
+          <input type="radio" id="customRadio1" formControlName="role" name="role" value="client" class="custom-control-input" #roleSignUp/>
+          <label class="custom-control-label" for="customRadio1">client</label>
+        </div>
+        <div class="custom-control custom-radio">
+          <input type="radio" id="customRadio2" formControlName="role" name="role" value="mentor" class="custom-control-input" #roleSignUp />
+          <label class="custom-control-label" for="customRadio2">mentor</label>
+        </div>
 
-      <button class="btn btn-primary btn-lg btn-block" (click)="authService.SignUp(emailSignUp.value,passwordSignUp.value)">submit</button>
+
+      <button class="btn btn-primary btn-lg btn-block" (click)="authService.SignUp(emailSignUp.value,passwordSignUp.value, signUpControls.role.value)">submit</button>
 
       <a [routerLink]="'/sign-in'">I have an account</a>
 

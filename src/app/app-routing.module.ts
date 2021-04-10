@@ -11,6 +11,7 @@ import { CourseComponent } from './pages/course/course.component';
 import { NotFoundComponent } from './components/shared/not-found/not-found.component';
 
 import { ClientComponent } from './profiles/clientModule/client/client.component';
+import { MentorComponent } from './profiles/mentorModule/mentor/mentor.component';
 
 // Components
 import { SignInComponent } from './components/authentication/sign-in/sign-in.component';
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: 'plan', component: PlanComponent, canActivate: [AuthGuard] },
   { path: 'course', component: CourseComponent, canActivate: [AuthGuard] },
   { path: 'client', component: ClientComponent },
+  { path: 'mentor', component: MentorComponent },
   { path: "**", component: NotFoundComponent },
 
 

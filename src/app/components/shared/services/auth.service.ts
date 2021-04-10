@@ -39,7 +39,7 @@ export class AuthService {
   }
 
   // Sign in with email/password
-  SignIn(email, password) {
+  SignIn(email, password, role) {
     return this.angularFireAuth.signInWithEmailAndPassword(email, password)
       .then((result) => {
         // this.ngZone.run(() => {
@@ -55,11 +55,12 @@ export class AuthService {
   }
 
   // Sign up with email/password
-  SignUp(email, password) {
+  SignUp(email, password, role) {
     return this.angularFireAuth.createUserWithEmailAndPassword(email, password)
       .then((result) => {
         this.router.navigate(['']);
         console.log("m");
+        localStorage.setItem('role', role)
         /* Call the SendVerificaitonMail() function when new user sign
         up and returns promise */
         // this.SendVerificationMail();
@@ -86,7 +87,10 @@ provider in Firestore database using AngularFirestore + AngularFirestoreDocument
       email: user.email,
       displayName: user.displayName,
       photoURL: user.photoURL,
-      emailVerified: user.emailVerified
+      emailVerified: user.emailVerified,
+      // roles: {
+      //   client: true
+      // }
     }
     return userRef.set(userData, {
       merge: true

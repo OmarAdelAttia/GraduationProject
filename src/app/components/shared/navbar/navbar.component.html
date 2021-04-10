@@ -18,8 +18,9 @@
         </li>
 
         <li class="nav-item active">
-          <a class="nav-link" *ngIf="authService.isLoggedIn" [routerLink]="'/client'">Profile</a>
+          <a class="nav-link" *ngIf="authService.isLoggedIn" (click)="fun()" >Profile</a>
         </li>
+        <!-- [routerLink]="'/client'" -->
 
         <li class="nav-item">
           <a class="nav-link" [routerLink]="'/plan'">Health Plans</a>
@@ -42,17 +43,17 @@
 
       </ul>
 
-      <form action="" class="form-inline my-2 my-lg-0">
+      <!-- <form action="" class="form-inline my-2 my-lg-0">
         <input type="search" class="mr-sm-2">
         <i class="fa fa-search"></i>
-      </form>
+      </form> -->
 
       <!-- <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
       </form> -->
 
-      <a class="nav-link" *ngIf="authService.isLoggedIn !== true" [routerLink]="'/sign-in'">Log in</a>
+      <a class="nav-link text-white" *ngIf="authService.isLoggedIn !== true" [routerLink]="'/sign-in'">Log in</a>
 
       <a class="nav-link" *ngIf="authService.isLoggedIn">
         <div class="btn-group mr-3">
