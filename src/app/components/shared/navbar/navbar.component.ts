@@ -12,7 +12,11 @@ import { Router } from '@angular/router';
 
 export class NavbarComponent implements OnInit {
 
-  constructor(private modalService: NgbModal, public authService: AuthService, public router: Router) { }
+  isCollapsed: boolean;
+
+  constructor(private modalService: NgbModal, public authService: AuthService, public router: Router) {
+    this.isCollapsed= true;
+  }
 
   ngOnInit(): void {
   }
