@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 
 // Modules
 import { AuthModuleModule } from './components/authentication/auth-module.module';
+import { PlanModuleModule } from './pages/planModule/plan-module.module';
 import { ClientModuleModule } from './profiles/clientModule/client-module.module';
 import { MentorModuleModule } from './profiles/mentorModule/mentor-module.module';
 
@@ -20,7 +21,11 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
 
 // Services
-import { AuthService } from './components/shared/services/auth.service';
+import { AuthService } from './components/shared/services/auth/auth.service';
+
+// Store
+import { StoreModule } from '@ngrx/store';
+import { shopping_cart_reducer } from './components/shared/services/store/cart.reducer';
 
 // bootstrap
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -28,7 +33,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 // pages
 import { HomeComponent } from './pages/home/home.component';
-import { PlanComponent } from './pages/plan/plan.component';
 import { CourseComponent } from './pages/course/course.component';
 import { NotFoundComponent } from './components/shared/not-found/not-found.component';
 
@@ -44,7 +48,6 @@ import { HeaderComponent } from './components/reusable-components/header/header.
     HomeComponent,
     NavbarComponent,
     FooterComponent,
-    PlanComponent,
     CourseComponent,
     NotFoundComponent,
     HeaderComponent,
@@ -54,13 +57,17 @@ import { HeaderComponent } from './components/reusable-components/header/header.
     AppRoutingModule,
 
     AuthModuleModule,
+    PlanModuleModule,
     ClientModuleModule,
     MentorModuleModule,
 
     AngularFireModule.initializeApp(environment.firebaseConfig), // Required for everything
     AngularFirestoreModule, // Only required for database features
     AngularFireAuthModule, // Only required for auth features,
-    AngularFireStorageModule, NgbModule // Only required for storage features
+    AngularFireStorageModule,  // Only required for storage features
+
+    NgbModule,
+    StoreModule.forRoot({cart: shopping_cart_reducer}),
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

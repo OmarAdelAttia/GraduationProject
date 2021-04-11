@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 // interfaces
-import { User } from './user';
+import { User } from '../interfaces/user';
 
 import { Router } from '@angular/router';
 

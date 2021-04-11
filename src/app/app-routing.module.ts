@@ -6,7 +6,8 @@ import { AuthGuard } from './components/shared/guard/auth.guard';
 
 // pages
 import { HomeComponent } from './pages/home/home.component';
-import { PlanComponent } from './pages/plan/plan.component';
+import { PlanComponent } from './pages/planModule/plan/plan.component';
+import { PlanDetailsComponent } from './pages/planModule/plan-details/plan-details.component';
 import { CourseComponent } from './pages/course/course.component';
 import { NotFoundComponent } from './components/shared/not-found/not-found.component';
 
@@ -23,13 +24,14 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'sign-in', component: SignInComponent },
   { path: 'sign-up', component: SignUpComponent },
-  { path: 'plan', component: PlanComponent, canActivate: [AuthGuard] },
-  { path: 'course', component: CourseComponent, canActivate: [AuthGuard] },
+  { path: 'plan', component: PlanComponent },
+  { path: 'plan-details/:id', component: PlanDetailsComponent },
+  { path: 'course', component: CourseComponent },
   { path: 'client', component: ClientComponent },
   { path: 'mentor', component: MentorComponent },
   { path: "**", component: NotFoundComponent },
 
-
+  // , canActivate: [AuthGuard]
 ];
 
 @NgModule({
