@@ -40,6 +40,9 @@ import { NotFoundComponent } from './components/shared/not-found/not-found.compo
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { HeaderComponent } from './components/reusable-components/header/header.component';
+import { CoursesComponent } from './components/reusable-components/courses/courses.component';
+import { MentorsComponent } from './components/reusable-components/mentors/mentors.component';
+import { AchievementsComponent } from './components/reusable-components/achievements/achievements.component';
 
 
 @NgModule({
@@ -51,6 +54,9 @@ import { HeaderComponent } from './components/reusable-components/header/header.
     CourseComponent,
     NotFoundComponent,
     HeaderComponent,
+    CoursesComponent,
+    MentorsComponent,
+    AchievementsComponent,
   ],
   imports: [
     BrowserModule,
