@@ -23,6 +23,7 @@ import { environment } from '../environments/environment';
 
 // Services
 import { AuthService } from './components/shared/services/auth/auth.service';
+import { HttpClientModule } from '@angular/common/http';
 
 // Store
 import { StoreModule } from '@ngrx/store';
@@ -67,6 +68,7 @@ import { ShoppingCartComponent } from './components/reusable-components/shopping
     MentorsModuleModule,
     MentorModuleModule,
     ClientModuleModule,
+    HttpClientModule,
 
 
     AngularFireModule.initializeApp(environment.firebaseConfig), // Required for everything
@@ -75,7 +77,7 @@ import { ShoppingCartComponent } from './components/reusable-components/shopping
     AngularFireStorageModule,  // Only required for storage features
 
     NgbModule,
-    StoreModule.forRoot({cart: shopping_cart_reducer}),
+    StoreModule.forRoot({ cart: shopping_cart_reducer }),
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

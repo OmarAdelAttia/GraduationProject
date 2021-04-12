@@ -50,15 +50,19 @@
 
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" *ngIf="authService.isLoggedIn !== true" [routerLink]="'/sign-in'"><i
-              class="fas fa-lg fa-sign-in-alt"></i></a>
+          <a class="nav-link" *ngIf="authService.isLoggedIn !== true" [routerLink]="'/sign-in'">
+            <i class="fas fa-lg fa-sign-in-alt"></i>
+          </a>
         </li>
       </ul>
 
       <ul class="navbar-nav">
         <li class="nav-item">
           <a class="nav-link" *ngIf="authService.isLoggedIn !== true" [routerLink]="'/shopping-cart'">
-            <i class="fas fa-lg fa-shopping-cart"><span class="badge badge-light">9</span></i></a>
+            <i class="fas fa-lg fa-shopping-cart">
+              <span class="badge badge-light">9</span>
+            </i>
+          </a>
         </li>
       </ul>
 
