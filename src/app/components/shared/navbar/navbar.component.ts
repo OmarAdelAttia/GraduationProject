@@ -34,11 +34,11 @@ import { Router } from '@angular/router';
 
 
 export class NavbarComponent implements OnInit {
-  isScrolled= false;
-  isCollapsed:boolean;
+  isScrolled = false;
+  isCollapsed: boolean;
 
-  constructor( public authService: AuthService, public router: Router) {
-    this.isCollapsed= true;
+  constructor(public authService: AuthService, public router: Router) {
+    this.isCollapsed = true;
   }
   ngOnInit(): void {
     // throw new Error("Method not implemented.");
@@ -56,6 +56,6 @@ export class NavbarComponent implements OnInit {
 
   @HostListener("window:scroll")
   scrollEvent() {
-    window.pageYOffset >= 80 ? (this.isScrolled = true) : (this.isScrolled = false);
+    window.pageYOffset >= 200 ? (this.isScrolled = true) : (this.isScrolled = false);
   }
 }
