@@ -9,15 +9,35 @@ import { TrainersService } from '../../../components/shared/services/Apis/traine
 })
 export class MentorsComponent implements OnInit {
 
+  doctorsList: any = [];
+  trainersList: any = [];
+  results: any = [];
+  resultsArray: any = [];
+
   constructor(private doctorsService: DoctorsService, private trainersService: TrainersService) { }
 
   ngOnInit(): void {
     this.doctorsService.getDoctor().subscribe(result => {
-      console.log(result);
+      this.results = result;
+      let list = [0, 1, 2, 3];
+      for (let i in list) {
+        this.resultsArray = this.results.documents[i].fields.Category.stringValue;
+        this.doctorsList = this.resultsArray;
+        console.log(this.doctorsList);
+      }
+      // this.resultsArray = this.results.documents[0].fields.Specialized.stringValue;
+      // this.doctorsList = this.resultsArray;
+      // console.log(this.doctorsList);
     })
-    this.trainersService.getTrainer().subscribe(result => {
-      console.log(result);
-    })
+    // this.trainersService.getTrainer().subscribe(result => {
+    //   this.trainersList = this.resultsArray;
+    //   console.log(this.trainersList.documents);
+    // })
+
+    let list = [0, 1, 2, 3];
+    for (let i in list) {
+      console.log(i); // "0", "1", "2",
+    }
   }
 
 }

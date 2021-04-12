@@ -9,6 +9,6 @@ export class TrainersService {
   constructor(private httpClient: HttpClient) { }
 
   getTrainer() {
-    return this.httpClient.get('https://firestore.googleapis.com/v1/projects/neofit-project/databases/(default)/documents/Courses');
+    return this.httpClient.get('https://firestore.googleapis.com/v1/projects/neofit-project/databases/(default)/documents/Trainers');
   }
 }
