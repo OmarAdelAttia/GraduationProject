@@ -43,6 +43,7 @@ import { HeaderComponent } from './components/reusable-components/header/header.
 import { CoursesComponent } from './components/reusable-components/courses/courses.component';
 import { MentorsComponent } from './components/reusable-components/mentors/mentors.component';
 import { AchievementsComponent } from './components/reusable-components/achievements/achievements.component';
+import { ShoppingCartComponent } from './components/reusable-components/shopping-cart/shopping-cart.component';
 
 
 @NgModule({
@@ -56,6 +57,7 @@ import { AchievementsComponent } from './components/reusable-components/achievem
     CoursesComponent,
     MentorsComponent,
     AchievementsComponent,
+    ShoppingCartComponent,
   ],
   imports: [
     BrowserModule,

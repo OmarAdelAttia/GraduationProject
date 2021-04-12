@@ -20,11 +20,15 @@ import { MentorComponent } from './profiles/mentor-module/mentor/mentor.componen
 import { SignInComponent } from './components/authentication/sign-in/sign-in.component';
 import { SignUpComponent } from './components/authentication/sign-up/sign-up.component';
 
+import { ShoppingCartComponent } from './components/reusable-components/shopping-cart/shopping-cart.component';
+
 
 
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
+
+  // LAZY LOADING WORK
 
   // {path: 'authentication',
   // loadChildren: () => import('./components/authentication/auth-module.module')
@@ -50,6 +54,8 @@ const routes: Routes = [
 
   { path: 'client', component: ClientComponent },
   { path: 'mentor', component: MentorComponent },
+
+  { path: 'shopping-cart', component: ShoppingCartComponent },
 
 
   { path: "**", component: NotFoundComponent },
