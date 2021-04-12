@@ -6,13 +6,15 @@ import { AuthGuard } from './components/shared/guard/auth.guard';
 
 // pages
 import { HomeComponent } from './pages/home/home.component';
-import { PlanComponent } from './pages/planModule/plan/plan.component';
-import { PlanDetailsComponent } from './pages/planModule/plan-details/plan-details.component';
-import { CourseComponent } from './pages/course/course.component';
 import { NotFoundComponent } from './components/shared/not-found/not-found.component';
 
-import { ClientComponent } from './profiles/clientModule/client/client.component';
-import { MentorComponent } from './profiles/mentorModule/mentor/mentor.component';
+import { MentorsComponent } from './pages/mentors-module/mentors/mentors.component';
+import { MentorDetailsComponent } from './pages/mentors-module/mentor-details/mentor-details.component';
+
+import { ClientComponent } from './profiles/client-module/client/client.component';
+import { MentorComponent } from './profiles/mentor-module/mentor/mentor.component';
+
+
 
 // Components
 import { SignInComponent } from './components/authentication/sign-in/sign-in.component';
@@ -20,15 +22,36 @@ import { SignUpComponent } from './components/authentication/sign-up/sign-up.com
 
 
 
+
 const routes: Routes = [
   { path: '', component: HomeComponent },
+
+  // {path: 'authentication',
+  // loadChildren: () => import('./components/authentication/auth-module.module')
+  // .then(m => m.AuthModuleModule)},
+
+  // {path: 'mentors-module',
+  // loadChildren: () => import('./pages/mentors-module/mentors-module.module')
+  // .then(m => m.MentorsModuleModule)},
+
+  // {path: 'client-module',
+  // loadChildren: () => import('./profiles/client-module/client-module.module')
+  // .then(m => m.ClientModuleModule)},
+
+  // {path: 'mentor-module',
+  // loadChildren: () => import('./profiles/mentor-module/mentor-module.module')
+  // .then(m => m.MentorModuleModule)},
+
   { path: 'sign-in', component: SignInComponent },
   { path: 'sign-up', component: SignUpComponent },
-  { path: 'plan', component: PlanComponent },
-  { path: 'plan-details/:id', component: PlanDetailsComponent },
-  { path: 'course', component: CourseComponent },
+
+  { path: 'mentors', component: MentorsComponent },
+  { path: 'mentor-details', component: MentorDetailsComponent },
+
   { path: 'client', component: ClientComponent },
   { path: 'mentor', component: MentorComponent },
+
+
   { path: "**", component: NotFoundComponent },
 
   // , canActivate: [AuthGuard]
@@ -36,6 +59,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+exports: [RouterModule]
 })
 export class AppRoutingModule { }

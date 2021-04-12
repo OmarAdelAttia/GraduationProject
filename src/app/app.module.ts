@@ -6,9 +6,10 @@ import { AppComponent } from './app.component';
 
 // Modules
 import { AuthModuleModule } from './components/authentication/auth-module.module';
-import { PlanModuleModule } from './pages/planModule/plan-module.module';
-import { ClientModuleModule } from './profiles/clientModule/client-module.module';
-import { MentorModuleModule } from './profiles/mentorModule/mentor-module.module';
+import { MentorsModuleModule } from './pages/mentors-module/mentors-module.module';
+import { ClientModuleModule } from './profiles/client-module/client-module.module';
+import { MentorModuleModule } from './profiles/mentor-module/mentor-module.module';
+
 
 // Firebase modules
 import { AngularFireModule } from '@angular/fire';
@@ -33,7 +34,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 // pages
 import { HomeComponent } from './pages/home/home.component';
-import { CourseComponent } from './pages/course/course.component';
 import { NotFoundComponent } from './components/shared/not-found/not-found.component';
 
 // Components
@@ -51,7 +51,6 @@ import { AchievementsComponent } from './components/reusable-components/achievem
     HomeComponent,
     NavbarComponent,
     FooterComponent,
-    CourseComponent,
     NotFoundComponent,
     HeaderComponent,
     CoursesComponent,
@@ -63,9 +62,10 @@ import { AchievementsComponent } from './components/reusable-components/achievem
     AppRoutingModule,
 
     AuthModuleModule,
-    PlanModuleModule,
-    ClientModuleModule,
+    MentorsModuleModule,
     MentorModuleModule,
+    ClientModuleModule,
+
 
     AngularFireModule.initializeApp(environment.firebaseConfig), // Required for everything
     AngularFirestoreModule, // Only required for database features
