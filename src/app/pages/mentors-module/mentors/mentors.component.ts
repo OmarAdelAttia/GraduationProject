@@ -19,13 +19,16 @@ export class MentorsComponent implements OnInit {
   ngOnInit(): void {
     this.doctorsService.getDoctor().subscribe(result => {
       this.results = result;
+
       let list = [0, 1, 2, 3];
       for (let i in list) {
-        this.resultsArray = this.results.documents[i].fields.Category.stringValue;
-        this.doctorsList = this.resultsArray;
+        this.resultsArray = this.results.documents[i].fields;
+        this.doctorsList.push(this.resultsArray);
         console.log(this.doctorsList);
       }
+
       // this.resultsArray = this.results.documents[0].fields.Specialized.stringValue;
+      // this.resultsArray = this.results.documents;
       // this.doctorsList = this.resultsArray;
       // console.log(this.doctorsList);
     })
@@ -34,10 +37,10 @@ export class MentorsComponent implements OnInit {
     //   console.log(this.trainersList.documents);
     // })
 
-    let list = [0, 1, 2, 3];
-    for (let i in list) {
-      console.log(i); // "0", "1", "2",
-    }
+    // let list = [0, 1, 2, 3];
+    // for (let i in list) {
+    //   console.log(i); // "0", "1", "2",
+    // }
   }
 
 }

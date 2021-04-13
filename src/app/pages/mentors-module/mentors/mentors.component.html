@@ -1,5 +1,7 @@
 <p>mentors works!</p>
 
 <ul *ngFor="let doctor of doctorsList">
-    <li>{{doctor}}</li>
+    <li>{{doctor.FirstName.stringValue}}</li>
+    <li>{{doctor.Category.stringValue}}</li>
+    <li>{{doctor.Rating.stringValue}}</li>
 </ul>
