@@ -45,6 +45,7 @@ import { CoursesComponent } from './components/reusable-components/courses/cours
 import { MentorsComponent } from './components/reusable-components/mentors/mentors.component';
 import { AchievementsComponent } from './components/reusable-components/achievements/achievements.component';
 import { ShoppingCartComponent } from './components/reusable-components/shopping-cart/shopping-cart.component';
+import { CardComponent } from './components/reusable-components/card/card.component';
 
 
 @NgModule({
@@ -59,6 +60,7 @@ import { ShoppingCartComponent } from './components/reusable-components/shopping
     MentorsComponent,
     AchievementsComponent,
     ShoppingCartComponent,
+    CardComponent,
   ],
   imports: [
     BrowserModule,

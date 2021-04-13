@@ -1,0 +1,31 @@
+<div class="card-flyer">
+    <div class="text-box">
+        <div class="image-box">
+            <img [src]="cardItem.image" alt="" />
+        </div>
+        <div class="text-container">
+            <div class="mb-4">
+                <a [routerLink]="" class="mentor-name-a">{{cardItem.name}}</a>
+                <ng-template #t let-fill="fill">
+                    <span class="star" [class.full]="fill === 100">
+                        <span class="half" [style.width.%]="fill">&#9734;</span>&#9734;
+                    </span>
+                </ng-template>
+                <br><b>{{cardItem.rating}} </b>
+                <ngb-rating [(rate)]="cardItem.rating" [starTemplate]="t" [readonly]="true">
+                </ngb-rating>
+
+                <p class="font-weight-bold cat">Category: <span
+                        class="font-weight-normal">{{cardItem.category}}</span></p>
+                <p class="font-weight-bold">Specialty: <span
+                        class="font-weight-normal">{{cardItem.specialty}}</span>
+                </p>
+            </div>
+            <div class="row d-flex justify-content-center">
+                <a class="future main-btn-a ">
+                    Hire Now
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
