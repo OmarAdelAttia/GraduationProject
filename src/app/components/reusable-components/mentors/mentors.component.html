@@ -1,6 +1,8 @@
-<div id="cards_landscape_wrap-2">
+<section class="my-5">
+  <div id="cards_landscape_wrap-2">
     <div class="container">
-        <h2 class="mb-3 text-center">Meet Neo Mentors </h2>
+        <h2 class="pt-5 mb-3 text-center">Meet Neo Mentors </h2>
+        <h6 class="text-center"><a [routerLink]="'/mentors'">Choose from 100 trainers and doctors</a></h6>
         <div class="row">
             <div *ngFor="let cardItem of mentorsList;" class="col-xs-12 col-sm-6 col-md-3 col-md-3">
                 <app-card [cardItem]="cardItem"></app-card>
@@ -8,3 +10,4 @@
         </div>
     </div>
 </div>
+</section>

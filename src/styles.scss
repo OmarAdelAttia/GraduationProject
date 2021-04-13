@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 body {
-    background: #edeef7 !important;
+    // background: #edeef7 !important;
 
     .prpl-txt{
         color: #7868e6;
@@ -28,11 +28,11 @@ body {
         color: #7868e6;
         background-color: transparent;
         text-align: center;
-    } 
+    }
     .future {
-    
+
         transition: 0.5s ease;
-    
+
         // &::after,
         // &::before {
         //     content: "";
@@ -42,28 +42,28 @@ body {
         //     height: 30px;
         //     transition: 0.5s ease;
         // }
-    
+
         // &::after {
         //     top: -9px;
         //     left: -9px;
         //     border-right: none;
         //     border-bottom: none;
         // }
-    
+
         // &::before {
         //     bottom: -9px;
         //     right: -9px;
         //     border-left: none;
         //     border-top: none;
         // }
-    
+
         // &:hover:after,
         // &:hover:before {
         //     width: 35px;
         //     height: 45px;
         //    // border-color: #b8b5ff;
         // }
-    
+
         &:hover{
             color: white;
             cursor: pointer;

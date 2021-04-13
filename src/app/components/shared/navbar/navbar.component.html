@@ -23,7 +23,10 @@
         <!-- [routerLink]="'/client'" -->
 
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="'/mentors'">Health Plans</a>
+          <a class="nav-link" [routerLink]="'/mentors'">mentors</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="'/mentor-details'">mentor-details</a>
         </li>
 
         <li class="nav-item">
@@ -60,7 +63,7 @@
         <li class="nav-item">
           <a class="nav-link" *ngIf="authService.isLoggedIn !== true" [routerLink]="'/shopping-cart'">
             <i class="fas fa-lg fa-shopping-cart">
-              <span class="badge badge-light">9</span>
+              <!-- <span class="badge badge-light">9</span> -->
             </i>
           </a>
         </li>
