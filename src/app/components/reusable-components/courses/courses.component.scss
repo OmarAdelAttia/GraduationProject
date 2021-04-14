@@ -1,3 +1,21 @@
-.courses {
-  background: #F7F7F7;
+@import '../../../../styles.scss';
+.card-color{
+  background-color: $lightest;
+  #cards_landscape_wrap-2 {
+    // background: #F7F7F7;
+  
+    // .container{
+    //     padding-top: 80px;
+    //     padding-bottom: 100px;
+    // }
+  
+    a{
+        text-decoration: none;
+        outline: none;
+    }
+  
+    
+  }
 }
+
+

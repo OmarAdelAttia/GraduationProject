@@ -1,4 +1,4 @@
-
+@import '../../../../styles.scss';
 
 .nav-link {
   color: #ffffff !important;
@@ -9,5 +9,5 @@ nav{
 }
 
 .fixed{
-  background-color: #7868e6;
+  background-color: $darkest;
 }

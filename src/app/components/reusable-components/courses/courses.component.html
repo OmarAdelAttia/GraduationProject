@@ -1,57 +1,13 @@
-<div class="courses py-5">
-  <h2 class="mb-3 text-center">Our Courses</h2>
-  <div class="container d-flex justify-content-between">
-      <div class="card mr-1" style="width: 18rem;">
-          <img src="/assets/img/course_1.jpg" class="card-img-top" alt="Health lifestyle course">
-          <div class="card-body">
-              <h5 class="card-title">
-                  <strong>
-                      The Complete Fitness & Health Masterclass
-                  </strong>
-              </h5>
-              <p class="card-text">
-                  <strong>If You Only Buy ONE Course This Year … It GOT To Be This One!</strong>
-                  With over 22 hours of video content, downloadable resources and bonuses - this is one of the most
-                  comprehensive fitness & health masterclass available!
-              </p>
-              <a href="#" class="btn btn-primary">Buy Now</a>
-          </div>
-      </div>
-      <div class="card mx-1" style="width: 18rem;">
-          <img src="/assets/img/course_2.jfif" class="card-img-top" alt="Nutrition Course">
-          <div class="card-body">
-              <h5 class="card-title">
-                  <strong>
-                      Superfood Nutrition: 60+ Foods For Health, Fitness & Dieting
-                  </strong>
-              </h5>
-              <p class="card-text">
-                  <strong>Want Learn What To Eat For Weight Loss, Better Health & More Energy?</strong>
-                  Then this is the right course for you!
-                  This course is designed <strong>for anyone who wants to get the most out of their diet</strong>
-                  through Superfoods that are proven to increase your health and well being while also promoting a
-                  longer life.
-              </p>
-              <a href="#" class="btn btn-primary">Buy Now</a>
-          </div>
-      </div>
-      <div class="card ml-1" style="width: 18rem;">
-          <img src="/assets/img/course_3.jpg" class="card-img-top" alt="Build Muscle and Lose Fat">
-          <div class="card-body">
-              <h5 class="card-title">
-                  <strong>
-                      How to Build Muscle and Lose Fat (Master Health and Fitness)
-                  </strong>
-              </h5>
-              <p class="card-text">
-                  <strong>Fitness and Nutrition for Beginners</strong> - Learn how to workout to build muscle or lose
-                  fat and how to
-                  eat for your goals
-              </p>
-              <a class="future main-btn-a my-5">
-                  Buy Now
-              </a>
-          </div>
-      </div>
-  </div>
-</div>
+<section class="card-color py-5">
+    <div id="cards_landscape_wrap-2">
+        <div class="container">
+            <h2 class="text-center">Check Our Courses </h2>
+            <h6 class="text-center"><a [routerLink]="">Choose from 100 courses</a></h6>
+            <div class="row">
+                <div *ngFor="let cardItem of coursesList;" class="col-xs-12 col-sm-6 col-md-3 col-md-3">
+                    <app-card [cardItem]="cardItem"></app-card>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

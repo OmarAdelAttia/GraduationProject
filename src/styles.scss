@@ -1,11 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+$darkest: #1c2b2d;
+$dark: #1f6f8b;
+$light: #99a8b2;
+$lightest: #e6d5b8;
+
 
 body {
-    // background: #edeef7 !important;
-
-    .prpl-txt{
-        color: #7868e6;
-    }
+    background: white !important;
 
     .header-txt{
         font-size: 3rem;
@@ -24,8 +25,8 @@ body {
         font-weight: 500;
         font-size: 1.15rem;
         //position: relative;
-        border: 2px solid #7868e6;
-        color: #7868e6;
+        border: 2px solid $dark;
+        color: $dark;
         background-color: transparent;
         text-align: center;
     }
@@ -61,7 +62,7 @@ body {
         // &:hover:before {
         //     width: 35px;
         //     height: 45px;
-        //    // border-color: #b8b5ff;
+        //     border-color: #b8b5ff;
         // }
 
         &:hover{
@@ -69,7 +70,7 @@ body {
             cursor: pointer;
             text-decoration: none;
            // border-color: #b8b5ff;
-            background-color: #7868e6;;
+            background-color: $dark;
         }
     }
 }
