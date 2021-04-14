@@ -10,13 +10,11 @@ import { MentorsModuleModule } from './pages/mentors-module/mentors-module.modul
 import { ClientModuleModule } from './profiles/client-module/client-module.module';
 import { MentorModuleModule } from './profiles/mentor-module/mentor-module.module';
 
-
 // Firebase modules
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-
 
 // environment
 import { environment } from '../environments/environment';
