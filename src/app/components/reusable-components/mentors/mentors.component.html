@@ -1,19 +1,45 @@
-<section class="card-color py-5">
-        <div id="cards_landscape_wrap-2">
-            <div class="container">
-                <h2 class="text-center">Our Top Mentors</h2>
-                <h6 class="text-center"><a [routerLink]="">Choose from 100 courses</a></h6>
-                <div class="row">
-                    <div *ngFor="let cardItem of mentorsList;" class="col-xs-12 col-sm-6 col-md-3 col-md-3">
-                        <app-card [cardItem]="cardItem"></app-card>
-                    </div>
-                </div>
-                <div class="seeMore-btn">
-                    <a class="effect1" href="#">
-                        Let's Go!
-                        <span class="bg"></span>
-                    </a>
+<!-- <section class="card-color py-5">
+    <div id="cards_landscape_wrap-2">
+        <div class="container">
+            <h2 class="text-center">Our Top Mentors</h2>
+            <h6 class="text-center"><a [routerLink]="">Choose from 100 courses</a></h6>
+            <div class="row">
+                <div *ngFor="let cardItem of mentorsList;" class="col-xs-12 col-sm-6 col-md-3 col-md-3">
+                    <app-card [cardItem]="cardItem"></app-card>
                 </div>
             </div>
+            <div class="seeMore-btn">
+                <a class="effect1" href="#">
+                    Let's Go!
+                    <span class="bg"></span>
+                </a>
+            </div>
         </div>
+    </div>
+</section> -->
+
+<!-- <ul *ngFor="let doctor of doctorsList">
+    <li>{{doctor.FirstName.stringValue}}</li>
+    <li>{{doctor.Category.stringValue}}</li>
+    <li>{{doctor.Rating.stringValue}}</li>
+</ul> -->
+
+<section class="card-color py-5">
+    <div id="cards_landscape_wrap-2">
+        <div class="container">
+            <h2 class="text-center">Our Top Mentors</h2>
+            <h6 class="text-center"><a [routerLink]="">Choose from 100 courses</a></h6>
+            <div class="row">
+                <div *ngFor="let topRated of topRatedList;" class="col-xs-12 col-sm-6 col-md-3 col-md-3">
+                    <app-card [topRated]="topRated"></app-card>
+                </div>
+            </div>
+            <div class="seeMore-btn">
+                <a class="effect1" href="#">
+                    Let's Go!
+                    <span class="bg"></span>
+                </a>
+            </div>
+        </div>
+    </div>
 </section>

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MentorsComponent } from './mentors/mentors.component';
 import { MentorDetailsComponent } from './mentor-details/mentor-details.component';
 
@@ -11,7 +12,8 @@ import { MentorDetailsComponent } from './mentor-details/mentor-details.componen
     MentorDetailsComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    NgbModule
   ]
 })
 export class MentorsModuleModule { }
