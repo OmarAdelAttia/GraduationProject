@@ -60,7 +60,7 @@ export class MentorsComponent implements OnInit {
       for (let i in list) {
         this.resultsArray = this.results.documents[i].fields;
         this.topRatedList.push(this.resultsArray);
-        console.log(this.topRatedList);
+        // console.log(this.topRatedList);
       }
       // this.results.forEach(element => {
       //   this.resultsArray = this.results.documents[element].fields;
