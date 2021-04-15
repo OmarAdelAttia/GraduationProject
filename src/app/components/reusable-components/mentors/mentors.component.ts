@@ -54,13 +54,19 @@ export class MentorsComponent implements OnInit {
   ngOnInit(): void {
     this.topRatedService.getTopRated().subscribe(result => {
       this.results = result;
+      console.log(result);
+
       let list = [0, 1, 2, 3];
       for (let i in list) {
         this.resultsArray = this.results.documents[i].fields;
         this.topRatedList.push(this.resultsArray);
         console.log(this.topRatedList);
-
       }
+      // this.results.forEach(element => {
+      //   this.resultsArray = this.results.documents[element].fields;
+      //   this.topRatedList.push(this.resultsArray);
+      //   console.log(this.topRatedList);
+      // })
     })
   }
 
