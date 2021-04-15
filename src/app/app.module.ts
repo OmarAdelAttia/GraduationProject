@@ -46,6 +46,8 @@ import { MentorsComponent } from './components/reusable-components/mentors/mento
 import { AchievementsComponent } from './components/reusable-components/achievements/achievements.component';
 import { ShoppingCartComponent } from './components/reusable-components/shopping-cart/shopping-cart.component';
 import { CardComponent } from './components/reusable-components/card/card.component';
+import { CheckoutComponent } from './components/shared/checkout/checkout.component';
+import { ConfirmComponent } from './components/shared/confirm/confirm.component';
 
 
 @NgModule({
@@ -61,6 +63,8 @@ import { CardComponent } from './components/reusable-components/card/card.compon
     AchievementsComponent,
     ShoppingCartComponent,
     CardComponent,
+    CheckoutComponent,
+    ConfirmComponent,
   ],
   imports: [
     BrowserModule,

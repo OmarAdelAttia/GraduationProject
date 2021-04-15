@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+
+import { AuthService } from '../../../components/shared/services/auth/auth.service';
 
 @Component({
   selector: 'app-mentor-details',
@@ -11,7 +13,7 @@ export class MentorDetailsComponent implements OnInit {
 
   activeId;
 
-  constructor(private activatedRoute : ActivatedRoute) {
+  constructor(private activatedRoute : ActivatedRoute, private router: Router, public authService: AuthService) {
 
     this.activatedRoute.params.subscribe( params => {
       console.log(params);
@@ -22,6 +24,17 @@ export class MentorDetailsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  toCheckout() {
+    if (!this.authService.isLoggedIn) {
+      this.router.navigate(['sign-in']);
+      return false;
+    } else {
+      this.router.navigate(['./checkout'])
+      return true;
+    }
+
   }
 
 }

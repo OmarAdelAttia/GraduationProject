@@ -1,0 +1,86 @@
+<div class="container my-5 d-flex justify-content-center align-items-center">
+  <div class="row">
+    <article class="card">
+
+      <div class="card-header text-center bg-white">
+        <div class="card-logos ">
+          <img src="https://designmodo.com/demo/checkout-panel/img/visa_logo.png" />
+          <img src="https://designmodo.com/demo/checkout-panel/img/mastercard_logo.png" />
+        </div>
+      </div>
+
+      <div class="card-body ">
+
+        <form role="form">
+          <div class="form-group">
+            <label for="username">Full name (on the card)</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fa fa-user"></i></span>
+              </div>
+              <input type="text" class="form-control" name="username" placeholder="" required="">
+            </div> <!-- input-group.// -->
+          </div> <!-- form-group.// -->
+
+          <div class="form-group">
+            <label for="cardNumber">Card number</label>
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fa fa-credit-card"></i></span>
+              </div>
+              <input type="text" class="form-control" name="cardNumber" placeholder="">
+            </div> <!-- input-group.// -->
+          </div> <!-- form-group.// -->
+
+
+
+          <div class="row">
+            <div class="col-sm-8">
+              <div class="form-group">
+                <label><span class="hidden-xs">Expiration</span> </label>
+                <div class="form-inline">
+                  <select class="form-control" style="width:45%">
+                    <option>MM</option>
+                  </select>
+                  <span style="width:10%; text-align: center"> / </span>
+                  <select class="form-control" style="width:45%">
+                    <option>YY</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label data-toggle="tooltip" title="" data-original-title="3 digits code on back side of the card">CVV
+                  <i class="fa fa-question-circle"></i></label>
+                <input class="form-control" required="" type="text">
+              </div> <!-- form-group.// -->
+            </div>
+          </div> <!-- row.// -->
+          <button class="subscribe mt-2 btn btn-primary btn-block" type="button"
+            (click)="openVerticallyCentered(content)"> Confirm </button>
+
+
+          <ng-template #content let-modal>
+            <div class="modal-header">
+              <h4 class="modal-title">Modal title</h4>
+              <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>One fine body&hellip;</p>
+              <P>You have successfully contracted with your mentor,
+                please go to your profile to start your conversation
+              </P>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-light" [routerLink]="'/client'"
+                (click)="modal.close('Close click')">OK</button>
+            </div>
+          </ng-template>
+        </form>
+      </div>
+    </article>
+  </div>
+</div>

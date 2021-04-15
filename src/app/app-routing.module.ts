@@ -21,8 +21,8 @@ import { SignInComponent } from './components/authentication/sign-in/sign-in.com
 import { SignUpComponent } from './components/authentication/sign-up/sign-up.component';
 
 import { ShoppingCartComponent } from './components/reusable-components/shopping-cart/shopping-cart.component';
-
-
+import { CheckoutComponent } from './components/shared/checkout/checkout.component';
+import { ConfirmComponent } from './components/shared/confirm/confirm.component';
 
 
 const routes: Routes = [
@@ -57,6 +57,9 @@ const routes: Routes = [
   { path: 'mentor', component: MentorComponent },
 
   { path: 'shopping-cart', component: ShoppingCartComponent },
+  { path: 'checkout', component: CheckoutComponent },
+  { path: 'confirm', component: ConfirmComponent },
+
 
 
   { path: "**", component: NotFoundComponent },
