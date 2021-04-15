@@ -1,5 +1,5 @@
-import { Component,Input, OnInit } from '@angular/core';
-import {NgbRatingConfig} from '@ng-bootstrap/ng-bootstrap';
+import { Component, Input, OnInit } from '@angular/core';
+import { NgbRatingConfig } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-card',
@@ -10,7 +10,7 @@ import {NgbRatingConfig} from '@ng-bootstrap/ng-bootstrap';
 export class CardComponent implements OnInit {
 
   // currentRate = 4.3;
-  @Input('cardItem') cardItem:any;
+  @Input('topRated') topRated: any;
 
   constructor(config: NgbRatingConfig) {
     // customize default values of ratings used by this component tree
