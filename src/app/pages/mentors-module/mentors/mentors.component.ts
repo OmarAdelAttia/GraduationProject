@@ -10,18 +10,24 @@ import { map } from 'rxjs/operators';
   templateUrl: './mentors.component.html',
   styleUrls: ['./mentors.component.scss']
 })
+
 export class MentorsComponent implements OnInit {
 
-  doctorsList: any = [];
+  topRatedList: any = [];
   trainersList: any = [];
-  results: any = [];
-  resultsArray: any = [];
+  // results: any = [];
+  // resultsArray: any = [];
 
   images = [944, 1011, 984].map((n) => `https://picsum.photos/id/${n}/900/500`);
 
   constructor(private doctorsService: DoctorsService, private trainersService: TrainersService) { }
 
   ngOnInit(): void {
+
+    this.doctorsService.doctors.subscribe(result => {
+      this.topRatedList = result;
+      console.log(result);
+    })
     //   this.doctorsService.getDoctor().subscribe(result => {
     //     this.results = result;
 
@@ -58,6 +64,11 @@ export class MentorsComponent implements OnInit {
     //   // for (let i in list) {
     //   //   console.log(i); // "0", "1", "2",
     //   // }
+
+    this.trainersService.trainers.subscribe(result => {
+      this.trainersList = result;
+      console.log(result);
+    })
   }
 
 }
