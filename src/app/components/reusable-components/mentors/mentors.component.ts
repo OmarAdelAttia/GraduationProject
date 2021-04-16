@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TopRatedService } from '../../shared/services/Apis/top-rated.service'
+import { TopRatedService } from '../../shared/services/Apis/top-rated.service';
 @Component({
   selector: 'app-mentors',
   templateUrl: './mentors.component.html',
@@ -48,15 +48,20 @@ export class MentorsComponent implements OnInit {
   topRatedList: any = [];
   results: any = [];
   resultsArray: any = [];
+  x: any = [];
 
   constructor(private topRatedService: TopRatedService) { }
 
   ngOnInit(): void {
     this.topRatedService.getTopRated().subscribe(result => {
       this.results = result;
+      console.log(this.results);
+
       let list = [0, 1, 2, 3];
       for (let i in list) {
         this.resultsArray = this.results.documents[i].fields;
+        this.x = this.results.documents[i];
+        console.log(this.x)
         this.topRatedList.push(this.resultsArray);
         console.log(this.topRatedList);
 

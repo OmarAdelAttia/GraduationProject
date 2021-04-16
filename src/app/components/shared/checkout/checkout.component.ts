@@ -17,5 +17,7 @@ export class CheckoutComponent implements OnInit {
   openVerticallyCentered(content) {
     this.modalService.open(content, { centered: true });
   }
-
+  userCheckOutForm(checkOutForm) {
+    console.log(checkOutForm);
+  }
 }

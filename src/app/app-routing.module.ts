@@ -50,10 +50,10 @@ const routes: Routes = [
   { path: 'sign-up', component: SignUpComponent },
 
   { path: 'mentors', component: MentorsComponent },
-  // { path: 'mentor-details/:id', component: MentorDetailsComponent },
-  { path: 'mentor-details', component: MentorDetailsComponent },
+  { path: 'mentor-details/:id', component: MentorDetailsComponent },
+  // { path: 'mentor-details', component: MentorDetailsComponent },
 
-  { path: 'client', component: ClientComponent },
+  { path: '', component: ClientComponent },
   { path: 'mentor', component: MentorComponent },
 
   { path: 'shopping-cart', component: ShoppingCartComponent },

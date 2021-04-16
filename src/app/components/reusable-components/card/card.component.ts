@@ -11,6 +11,7 @@ export class CardComponent implements OnInit {
 
   // currentRate = 4.3;
   @Input('topRated') topRated: any;
+  @Input('xId') xId: any;
 
   constructor(config: NgbRatingConfig) {
     // customize default values of ratings used by this component tree

@@ -30,6 +30,8 @@ import { shopping_cart_reducer } from './components/shared/services/store/cart.r
 // bootstrap
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 // pages
 import { HomeComponent } from './pages/home/home.component';
@@ -67,7 +69,8 @@ import { ConfirmComponent } from './components/shared/confirm/confirm.component'
   imports: [
     BrowserModule,
     AppRoutingModule,
-
+    FormsModule,
+    ReactiveFormsModule,
     AuthModuleModule,
     MentorsModuleModule,
     MentorModuleModule,
