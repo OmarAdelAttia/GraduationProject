@@ -32,6 +32,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { SharedModule } from './components/shared/shared.module';
+
 
 // pages
 import { HomeComponent } from './pages/home/home.component';
@@ -45,12 +47,10 @@ import { topRatedCoursesComponent } from './components/reusable-components/topRa
 import { topRatedMentorsComponent } from './components/reusable-components/topRated-mentors/topRated-mentors.component';
 import { AchievementsComponent } from './components/reusable-components/achievements/achievements.component';
 import { ShoppingCartComponent } from './components/reusable-components/shopping-cart/shopping-cart.component';
-import { CardComponent } from './components/reusable-components/card/card.component';
 import { CheckoutComponent } from './components/shared/checkout/checkout.component';
 // import { ConfirmComponent } from './components/shared/confirm/confirm.component';
 
-import { MentorsComponent } from './pages/mentors-module/mentors/mentors.component';
-import { MentorDetailsComponent } from './pages/mentors-module/mentor-details/mentor-details.component';
+
 
 
 @NgModule({
@@ -65,11 +65,7 @@ import { MentorDetailsComponent } from './pages/mentors-module/mentor-details/me
     topRatedMentorsComponent,
     AchievementsComponent,
     ShoppingCartComponent,
-    CardComponent,
     CheckoutComponent,
-    // ConfirmComponent,
-    MentorsComponent,
-    MentorDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -81,7 +77,7 @@ import { MentorDetailsComponent } from './pages/mentors-module/mentor-details/me
     MentorModuleModule,
     ClientModuleModule,
     HttpClientModule,
-
+    SharedModule,
 
     AngularFireModule.initializeApp(environment.firebaseConfig), // Required for everything
     AngularFirestoreModule, // Only required for database features

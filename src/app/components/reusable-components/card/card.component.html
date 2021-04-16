@@ -1,25 +1,25 @@
 <div class="card-flyer">
     <div class="text-box">
         <div class="image-box">
-            <img [src]="this.itemData.Photo" alt="" />
+            <img [src]="itemData.Photo" alt="" />
         </div>
         <div class="text-container">
             <div class="mb-4">
-                <a [routerLink]="['/mentor-details' , this.itemData.ID]"  class="mentor-name-a">{{this.itemData.Name}}</a>
+                <a [routerLink]="['/mentor-details' , itemData.ID]"  class="mentor-name-a">{{itemData.Name}}</a>
                 <ng-template #t let-fill="fill">
                     <span class="star" [class.full]="fill === 100">
                         <span class="half" [style.width.%]="fill">&#9734;</span>&#9734;
                     </span>
                 </ng-template>
-                <br><b>{{this.itemData.Rating}} </b>
-                <ngb-rating [(rate)]="itemData.Rating.doubleValue" [starTemplate]="t" [readonly]="true">
+                <br><b>{{itemData.Rating}} </b>
+                <ngb-rating [(rate)]="itemData.Rating" [starTemplate]="t" [readonly]="true">
                 </ngb-rating>
 
                 <p class="font-weight-bold cat">Category: <span
-                        class="font-weight-normal">{{this.itemData.Category}}</span>
+                        class="font-weight-normal">{{itemData.Category}}</span>
                 </p>
                 <p class="font-weight-bold">Specialty: <span
-                        class="font-weight-normal">{{this.itemData.Specialized}}</span>
+                        class="font-weight-normal">{{itemData.Specialized}}</span>
                 </p>
             </div>
             <div class="row d-flex justify-content-center">

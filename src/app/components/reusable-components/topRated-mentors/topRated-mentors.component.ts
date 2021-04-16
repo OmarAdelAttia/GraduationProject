@@ -9,14 +9,14 @@ import { TopRatedService } from '../../shared/services/Apis/top-rated.service';
 
 export class topRatedMentorsComponent implements OnInit {
 
-  topRatedList: any = [];
+  topMentorsList: any = [];
 
   constructor(private topRatedService: TopRatedService) { }
 
   ngOnInit(): void {
 
     this.topRatedService.topRated.subscribe(result => {
-      this.topRatedList = result;
+      this.topMentorsList = result;
       console.log(result);
     })
 

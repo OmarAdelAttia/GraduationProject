@@ -4,8 +4,8 @@
             <h2 class="text-center">Our Top Mentors</h2>
             <h6 class="text-center"><a [routerLink]="">Choose from 100 courses</a></h6>
             <div class="row">
-                <div *ngFor="let itemData of topRatedList;" class="col-xs-12 col-sm-6 col-md-3 col-md-3">
-                    <app-card [itemData]="itemData"></app-card>
+                <div *ngFor="let topMentor of topMentorsList" class="col-xs-12 col-sm-6 col-md-3 col-md-3">
+                    <app-card [itemData]="topMentor"></app-card>
                 </div>
 
                 <!-- <div *ngFor="let xId of x;" class="col-xs-12 col-sm-6 col-md-3 col-md-3">
