@@ -33,25 +33,25 @@
 <div class="card-flyer">
     <div class="text-box">
         <div class="image-box">
-            <img [src]="topRated.Photo.stringValue" alt="" />
+            <img [src]="this.topRated.Photo" alt="" />
         </div>
         <div class="text-container">
             <div class="mb-4">
-                <a [routerLink]="" class="mentor-name-a">{{topRated.Name.stringValue}}</a>
+                <a [routerLink]="" class="mentor-name-a">{{this.topRated.Name}}</a>
                 <ng-template #t let-fill="fill">
                     <span class="star" [class.full]="fill === 100">
                         <span class="half" [style.width.%]="fill">&#9734;</span>&#9734;
                     </span>
                 </ng-template>
-                <br><b>{{topRated.Rating.doubleValue}} </b>
+                <br><b>{{this.topRated.Rating}} </b>
                 <ngb-rating [(rate)]="topRated.Rating.doubleValue" [starTemplate]="t" [readonly]="true">
                 </ngb-rating>
 
                 <p class="font-weight-bold cat">Category: <span
-                        class="font-weight-normal">{{topRated.Category.stringValue}}</span>
+                        class="font-weight-normal">{{this.topRated.Category}}</span>
                 </p>
                 <p class="font-weight-bold">Specialty: <span
-                        class="font-weight-normal">{{topRated.Specialized.stringValue}}</span>
+                        class="font-weight-normal">{{this.topRated.Specialized}}</span>
                 </p>
             </div>
             <div class="row d-flex justify-content-center">
