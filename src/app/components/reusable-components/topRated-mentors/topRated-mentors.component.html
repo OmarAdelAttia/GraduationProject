@@ -1,0 +1,23 @@
+<section class="card-color py-5">
+    <div id="cards_landscape_wrap-2">
+        <div class="container">
+            <h2 class="text-center">Our Top Mentors</h2>
+            <h6 class="text-center"><a [routerLink]="">Choose from 100 courses</a></h6>
+            <div class="row">
+                <div *ngFor="let itemData of topRatedList;" class="col-xs-12 col-sm-6 col-md-3 col-md-3">
+                    <app-card [itemData]="itemData"></app-card>
+                </div>
+
+                <!-- <div *ngFor="let xId of x;" class="col-xs-12 col-sm-6 col-md-3 col-md-3">
+                  <app-card [xId]="xId"></app-card>
+              </div> -->
+            </div>
+            <div class="seeMore-btn">
+                <a class="effect1" href="#">
+                    Let's Go!
+                    <span class="bg"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

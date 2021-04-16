@@ -22,7 +22,7 @@ import { SignUpComponent } from './components/authentication/sign-up/sign-up.com
 
 import { ShoppingCartComponent } from './components/reusable-components/shopping-cart/shopping-cart.component';
 import { CheckoutComponent } from './components/shared/checkout/checkout.component';
-import { ConfirmComponent } from './components/shared/confirm/confirm.component';
+
 
 
 const routes: Routes = [
@@ -53,12 +53,12 @@ const routes: Routes = [
   { path: 'mentor-details/:id', component: MentorDetailsComponent },
   // { path: 'mentor-details', component: MentorDetailsComponent },
 
-  { path: '', component: ClientComponent },
+  { path: 'client', component: ClientComponent },
   { path: 'mentor', component: MentorComponent },
 
   { path: 'shopping-cart', component: ShoppingCartComponent },
   { path: 'checkout', component: CheckoutComponent },
-  { path: 'confirm', component: ConfirmComponent },
+
 
 
 

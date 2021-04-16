@@ -16,128 +16,26 @@
         </ul>
     </div>
 </div>
+<section class="card-color py-5">
+  <div id="cards_landscape_wrap-2">
+      <div class="container">
+          <h2 class="text-center">DOCTORS </h2>
+          <div class="row">
+            <div *ngFor="let itemData of doctorsList" class="col-xs-12 col-sm-6 col-md-3 col-md-3">
+              <app-card [itemData]="itemData"></app-card>
+            </div>
+          </div>
+      </div>
+  </div>
+</section>
 
-<!-- <ul *ngFor="let topRated of topRatedList">
-    <li>{{this.topRated.Name}}</li>
-    <li>{{this.topRated.Category}}</li>
-    <li>{{this.topRated.Rating}}</li>
+
+
+<!-- <ul *ngFor="let itemData of doctorsList">
+    <li>{{this.itemData.Name}}</li>
+    <li>{{this.itemData.Category}}</li>
+    <li>{{this.itemData.Rating}}</li>
 </ul> -->
-
-<!-- <ngb-carousel *ngIf="images">
-    <ng-template ngbSlide>
-        <div class="row"> -->
-<!-- <section class="card-color py-5">
-    <div id="cards_landscape_wrap-2">
-        <div class="container">
-            <h2 class="text-center">Our Top Mentors</h2> -->
-<!-- <h6 class="text-center"><a [routerLink]="">Choose from 100 courses</a></h6> -->
-<!-- <div class="row"> -->
-<!-- <div *ngFor="let topRated of topRatedList;" class="col-xs-12 col-sm-6 col-md-3 col-md-3">
-    <app-card [topRated]="topRated"></app-card>
-</div> -->
-<!-- </div>
-                <div class="seeMore-btn">
-                    <a class="effect1" href="#">
-                        Let's Go!
-                        <span class="bg"></span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section> -->
-<!-- </div>
-    </ng-template>
-</ngb-carousel> -->
-
-<ngb-carousel *ngIf="images">
-    <ng-template ngbSlide>
-        <div class="row">
-            <div class="example-2 card mb-5" *ngFor="let topRated of topRatedList;">
-                <div class="wrapper">
-                    <div class="data">
-                        <div class="content">
-                            <h3 class="title"><a href="#">{{this.topRated.Name}}</a></h3>
-                            <p class="text">The antsy bingers of Netflix will eagerly anticipate the digital
-                                release
-                                of
-                                the Survive
-                                soundtrack, out today.</p>
-                            <app-card [topRated]="topRated"></app-card>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </ng-template>
-    <ng-template ngbSlide>
-        <div class="row">
-            <div class="example-2 card mb-5">
-                <div class="wrapper">
-                    <div class="data">
-                        <div class="content">
-                            <h3 class="title"><a href="#">Stranger Things: The sound of the Upside Down</a></h3>
-                            <p class="text">The antsy bingers of Netflix will eagerly anticipate the digital
-                                release
-                                of
-                                the Survive
-                                soundtrack, out today.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="example-2 card mb-5">
-                <div class="wrapper">
-
-                    <div class="data">
-                        <div class="content">
-                            <span class="author">Jane Doe</span>
-                            <h3 class="title"><a href="#">Stranger Things: The sound of the Upside Down</a></h3>
-                            <p class="text">The antsy bingers of Netflix will eagerly anticipate the digital
-                                release
-                                of
-                                the Survive
-                                soundtrack, out today.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </ng-template>
-    <ng-template ngbSlide>
-        <div class="row">
-            <div class="example-2 card mb-5">
-                <div class="wrapper">
-                    <div class="data">
-                        <div class="content">
-                            <h3 class="title"><a href="#">Stranger Things: The sound of the Upside Down</a></h3>
-                            <p class="text">The antsy bingers of Netflix will eagerly anticipate the digital
-                                release
-                                of
-                                the Survive
-                                soundtrack, out today.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="example-2 card mb-5">
-                <div class="wrapper">
-
-                    <div class="data">
-                        <div class="content">
-                            <span class="author">Jane Doe</span>
-                            <h3 class="title"><a href="#">Stranger Things: The sound of the Upside Down</a></h3>
-                            <p class="text">The antsy bingers of Netflix will eagerly anticipate the digital
-                                release
-                                of
-                                the Survive
-                                soundtrack, out today.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </ng-template>
-</ngb-carousel>
 
 <div class="container my-5">
     <div class="">
@@ -158,257 +56,129 @@
 
     </div>
 </div>
-
-
-<ngb-carousel *ngIf="images">
-    <ng-template ngbSlide>
-        <div class="row">
-            <div class="example-2 card mb-5">
-                <div class="wrapper">
-                    <div class="data">
-                        <div class="content">
-                            <h3 class="title"><a href="#">Stranger Things: The sound of the Upside Down</a></h3>
-                            <p class="text">The antsy bingers of Netflix will eagerly anticipate the digital
-                                release
-                                of
-                                the Survive
-                                soundtrack, out today.</p>
-                        </div>
-                    </div>
-                </div>
+<section class="card-color py-5">
+  <div id="cards_landscape_wrap-2">
+      <div class="container">
+          <h2 class="text-center">TRAINERS </h2>
+          <div class="row">
+            <div *ngFor="let itemData of trainersList" class="col-xs-12 col-sm-6 col-md-3 col-md-3">
+              <app-card [itemData]="itemData"></app-card>
             </div>
-            <div class="example-2 card mb-5">
-                <div class="wrapper">
-
-                    <div class="data">
-                        <div class="content">
-                            <span class="author">Jane Doe</span>
-                            <h3 class="title"><a href="#">Stranger Things: The sound of the Upside Down</a></h3>
-                            <p class="text">The antsy bingers of Netflix will eagerly anticipate the digital
-                                release
-                                of
-                                the Survive
-                                soundtrack, out today.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </ng-template>
-    <ng-template ngbSlide>
-        <div class="row">
-            <div class="example-2 card mb-5">
-                <div class="wrapper">
-                    <div class="data">
-                        <div class="content">
-                            <h3 class="title"><a href="#">Stranger Things: The sound of the Upside Down</a></h3>
-                            <p class="text">The antsy bingers of Netflix will eagerly anticipate the digital
-                                release
-                                of
-                                the Survive
-                                soundtrack, out today.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="example-2 card mb-5">
-                <div class="wrapper">
-
-                    <div class="data">
-                        <div class="content">
-                            <span class="author">Jane Doe</span>
-                            <h3 class="title"><a href="#">Stranger Things: The sound of the Upside Down</a></h3>
-                            <p class="text">The antsy bingers of Netflix will eagerly anticipate the digital
-                                release
-                                of
-                                the Survive
-                                soundtrack, out today.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </ng-template>
-    <ng-template ngbSlide>
-        <div class="row">
-            <div class="example-2 card mb-5">
-                <div class="wrapper">
-                    <div class="data">
-                        <div class="content">
-                            <h3 class="title"><a href="#">Stranger Things: The sound of the Upside Down</a></h3>
-                            <p class="text">The antsy bingers of Netflix will eagerly anticipate the digital
-                                release
-                                of
-                                the Survive
-                                soundtrack, out today.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="example-2 card mb-5">
-                <div class="wrapper">
-
-                    <div class="data">
-                        <div class="content">
-                            <span class="author">Jane Doe</span>
-                            <h3 class="title"><a href="#">Stranger Things: The sound of the Upside Down</a></h3>
-                            <p class="text">The antsy bingers of Netflix will eagerly anticipate the digital
-                                release
-                                of
-                                the Survive
-                                soundtrack, out today.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </ng-template>
-</ngb-carousel>
+          </div>
+      </div>
+  </div>
+</section>
 
 
 <!-- <ngb-carousel *ngIf="images">
-    <ng-template ngbSlide> -->
-
-<!-- <section class="card-color py-5">
-    <div id="cards_landscape_wrap-2">
-        <div class="container">
-            <h2 class="text-center">Our Top Mentors</h2>
-            <h6 class="text-center"><a [routerLink]="">Choose from 100 courses</a></h6>
-            <div class="row">
-                <div *ngFor="let cardItem of mentorsList;" class="col-xs-12 col-sm-6 col-md-3 col-md-3">
-                    <app-card [cardItem]="cardItem"></app-card>
-                </div>
-            </div>
-            <div class="seeMore-btn">
-                <a class="effect1" href="#">
-                    Let's Go!
-                    <span class="bg"></span>
-                </a>
-            </div>
-        </div>
-    </div>
-</section> -->
-
-<!-- <ul *ngFor="let doctor of doctorsList">
-    <li>{{doctor.FirstName.stringValue}}</li>
-    <li>{{doctor.Category.stringValue}}</li>
-    <li>{{doctor.Rating.stringValue}}</li>
-</ul> -->
-
-<!-- <section class="card-color py-5">
-    <div id="cards_landscape_wrap-2">
-        <div class="container">
-            <h2 class="text-center">Our Top Mentors</h2>
-            <h6 class="text-center"><a [routerLink]="">Choose from 100 courses</a></h6>
-             <div class="row"> -->
-<!-- <div *ngFor="let topRated of doctorsList;" class="col-xs-12 col-sm-6 col-md-3 col-md-3">
-                    <app-card [topRated]="topRated"></app-card>
-                </div>
-            </div>
-            <div class="seeMore-btn">
-                <a class="effect1" href="#">
-                    Let's Go!
-                    <span class="bg"></span>
-                </a>
-            </div>
-        </div>
-    </div>
-</section> -->
-<!-- </ng-template> -->
-<!-- <ng-template ngbSlide> --> -->
-<!-- <section class="card-color py-5">
-    <div id="cards_landscape_wrap-2">
-        <div class="container">
-            <h2 class="text-center">Our Top Mentors</h2>
-            <h6 class="text-center"><a [routerLink]="">Choose from 100 courses</a></h6>
-            <div class="row">
-                <div *ngFor="let cardItem of mentorsList;" class="col-xs-12 col-sm-6 col-md-3 col-md-3">
-                    <app-card [cardItem]="cardItem"></app-card>
-                </div>
-            </div>
-            <div class="seeMore-btn">
-                <a class="effect1" href="#">
-                    Let's Go!
-                    <span class="bg"></span>
-                </a>
-            </div>
-        </div>
-    </div>
-</section> -->
-
-<!-- <ul *ngFor="let doctor of doctorsList">
-    <li>{{doctor.FirstName.stringValue}}</li>
-    <li>{{doctor.Category.stringValue}}</li>
-    <li>{{doctor.Rating.stringValue}}</li>
-</ul> -->
-
-<!-- <section class="card-color py-5">
-            <div id="cards_landscape_wrap-2">
-                <div class="container">
-                    <h2 class="text-center">Our Doctors</h2>
-                    <h6 class="text-center"><a [routerLink]="">Choose from 100 courses</a></h6>
-                    <div class="row">
-                        <div *ngFor="let topRated of doctorsList;" class="col-xs-12 col-sm-6 col-md-3 col-md-3">
-                            <app-card [topRated]="topRated"></app-card>
+    <ng-template ngbSlide>
+        <div class="row">
+            <div class="example-2 card mb-5">
+                <div class="wrapper">
+                    <div class="data">
+                        <div class="content">
+                            <h3 class="title"><a href="#">Stranger Things: The sound of the Upside Down</a></h3>
+                            <p class="text">The antsy bingers of Netflix will eagerly anticipate the digital
+                                release
+                                of
+                                the Survive
+                                soundtrack, out today.</p>
                         </div>
                     </div>
-                    <div class="seeMore-btn">
-                        <a class="effect1" href="#">
-                            Let's Go!
-                            <span class="bg"></span>
-                        </a>
+                </div>
+            </div>
+            <div class="example-2 card mb-5">
+                <div class="wrapper">
+
+                    <div class="data">
+                        <div class="content">
+                            <span class="author">Jane Doe</span>
+                            <h3 class="title"><a href="#">Stranger Things: The sound of the Upside Down</a></h3>
+                            <p class="text">The antsy bingers of Netflix will eagerly anticipate the digital
+                                release
+                                of
+                                the Survive
+                                soundtrack, out today.</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
-
+        </div>
     </ng-template>
-    <ng-template ngbSlide> -->
-<!-- <section class="card-color py-5">
-    <div id="cards_landscape_wrap-2">
-        <div class="container">
-            <h2 class="text-center">Our Top Mentors</h2>
-            <h6 class="text-center"><a [routerLink]="">Choose from 100 courses</a></h6>
-            <div class="row">
-                <div *ngFor="let cardItem of mentorsList;" class="col-xs-12 col-sm-6 col-md-3 col-md-3">
-                    <app-card [cardItem]="cardItem"></app-card>
-                </div>
-            </div>
-            <div class="seeMore-btn">
-                <a class="effect1" href="#">
-                    Let's Go!
-                    <span class="bg"></span>
-                </a>
-            </div>
-        </div>
-    </div>
-</section> -->
-
-<!-- <ul *ngFor="let doctor of doctorsList">
-    <li>{{doctor.FirstName.stringValue}}</li>
-    <li>{{doctor.Category.stringValue}}</li>
-    <li>{{doctor.Rating.stringValue}}</li>
-</ul> -->
-
-<!-- <section class="card-color py-5">
-            <div id="cards_landscape_wrap-2">
-                <div class="container">
-                    <h2 class="text-center">Our Top Mentors</h2>
-                    <h6 class="text-center"><a [routerLink]="">Choose from 100 courses</a></h6>
-                    <div class="row">
-                        <div *ngFor="let topRated of doctorsList;" class="col-xs-12 col-sm-6 col-md-3 col-md-3">
-                            <app-card [topRated]="topRated"></app-card>
+    <ng-template ngbSlide>
+        <div class="row">
+            <div class="example-2 card mb-5">
+                <div class="wrapper">
+                    <div class="data">
+                        <div class="content">
+                            <h3 class="title"><a href="#">Stranger Things: The sound of the Upside Down</a></h3>
+                            <p class="text">The antsy bingers of Netflix will eagerly anticipate the digital
+                                release
+                                of
+                                the Survive
+                                soundtrack, out today.</p>
                         </div>
                     </div>
-                    <div class="seeMore-btn">
-                        <a class="effect1" href="#">
-                            Let's Go!
-                            <span class="bg"></span>
-                        </a>
+                </div>
+            </div>
+            <div class="example-2 card mb-5">
+                <div class="wrapper">
+
+                    <div class="data">
+                        <div class="content">
+                            <span class="author">Jane Doe</span>
+                            <h3 class="title"><a href="#">Stranger Things: The sound of the Upside Down</a></h3>
+                            <p class="text">The antsy bingers of Netflix will eagerly anticipate the digital
+                                release
+                                of
+                                the Survive
+                                soundtrack, out today.</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </ng-template>
+    <ng-template ngbSlide>
+        <div class="row">
+            <div class="example-2 card mb-5">
+                <div class="wrapper">
+                    <div class="data">
+                        <div class="content">
+                            <h3 class="title"><a href="#">Stranger Things: The sound of the Upside Down</a></h3>
+                            <p class="text">The antsy bingers of Netflix will eagerly anticipate the digital
+                                release
+                                of
+                                the Survive
+                                soundtrack, out today.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="example-2 card mb-5">
+                <div class="wrapper">
 
+                    <div class="data">
+                        <div class="content">
+                            <span class="author">Jane Doe</span>
+                            <h3 class="title"><a href="#">Stranger Things: The sound of the Upside Down</a></h3>
+                            <p class="text">The antsy bingers of Netflix will eagerly anticipate the digital
+                                release
+                                of
+                                the Survive
+                                soundtrack, out today.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </ng-template>
 </ngb-carousel> -->
+
+
+
+
+
+
+
+

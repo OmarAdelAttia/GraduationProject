@@ -1,61 +1,29 @@
-<!-- <div class="card-flyer">
-    <div class="text-box">
-        <div class="image-box">
-            <img [src]="cardItem.image" alt="" />
-        </div>
-        <div class="text-container">
-            <div class="mb-4">
-                <a [routerLink]="" class="mentor-name-a">{{cardItem.name}}</a>
-                <ng-template #t let-fill="fill">
-                    <span class="star" [class.full]="fill === 100">
-                        <span class="half" [style.width.%]="fill">&#9734;</span>&#9734;
-                    </span>
-                </ng-template>
-                <br><b>{{cardItem.rating}} </b>
-                <ngb-rating [(rate)]="cardItem.rating" [starTemplate]="t" [readonly]="true">
-                </ngb-rating>
-
-                <p class="font-weight-bold cat">Category: <span class="font-weight-normal">{{cardItem.category}}</span>
-                </p>
-                <p class="font-weight-bold">Specialty: <span class="font-weight-normal">{{cardItem.specialty}}</span>
-                </p>
-            </div>
-            <div class="row d-flex justify-content-center">
-                <a class="future main-btn-a ">
-                    Hire Now
-                </a>
-            </div>
-        </div>
-    </div>
-</div> -->
-
-
 <div class="card-flyer">
     <div class="text-box">
         <div class="image-box">
-            <img [src]="this.topRated.Photo" alt="" />
+            <img [src]="this.itemData.Photo" alt="" />
         </div>
         <div class="text-container">
             <div class="mb-4">
-                <a [routerLink]="" class="mentor-name-a">{{this.topRated.Name}}</a>
+                <a [routerLink]="['/mentor-details' , this.itemData.ID]"  class="mentor-name-a">{{this.itemData.Name}}</a>
                 <ng-template #t let-fill="fill">
                     <span class="star" [class.full]="fill === 100">
                         <span class="half" [style.width.%]="fill">&#9734;</span>&#9734;
                     </span>
                 </ng-template>
-                <br><b>{{this.topRated.Rating}} </b>
-                <ngb-rating [(rate)]="topRated.Rating.doubleValue" [starTemplate]="t" [readonly]="true">
+                <br><b>{{this.itemData.Rating}} </b>
+                <ngb-rating [(rate)]="itemData.Rating.doubleValue" [starTemplate]="t" [readonly]="true">
                 </ngb-rating>
 
                 <p class="font-weight-bold cat">Category: <span
-                        class="font-weight-normal">{{this.topRated.Category}}</span>
+                        class="font-weight-normal">{{this.itemData.Category}}</span>
                 </p>
                 <p class="font-weight-bold">Specialty: <span
-                        class="font-weight-normal">{{this.topRated.Specialized}}</span>
+                        class="font-weight-normal">{{this.itemData.Specialized}}</span>
                 </p>
             </div>
             <div class="row d-flex justify-content-center">
-                <a class="future main-btn-a ">
+                <a class="future main-btn-a " (click)="toCheckout()">
                     Hire Now
                 </a>
             </div>

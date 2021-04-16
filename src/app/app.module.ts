@@ -41,13 +41,16 @@ import { NotFoundComponent } from './components/shared/not-found/not-found.compo
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { HeaderComponent } from './components/reusable-components/header/header.component';
-import { CoursesComponent } from './components/reusable-components/courses/courses.component';
-import { MentorsComponent } from './components/reusable-components/mentors/mentors.component';
+import { topRatedCoursesComponent } from './components/reusable-components/topRated-courses/topRated-courses.component';
+import { topRatedMentorsComponent } from './components/reusable-components/topRated-mentors/topRated-mentors.component';
 import { AchievementsComponent } from './components/reusable-components/achievements/achievements.component';
 import { ShoppingCartComponent } from './components/reusable-components/shopping-cart/shopping-cart.component';
 import { CardComponent } from './components/reusable-components/card/card.component';
 import { CheckoutComponent } from './components/shared/checkout/checkout.component';
-import { ConfirmComponent } from './components/shared/confirm/confirm.component';
+// import { ConfirmComponent } from './components/shared/confirm/confirm.component';
+
+import { MentorsComponent } from './pages/mentors-module/mentors/mentors.component';
+import { MentorDetailsComponent } from './pages/mentors-module/mentor-details/mentor-details.component';
 
 
 @NgModule({
@@ -58,13 +61,15 @@ import { ConfirmComponent } from './components/shared/confirm/confirm.component'
     FooterComponent,
     NotFoundComponent,
     HeaderComponent,
-    CoursesComponent,
-    MentorsComponent,
+    topRatedCoursesComponent,
+    topRatedMentorsComponent,
     AchievementsComponent,
     ShoppingCartComponent,
     CardComponent,
     CheckoutComponent,
-    ConfirmComponent,
+    // ConfirmComponent,
+    MentorsComponent,
+    MentorDetailsComponent
   ],
   imports: [
     BrowserModule,

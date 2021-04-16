@@ -2,9 +2,12 @@ import { Component, OnInit } from '@angular/core';
 
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { AuthService } from '../../../components/shared/services/auth/auth.service';
 import { TopRatedService } from '../../../components/shared/services/Apis/top-rated.service';
-import { HttpClient } from '@angular/common/http';
+import { DoctorsService } from '../../../components/shared/services/Apis/doctors.service';
+import { TrainersService } from '../../../components/shared/services/Apis/trainers.service';
+
+import { AuthService } from '../../../components/shared/services/auth/auth.service';
+
 
 @Component({
   selector: 'app-mentor-details',
@@ -14,11 +17,13 @@ import { HttpClient } from '@angular/common/http';
 export class MentorDetailsComponent implements OnInit {
 
   activeId;
+  doctorsList: any = [];
 
   constructor(private activatedRoute : ActivatedRoute,
               private router: Router, public authService: AuthService,
               public topRatedService: TopRatedService,
-              private httpClient: HttpClient) {
+              private doctorsService: DoctorsService,
+              private TrainersService: TrainersService) {
 
 
   }
@@ -26,15 +31,19 @@ export class MentorDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
       this.activeId = params;
-      console.log(params);
+      console.log(this.activeId);
       // console.log(params.id);
       // console.log(this.activeId);
       // this.activeId = params.id;
     });
+    // this.doctorsService.doctors.subscribe(result => {
+    //   console.log(result);
 
-    this.httpClient.get('https://firestore.googleapis.com/v1/projects/neofit-project/databases/(default)/documents/TopRated/' + this.activeId.id).subscribe(data => {
-      console.log(data)
-    })
+
+    // })
+
+
+
   }
 
   toCheckout() {
