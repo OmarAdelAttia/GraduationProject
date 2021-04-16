@@ -5,6 +5,7 @@ import { TopRatedService } from '../../shared/services/Apis/top-rated.service';
   templateUrl: './mentors.component.html',
   styleUrls: ['./mentors.component.scss']
 })
+
 export class MentorsComponent implements OnInit {
 
   //   mentorsList: Array<object> = [
@@ -46,27 +47,29 @@ export class MentorsComponent implements OnInit {
   //  ];
 
   topRatedList: any = [];
-  results: any = [];
-  resultsArray: any = [];
-  x: any = [];
+  // results: any = [];
+  // resultsArray: any = [];
 
   constructor(private topRatedService: TopRatedService) { }
 
   ngOnInit(): void {
-    this.topRatedService.getTopRated().subscribe(result => {
-      this.results = result;
-      console.log(this.results);
 
-      let list = [0, 1, 2, 3];
-      for (let i in list) {
-        this.resultsArray = this.results.documents[i].fields;
-        this.x = this.results.documents[i];
-        console.log(this.x)
-        this.topRatedList.push(this.resultsArray);
-        console.log(this.topRatedList);
-
-      }
+    this.topRatedService.topRated.subscribe(result => {
+      this.topRatedList = result;
+      console.log(result);
     })
+
+    // let list = [0, 1, 2, 3];
+    // for (let i in list) {
+    // this.resultsArray = this.results.documents[i].fields;
+    // this.topRatedList.push(this.resultsArray);
+    // console.log(this.topRatedList);
+    // }
+    // this.results.forEach(element => {
+    //   this.resultsArray = this.results.documents[element].fields;
+    //   this.topRatedList.push(this.resultsArray);
+    //   console.log(this.topRatedList);
+    // })
   }
 
 }
