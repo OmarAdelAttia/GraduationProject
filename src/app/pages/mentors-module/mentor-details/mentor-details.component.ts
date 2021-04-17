@@ -19,11 +19,13 @@ export class MentorDetailsComponent implements OnInit {
   activeId;
   doctorsList: any = [];
 
-  constructor(private activatedRoute : ActivatedRoute,
-              private router: Router, public authService: AuthService,
-              public topRatedService: TopRatedService,
-              private doctorsService: DoctorsService,
-              private TrainersService: TrainersService) {
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private router: Router,
+    public authService: AuthService,
+    public topRatedService: TopRatedService,
+    private doctorsService: DoctorsService,
+    private TrainersService: TrainersService) {
 
 
   }

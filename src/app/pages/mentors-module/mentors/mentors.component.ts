@@ -5,6 +5,9 @@ import { TrainersService } from '../../../components/shared/services/Apis/traine
 import { of } from 'rxjs';
 import { map } from 'rxjs/operators';
 
+export interface Doctor { name: string; price: number; }
+export interface DoctorId extends Doctor { id: string; }
+
 @Component({
   selector: 'app-mentors',
   templateUrl: './mentors.component.html',
@@ -24,15 +27,15 @@ export class MentorsComponent implements OnInit {
 
     this.doctorsService.doctors.subscribe(result => {
       this.doctorsList = result;
-      console.log(this.doctorsList);
+      // console.log(result);
     })
 
 
     this.trainersService.trainers.subscribe(result => {
       this.trainersList = result;
-      console.log(this.trainersList);
+      // console.log(this.trainersList);
     })
-  }
 
+  }
 }
 
