@@ -11,7 +11,7 @@ export class TrainersService {
 
   trainers: Observable<any[]>;
 
-  constructor(firestore: AngularFirestore) {
+  constructor(private firestore: AngularFirestore) {
 
     // this.trainers = firestore.collection('Trainers').valueChanges();
 
@@ -23,6 +23,10 @@ export class TrainersService {
       }))
     );
 
+  }
+
+  getTrainer(id) {
+    return this.firestore.collection('Trainer').doc(id).valueChanges()
   }
 
 }

@@ -11,7 +11,7 @@ export class TopRatedService {
 
   topRated: Observable<any[]>;
 
-  constructor(firestore: AngularFirestore) {
+  constructor(private firestore: AngularFirestore) {
 
     // this.topRated = firestore.collection('TopRated').valueChanges();
 
@@ -23,6 +23,10 @@ export class TopRatedService {
       }))
     );
 
+  }
+
+  getTopRated(id) {
+    return this.firestore.collection('TopRated').doc(id).valueChanges()
   }
 
 }

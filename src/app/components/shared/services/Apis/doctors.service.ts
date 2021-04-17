@@ -11,11 +11,11 @@ export class DoctorsService {
 
   doctors: Observable<any[]>;
 
-  constructor(firestore: AngularFirestore) {
+  constructor(private firestore: AngularFirestore) {
 
     // this.doctors = firestore.collection('Doctors').valueChanges();
 
-    this.doctors = firestore.collection('Doctors').snapshotChanges().pipe(
+    this.doctors = this.firestore.collection('Doctors').snapshotChanges().pipe(
       map(actions => actions.map(a => {
         const data = a.payload.doc.data() as Object;
         const id = a.payload.doc.id;
@@ -23,7 +23,10 @@ export class DoctorsService {
       }))
     );
 
+  }
 
+  getDoctor(id) {
+    return this.firestore.collection('Doctors').doc(id).valueChanges()
   }
 
 }
