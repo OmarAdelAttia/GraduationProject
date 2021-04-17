@@ -48,6 +48,7 @@ import { topRatedMentorsComponent } from './components/reusable-components/topRa
 import { AchievementsComponent } from './components/reusable-components/achievements/achievements.component';
 import { ShoppingCartComponent } from './components/reusable-components/shopping-cart/shopping-cart.component';
 import { CheckoutComponent } from './components/shared/checkout/checkout.component';
+import { HireButtonComponent } from './components/reusable-components/hire-button/hire-button.component';
 // import { ConfirmComponent } from './components/shared/confirm/confirm.component';
 
 
@@ -66,6 +67,7 @@ import { CheckoutComponent } from './components/shared/checkout/checkout.compone
     AchievementsComponent,
     ShoppingCartComponent,
     CheckoutComponent,
+    HireButtonComponent,
   ],
   imports: [
     BrowserModule,

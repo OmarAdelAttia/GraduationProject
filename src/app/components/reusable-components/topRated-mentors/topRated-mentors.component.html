@@ -2,7 +2,6 @@
     <div id="cards_landscape_wrap-2">
         <div class="container">
             <h2 class="text-center">Our Top Mentors</h2>
-            <h6 class="text-center"><a [routerLink]="">Choose from 100 courses</a></h6>
             <div class="row">
                 <div *ngFor="let topMentor of topMentorsList" class="col-xs-12 col-sm-6 col-md-3 col-md-3">
                     <app-card [itemData]="topMentor"></app-card>
@@ -12,9 +11,9 @@
                   <app-card [xId]="xId"></app-card>
               </div> -->
             </div>
-            <div class="seeMore-btn">
-                <a class="effect1" href="#">
-                    Let's Go!
+            <div class="seeMore-btn mt-5">
+                <a class="effect1"  [routerLink]="">
+                    Check All Mentors
                     <span class="bg"></span>
                 </a>
             </div>

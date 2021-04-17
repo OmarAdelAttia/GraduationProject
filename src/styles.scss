@@ -16,63 +16,134 @@ body {
         font-size: 5rem;
     }
 
-    // .bg-customColor{
-    //     background-color: #7968e6ad;
-    // }
-
     .main-btn-a {
         padding: 0.8rem 2rem;
         font-weight: 500;
         font-size: 1.15rem;
-        //position: relative;
+        position: relative;
         border: 2px solid $dark;
         color: $dark;
         background-color: transparent;
         text-align: center;
+
+        &:hover{
+            text-decoration: none;
+            color: #fff;
+        }
     }
     .future {
 
         transition: 0.5s ease;
 
-        // &::after,
-        // &::before {
-        //     content: "";
-        //     position: absolute;
-        //     border: 2px solid #7868e6;
-        //     width: 50px;
-        //     height: 30px;
-        //     transition: 0.5s ease;
-        // }
-
-        // &::after {
-        //     top: -9px;
-        //     left: -9px;
-        //     border-right: none;
-        //     border-bottom: none;
-        // }
-
-        // &::before {
-        //     bottom: -9px;
-        //     right: -9px;
-        //     border-left: none;
-        //     border-top: none;
-        // }
-
-        // &:hover:after,
-        // &:hover:before {
-        //     width: 35px;
-        //     height: 45px;
-        //     border-color: #b8b5ff;
-        // }
-
         &:hover{
             color: white;
             cursor: pointer;
             text-decoration: none;
-           // border-color: #b8b5ff;
             background-color: $dark;
         }
     }
+
+    .seeMore-btn {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        height: 50%;
+        
+        .effect1 {
+          color: $light;
+          text-decoration: none;
+          font-family: sans-serif;
+          font-size: 0.4rem;
+          position: relative;
+          padding: 10px 50px 10px 20px;
+        
+          -webkit-transition: all 0.3s;
+        
+          -o-transition: all 0.3s;
+        
+          transition: all 0.3s;
+        
+          -webkit-transform: scale(3);
+        
+              -ms-transform: scale(3);
+        
+                  transform: scale(3); /*change scale(3) to scale(1)*/
+    
+                  & .bg {
+                    background: $light;
+                    width: 9px;
+                    height: 1px;
+                    position: absolute;
+                    right: 38px;
+                    top: 53%;
+                    margin-top: -1px;
+                    z-index: -1;
+                  
+                    -webkit-transition: all 0.3s;
+                  
+                    -o-transition: all 0.3s;
+                  
+                    transition: all 0.3s;
+                  }
+                  
+                  &:hover {
+                    padding-right: 20px;
+                    color: #fff;
+                  }
+                  
+                  &:hover .bg {
+                    height:70%;
+                    width: 70%;
+                    // -webkit-transform: translate(0, -50%);
+                    //     -ms-transform: translate(0, -50%);
+                            transform: translate(39%, -50%);
+                  }
+                  
+                  & .bg:before, & .bg:after {
+                    content: '';
+                    height: 1px;
+                    width: 6px;
+                    background: $light;
+                    position: absolute;
+                    right: -1px;      
+                    -webkit-transition: all 0.3s;      
+                    -o-transition: all 0.3s;      
+                    transition: all 0.3s;
+                  }
+                  
+                  & .bg:before {
+                    bottom: 2px;
+                    -webkit-transform: rotate(45deg);
+                        -ms-transform: rotate(45deg);
+                            transform: rotate(45deg);
+                  }
+                  & .bg:after{
+                    top: 2px;
+                    -webkit-transform: rotate(-45deg);
+                        -ms-transform: rotate(-45deg);
+                            transform: rotate(-45deg);
+                  }
+                  
+                  &:hover .bg:before,
+                  &:hover .bg:after{
+                    right: 0;
+                  }
+                  
+                  &:hover .bg:before{
+                    bottom: 6px;
+                  }
+                  
+                  &:hover .bg:after{
+                    top: 6px;
+                  }
+        }  
+      }
 }
 
 
