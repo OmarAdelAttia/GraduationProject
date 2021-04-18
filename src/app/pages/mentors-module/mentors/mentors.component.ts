@@ -17,7 +17,14 @@ export interface DoctorId extends Doctor { id: string; }
 export class MentorsComponent implements OnInit {
 
   doctorsList: any = [];
+  goldDoctorsList: any = [];
+  silverDoctorsList: any = [];
+  bronzeDoctorsList: any = [];
+
   trainersList: any = [];
+  goldTrainersList: any = [];
+  silverTrainersList: any = [];
+  bronzeTrainersList: any = [];
 
   images = [944, 1011, 984].map((n) => `https://picsum.photos/id/${n}/900/500`);
 
@@ -35,7 +42,26 @@ export class MentorsComponent implements OnInit {
       this.trainersList = result;
       // console.log(this.trainersList);
     })
+  }
+  all(){
+    console.log(this.doctorsList);
+  }
+  goldDoctors() {
+    this.goldDoctorsList = this.doctorsList.filter(g => g.Category == 'Gold');
+    console.log('g');
+    console.log(this.goldDoctorsList);
+  }
+  silverDoctors(){
+    this.silverDoctorsList = this.doctorsList.filter(s => s.Category == 'Silver')
+    console.log('s');
+    console.log(this.silverDoctorsList);
+  }
+  bronzeDoctors(){
+    this.bronzeDoctorsList = this.doctorsList.filter(b => b.Category == 'Bronze')
+    console.log('b');
+    console.log(this.bronzeDoctorsList);
+  }
 
   }
-}
+
 
