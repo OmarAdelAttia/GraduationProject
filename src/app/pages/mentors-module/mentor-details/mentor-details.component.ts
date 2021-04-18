@@ -20,10 +20,10 @@ import { map } from 'rxjs/internal/operators/map';
 export class MentorDetailsComponent implements OnInit {
 
   activeId;
-  doctorsList: any = [];
-  doctorDoc: any;
+  // doctorsList: any = [];
+  // doctorDoc: any;
   // doctor: any;
-  doctors: Observable<any[]>;
+  // doctors: Observable<any[]>;
 
 
   constructor(
