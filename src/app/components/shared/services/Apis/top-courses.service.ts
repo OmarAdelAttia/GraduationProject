@@ -11,9 +11,7 @@ export class TopCoursesService {
   topCourses: Observable<any[]>;
 
   constructor(firestore: AngularFirestore) {
-
     this.topCourses = firestore.collection('TopCourses').valueChanges();
-
   }
 
 }

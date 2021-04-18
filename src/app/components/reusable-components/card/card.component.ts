@@ -15,13 +15,16 @@ export class CardComponent implements OnInit {
   @Input('itemData') itemData: any;
 
   constructor(config: NgbRatingConfig, public authService: AuthService,
-              private router: Router) {
+    private router: Router) {
     // customize default values of ratings used by this component tree
     config.max = 5;
     config.readonly = true;
   }
 
   ngOnInit(): void {
+
+    // console.log(this.itemData);
+
   }
 
   toCheckout() {
