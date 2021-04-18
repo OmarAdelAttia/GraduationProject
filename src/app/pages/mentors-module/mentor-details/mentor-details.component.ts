@@ -25,6 +25,8 @@ export class MentorDetailsComponent implements OnInit {
   // doctor: any;
   doctors: Observable<any[]>;
 
+  mentor;
+
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -41,9 +43,30 @@ export class MentorDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
       this.activeId = params;
-      this.doctorsService.getDoctor(params.id).subscribe(doctor => console.log(doctor));
-      this.trainersService.getTrainer(params.id).subscribe(trainer => console.log(trainer));
-      this.topRatedService.getTopRated(params.id).subscribe(topRated => console.log(topRated));
+      this.doctorsService.getDoctor(params.id).subscribe(doctor => {
+        this.mentor = doctor;
+        // console.log(doctor)
+        // console.log(this.mentor)
+      });
+
+
+
+
+
+      this.trainersService.getTrainer(params.id).subscribe(trainer => {
+        this.mentor = trainer;
+        // console.log(trainer)
+        // console.log(this.mentor)
+      });
+
+
+
+      this.topRatedService.getTopRated(params.id).subscribe(topRated => {
+        this.mentor = topRated;
+        // console.log(topRated)
+        // console.log(this.mentor)
+      });
+
       // console.log(this.activeId);
 
       // this.doctors = this.angularFirestore.collection('Doctors').doc(this.activeId).snapshotChanges().pipe(
