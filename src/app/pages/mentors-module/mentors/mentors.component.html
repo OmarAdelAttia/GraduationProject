@@ -1,121 +1,213 @@
-<div class="container my-5">
-  <div class="">
-    <ul class="nav">
-      <li class="nav-item">
-        <a class="nav-link active" href="#">Active</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-      </li>
-    </ul>
-  </div>
-</div>
+<section class="py-5">
+  <div class="container "> <h1>Doctors</h1></div>
+</section>
 
-<ngb-carousel *ngIf="images">
-  <ng-template ngbSlide>
-    <div id="cards_landscape_wrap-2">
-      <div class="container">
-        <h2 class="text-center">DOCTORS </h2>
-        <div class="row">
-          <div *ngFor="let doctor of doctorsList | slice : 0 : 4" class="col-xs-12 col-sm-6 col-md-3 col-md-3">
-            <app-card [itemData]="doctor"></app-card>
+<ul ngbNav #nav="ngbNav" class="nav-tabs">
+  <li ngbNavItem>
+    <a ngbNavLink>ALL</a>
+    <ng-template ngbNavContent>
+      <ngb-carousel *ngIf="images">
+      <ng-template ngbSlide>
+        <div id="cards_landscape_wrap-2">
+          <div class="container">
+            <div class="row">
+              <div *ngFor="let doctor of doctorsList | slice : 0 : 4" class="col-xs-12 col-sm-6 col-md-3 col-md-3">
+                <app-card [itemData]="doctor"></app-card>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </ng-template>
+      </ng-template>
 
-  <ng-template ngbSlide>
-    <div id="cards_landscape_wrap-2">
-      <div class="container">
-        <h2 class="text-center">DOCTORS </h2>
-        <div class="row">
-          <div *ngFor="let doctor of doctorsList | slice : 4 : 8" class="col-xs-12 col-sm-6 col-md-3 col-md-3">
-            <app-card [itemData]="doctor"></app-card>
+      <ng-template ngbSlide>
+        <div id="cards_landscape_wrap-2">
+          <div class="container">
+            <div class="row">
+              <div *ngFor="let doctor of doctorsList | slice : 4 : 8" class="col-xs-12 col-sm-6 col-md-3 col-md-3">
+                <app-card [itemData]="doctor"></app-card>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </ng-template>
+      </ng-template>
 
-  <ng-template ngbSlide>
-    <div id="cards_landscape_wrap-2">
-      <div class="container">
-        <h2 class="text-center">DOCTORS </h2>
-        <div class="row">
-          <div *ngFor="let doctor of doctorsList | slice : 8 : 12" class="col-xs-12 col-sm-6 col-md-3 col-md-3">
-            <app-card [itemData]="doctor"></app-card>
+      <ng-template ngbSlide>
+        <div id="cards_landscape_wrap-2">
+          <div class="container">
+            <div class="row">
+              <div *ngFor="let doctor of doctorsList | slice : 8 : 12" class="col-xs-12 col-sm-6 col-md-3 col-md-3">
+                <app-card [itemData]="doctor"></app-card>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </ng-template>
-</ngb-carousel>
+      </ng-template>
+    </ngb-carousel>
+    </ng-template>
+  </li>
 
-
-<div class="container my-5">
-  <div class="">
-    <ul class="nav">
-      <li class="nav-item">
-        <a class="nav-link active" href="#">Active</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-      </li>
-    </ul>
-
-  </div>
-</div>
-
-<ngb-carousel *ngIf="images">
-  <ng-template ngbSlide>
-    <div id="cards_landscape_wrap-2">
-      <div class="container">
-        <h2 class="text-center">DOCTORS </h2>
-        <div class="row">
-          <div *ngFor="let trainer of trainersList | slice : 0 : 4" class="col-xs-12 col-sm-6 col-md-3 col-md-3">
-            <app-card [itemData]="trainer"></app-card>
+  <li ngbNavItem>
+    <a ngbNavLink (click)="goldDoctors()">Gold</a>
+    <ng-template ngbNavContent>
+      <ngb-carousel *ngIf="images">
+        <ng-template ngbSlide>
+          <div id="cards_landscape_wrap-2">
+            <div class="container">
+              <div class="row">
+                <div *ngFor="let doctor of goldDoctorsList" class="col-xs-12 col-sm-6 col-md-3 col-md-3">
+                  <app-card [itemData]="doctor"></app-card>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </ng-template>
+        </ng-template>
+      </ngb-carousel>
+    </ng-template>
+  </li>
 
-  <ng-template ngbSlide>
-    <div id="cards_landscape_wrap-2">
-      <div class="container">
-        <h2 class="text-center">DOCTORS </h2>
-        <div class="row">
-          <div *ngFor="let trainer of trainersList | slice : 4 : 8" class="col-xs-12 col-sm-6 col-md-3 col-md-3">
-            <app-card [itemData]="trainer"></app-card>
+  <li ngbNavItem>
+    <a ngbNavLink (click)="silverDoctors()">Silver</a>
+    <ng-template ngbNavContent>
+      <ngb-carousel *ngIf="images">
+        <ng-template ngbSlide>
+          <div id="cards_landscape_wrap-2">
+            <div class="container">
+              <div class="row">
+                <div *ngFor="let doctor of silverDoctorsList" class="col-xs-12 col-sm-6 col-md-3 col-md-3">
+                  <app-card [itemData]="doctor"></app-card>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </ng-template>
+        </ng-template>
+      </ngb-carousel>
+    </ng-template>
+  </li>
 
-  <ng-template ngbSlide>
-    <div id="cards_landscape_wrap-2">
-      <div class="container">
-        <h2 class="text-center">DOCTORS </h2>
-        <div class="row">
-          <div *ngFor="let trainer of trainersList | slice : 8 : 12" class="col-xs-12 col-sm-6 col-md-3 col-md-3">
-            <app-card [itemData]="trainer"></app-card>
+  <li ngbNavItem>
+    <a ngbNavLink (click)="bronzeDoctors()">Bronze</a>
+    <ng-template ngbNavContent>
+      <ngb-carousel *ngIf="images">
+        <ng-template ngbSlide>
+          <div id="cards_landscape_wrap-2">
+            <div class="container">
+              <div class="row">
+                <div *ngFor="let doctor of bronzeDoctorsList" class="col-xs-12 col-sm-6 col-md-3 col-md-3">
+                  <app-card [itemData]="doctor"></app-card>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </ng-template>
-</ngb-carousel>
+        </ng-template>
+      </ngb-carousel>
+    </ng-template>
+  </li>
+</ul>
+
+<!--
+<h1>Trainers</h1>
+<ul ngbNav #nav="ngbNav" class="nav-tabs">
+    <li ngbNavItem>
+      <a ngbNavLink>ALL</a>
+      <ng-template ngbNavContent>
+        <ngb-carousel *ngIf="images">
+        <ng-template ngbSlide>
+          <div id="cards_landscape_wrap-2">
+            <div class="container">
+              <div class="row">
+                <div *ngFor="let trainer of trainersList | slice : 0 : 4" class="col-xs-12 col-sm-6 col-md-3 col-md-3">
+                  <app-card [itemData]="trainer"></app-card>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+
+        <ng-template ngbSlide>
+          <div id="cards_landscape_wrap-2">
+            <div class="container">
+              <div class="row">
+                <div *ngFor="let trainer of trainersList | slice : 4 : 8" class="col-xs-12 col-sm-6 col-md-3 col-md-3">
+                  <app-card [itemData]="trainer"></app-card>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+
+        <ng-template ngbSlide>
+          <div id="cards_landscape_wrap-2">
+            <div class="container">
+              <div class="row">
+                <div *ngFor="let trainer of trainersList | slice : 8 : 12" class="col-xs-12 col-sm-6 col-md-3 col-md-3">
+                  <app-card [itemData]="trainer"></app-card>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </ngb-carousel>
+      </ng-template>
+    </li>
+
+    <li ngbNavItem>
+      <a ngbNavLink (click)="goldTrainers()">Gold</a>
+      <ng-template ngbNavContent>
+        <ngb-carousel *ngIf="images">
+          <ng-template ngbSlide>
+            <div id="cards_landscape_wrap-2">
+              <div class="container">
+                <div class="row">
+                  <div *ngFor="let trainer of goldTrainersList" class="col-xs-12 col-sm-6 col-md-3 col-md-3">
+                    <app-card [itemData]="trainer"></app-card>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </ngb-carousel>
+      </ng-template>
+    </li>
+
+    <li ngbNavItem>
+      <a ngbNavLink (click)="silverTrainers()">Silver</a>
+      <ng-template ngbNavContent>
+        <ngb-carousel *ngIf="images">
+          <ng-template ngbSlide>
+            <div id="cards_landscape_wrap-2">
+              <div class="container">
+                <div class="row">
+                  <div *ngFor="let trainer of silverTrainersList" class="col-xs-12 col-sm-6 col-md-3 col-md-3">
+                    <app-card [itemData]="trainer"></app-card>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </ngb-carousel>
+      </ng-template>
+    </li>
+
+    <li ngbNavItem>
+      <a ngbNavLink (click)="bronzeTrainers()">Bronze</a>
+      <ng-template ngbNavContent>
+        <ngb-carousel *ngIf="images">
+          <ng-template ngbSlide>
+            <div id="cards_landscape_wrap-2">
+              <div class="container">
+                <div class="row">
+                  <div *ngFor="let trainer of bronzeTrainersList" class="col-xs-12 col-sm-6 col-md-3 col-md-3">
+                    <app-card [itemData]="trainer"></app-card>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </ngb-carousel>
+      </ng-template>
+    </li>
+  </ul> -->
+
+
+
+
