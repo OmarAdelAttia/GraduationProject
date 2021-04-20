@@ -9,6 +9,7 @@ import { AuthModuleModule } from './components/authentication/auth-module.module
 import { MentorsModuleModule } from './pages/mentors-module/mentors-module.module';
 import { ClientModuleModule } from './profiles/client-module/client-module.module';
 import { MentorModuleModule } from './profiles/mentor-module/mentor-module.module';
+import { SharedModule } from './components/shared/shared.module';
 
 // Firebase modules
 import { AngularFireModule } from '@angular/fire';
@@ -29,11 +30,7 @@ import { shopping_cart_reducer } from './components/shared/services/store/cart.r
 
 // bootstrap
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
-import { SharedModule } from './components/shared/shared.module';
-
 
 // pages
 import { HomeComponent } from './pages/home/home.component';
@@ -49,7 +46,6 @@ import { AchievementsComponent } from './components/reusable-components/achievem
 import { ShoppingCartComponent } from './components/reusable-components/shopping-cart/shopping-cart.component';
 import { CheckoutComponent } from './components/shared/checkout/checkout.component';
 import { HireButtonComponent } from './components/reusable-components/hire-button/hire-button.component';
-// import { ConfirmComponent } from './components/shared/confirm/confirm.component';
 
 
 
