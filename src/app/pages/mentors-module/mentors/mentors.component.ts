@@ -16,14 +16,14 @@ export interface DoctorId extends Doctor { id: string; }
 
 export class MentorsComponent implements OnInit {
 
-  carouselOptions = {};
+  // carouselOptions = {};
 
-  responsive = {
-    0: { items: 1.2 },
-    425: { items: 1.2 },
-    768: { items: 2.2 },
-    1024: { items: 3 },
-  };
+  // responsive = {
+  //   0: { items: 1.2 },
+  //   425: { items: 1.2 },
+  //   768: { items: 2.2 },
+  //   1024: { items: 3 },
+  // };
 
 
   doctorsList: any = [];
@@ -42,13 +42,13 @@ export class MentorsComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.carouselOptions = {
-      margin: 5,
-      loop: true,
-      nav: true,
-      responsiveClass: true,
-      responsive: this.responsive,
-    };
+    // this.carouselOptions = {
+    //   margin: 5,
+    //   loop: true,
+    //   nav: true,
+    //   responsiveClass: true,
+    //   responsive: this.responsive,
+    // };
 
     this.doctorsService.doctors.subscribe(result => {
       this.doctorsList = result;
