@@ -4,8 +4,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MentorsComponent } from './mentors/mentors.component';
 import { MentorDetailsComponent } from './mentor-details/mentor-details.component';
 import { SharedModule } from '../../components/shared/shared.module';
-
-
+import { OwlModule } from 'ngx-owl-carousel';
 
 @NgModule({
   declarations: [
@@ -15,7 +14,8 @@ import { SharedModule } from '../../components/shared/shared.module';
   imports: [
     SharedModule,
     CommonModule,
-    NgbModule
+    NgbModule,
+    OwlModule
   ]
 })
 export class MentorsModuleModule { }

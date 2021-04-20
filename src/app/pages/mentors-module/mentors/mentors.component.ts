@@ -16,6 +16,16 @@ export interface DoctorId extends Doctor { id: string; }
 
 export class MentorsComponent implements OnInit {
 
+  carouselOptions = {};
+
+  responsive = {
+    0: { items: 1.2 },
+    425: { items: 1.2 },
+    768: { items: 2.2 },
+    1024: { items: 3 },
+  };
+
+
   doctorsList: any = [];
   goldDoctorsList: any = [];
   silverDoctorsList: any = [];
@@ -32,6 +42,14 @@ export class MentorsComponent implements OnInit {
 
   ngOnInit(): void {
 
+    this.carouselOptions = {
+      margin: 5,
+      loop: true,
+      nav: true,
+      responsiveClass: true,
+      responsive: this.responsive,
+    };
+
     this.doctorsService.doctors.subscribe(result => {
       this.doctorsList = result;
       // console.log(result);
@@ -43,7 +61,7 @@ export class MentorsComponent implements OnInit {
       // console.log(this.trainersList);
     })
   }
-  all(){
+  all() {
     console.log(this.doctorsList);
   }
   goldDoctors() {
@@ -51,17 +69,17 @@ export class MentorsComponent implements OnInit {
     console.log('g');
     console.log(this.goldDoctorsList);
   }
-  silverDoctors(){
+  silverDoctors() {
     this.silverDoctorsList = this.doctorsList.filter(s => s.Category == 'Silver')
     console.log('s');
     console.log(this.silverDoctorsList);
   }
-  bronzeDoctors(){
+  bronzeDoctors() {
     this.bronzeDoctorsList = this.doctorsList.filter(b => b.Category == 'Bronze')
     console.log('b');
     console.log(this.bronzeDoctorsList);
   }
 
-  }
+}
 
 

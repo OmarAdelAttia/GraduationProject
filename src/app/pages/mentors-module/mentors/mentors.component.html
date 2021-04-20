@@ -1,5 +1,7 @@
 <section class="py-5">
-  <div class="container "> <h1>Doctors</h1></div>
+  <div class="container ">
+    <h1>Doctors</h1>
+  </div>
 </section>
 
 <ul ngbNav #nav="ngbNav" class="nav-tabs">
@@ -7,42 +9,42 @@
     <a ngbNavLink>ALL</a>
     <ng-template ngbNavContent>
       <ngb-carousel *ngIf="images">
-      <ng-template ngbSlide>
-        <div id="cards_landscape_wrap-2">
-          <div class="container">
-            <div class="row">
-              <div *ngFor="let doctor of doctorsList | slice : 0 : 4" class="col-xs-12 col-sm-6 col-md-3 col-md-3">
-                <app-card [itemData]="doctor"></app-card>
+        <ng-template ngbSlide>
+          <div id="cards_landscape_wrap-2">
+            <div class="container">
+              <div class="row">
+                <div *ngFor="let doctor of doctorsList | slice : 0 : 4" class="col-xs-12 col-sm-6 col-md-3 col-md-3">
+                  <app-card [itemData]="doctor"></app-card>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </ng-template>
+        </ng-template>
 
-      <ng-template ngbSlide>
-        <div id="cards_landscape_wrap-2">
-          <div class="container">
-            <div class="row">
-              <div *ngFor="let doctor of doctorsList | slice : 4 : 8" class="col-xs-12 col-sm-6 col-md-3 col-md-3">
-                <app-card [itemData]="doctor"></app-card>
+        <ng-template ngbSlide>
+          <div id="cards_landscape_wrap-2">
+            <div class="container">
+              <div class="row">
+                <div *ngFor="let doctor of doctorsList | slice : 4 : 8" class="col-xs-12 col-sm-6 col-md-3 col-md-3">
+                  <app-card [itemData]="doctor"></app-card>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </ng-template>
+        </ng-template>
 
-      <ng-template ngbSlide>
-        <div id="cards_landscape_wrap-2">
-          <div class="container">
-            <div class="row">
-              <div *ngFor="let doctor of doctorsList | slice : 8 : 12" class="col-xs-12 col-sm-6 col-md-3 col-md-3">
-                <app-card [itemData]="doctor"></app-card>
+        <ng-template ngbSlide>
+          <div id="cards_landscape_wrap-2">
+            <div class="container">
+              <div class="row">
+                <div *ngFor="let doctor of doctorsList | slice : 8 : 12" class="col-xs-12 col-sm-6 col-md-3 col-md-3">
+                  <app-card [itemData]="doctor"></app-card>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </ng-template>
-    </ngb-carousel>
+        </ng-template>
+      </ngb-carousel>
     </ng-template>
   </li>
 
@@ -209,3 +211,24 @@
   </ul> -->
 
 
+
+
+
+
+<!-- <div *ngFor="let doctor of doctorsList | slice : 0 : 4" class="col-xs-12 col-sm-6 col-md-3 col-md-3">
+  <div class="w-100">
+    <app-card [itemData]="doctor"></app-card>
+  </div>
+</div> -->
+
+<!-- <owl-carousel class="mt-5" [options]="carouselOptions">
+  <div class="mt-5 mx-2 wow fadeInDown" data-wow-delay=".5s">
+    <div class="card-product d-flex flex-column bg-dark p-3 text-center w-100 m-auto">
+      <div class="card-body d-flex flex-column justify-content-between">
+        <div *ngFor="let doctor of doctorsList | slice : 0 : 4">
+          <app-card [itemData]="doctor"></app-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</owl-carousel> -->

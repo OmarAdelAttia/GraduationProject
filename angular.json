@@ -31,11 +31,16 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "node_modules/@fortawesome/fontawesome-free/css/all.css"
+              "node_modules/owl.carousel/dist/assets/owl.carousel.css",
+              "node_modules/owl.carousel/dist/assets/owl.theme.default.css",
+              "node_modules/@fortawesome/fontawesome-free/css/all.css",
+              "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.js",
+              "node_modules/owl.carousel/dist/owl.carousel.js"
+            ]
           },
           "configurations": {
             "production": {
