@@ -1,47 +1,50 @@
-<section class="py-5">
+<section class="pt-5">
   <div class="container emp-profile">
-
     <div class="row">
-      <div class="col-md-4">
-        <div class="profile-img">
-          <img
-          [src]="mentor.Photo"
-            alt="" />
+      <div class="col-md-4 d-flex justify-content-center">
+        <div class="profile-img mb-5">
+          <img class="border" [src]="mentor.Photo" alt="alt" />
+          <div class="my-5">
+            <a class="main-btn-a" id="future" name="btnAddMore" (click)="toCheckout()">
+              Hire Now
+            </a>
+          </div>
         </div>
       </div>
 
       <div class="col-md-6">
         <div class="profile-head">
-          <h5>{{ mentor.Name}}</h5>
-          <h6>{{ mentor.Specialized}}</h6>
-          <p class=" proile-rating">RANKINGS : <span>{{ mentor.Rating}}</span></p>
+          <h2>{{ mentor.Name}}</h2>
+          <p class="text-secondary">{{ mentor.Specialized}}, {{ mentor.Category }} category.</p>
+          <ng-template #t let-fill="fill">
+            <span class="star" [class.full]="fill === 100">
+              <span class="half" [style.width.%]="fill">&#9734;</span>&#9734;
+            </span>
+          </ng-template>
+          <div>
+            <b class="rate-txt">{{ mentor.Rating }} </b>
+            <ngb-rating [(rate)]="mentor.Rating" [starTemplate]="t" [readonly]="true">
+            </ngb-rating>
+            <span class="text-secondary"> (342)</span>
+          </div>
+
           <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item">
-              <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+              <a class="nav-link link-color active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
                 aria-selected="true">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
+              <a class="nav-link link-color" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
                 aria-selected="false">Timeline</a>
             </li>
           </ul>
         </div>
       </div>
-
-      <div class="col-md-2">
-        <button class="profile-edit-btn" name="btnAddMore" (click)="toCheckout()">Hire Now</button>
-      </div>
     </div>
 
 
     <div class="row">
-      <div class="col-md-4">
-        <div class="profile-work">
-          <p>Category</p>
-          <a>{{mentor.Category}}</a><br />
-        </div>
-      </div>
-      <div class="col-md-8">
+      <!-- <div class="col-md-8">
         <div class="tab-content profile-tab" id="myTabContent">
           <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
             <div class="row">
@@ -131,6 +134,27 @@
                 <label>Your Bio</label><br />
                 <p>Your detail description</p>
               </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+      <div class="col-md-8 offset-md-4">
+        <div class="tab-content profile-tab" id="myTabContent">
+          <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <div>
+              <p>Sint dolore reprehenderit officia officia nostrud ullamco nostrud excepteur. Non fugiat culpa et ea
+                laboris aliqua. Nisi aute consectetur voluptate enim sint officia.</p>
+
+              <p>Voluptate duis duis minim enim id magna commodo amet. Cupidatat ea cupidatat voluptate ut velit laborum
+                irure laborum. Excepteur elit consectetur aliqua aliqua.</p>
+
+              <p>In sit labore consequat veniam dolor. Aliquip ad exercitation cillum est proident. Nisi nostrud ut aute
+                aute qui officia. Cupidatat magna anim mollit laboris labore dolore ullamco quis ad sit.</p>
+
+              <p>Ut ea consequat adipisicing ullamco elit qui velit ipsum nisi eu. Eiusmod voluptate magna et Lorem amet
+                elit do et consectetur consectetur ex. Cupidatat consequat commodo dolore adipisicing et cupidatat elit
+                tempor consequat tempor. Deserunt reprehenderit minim eu eu exercitation sit est commodo sit cupidatat
+                ut quis tempor.</p>
             </div>
           </div>
         </div>

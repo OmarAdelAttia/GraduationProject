@@ -32,6 +32,7 @@
             transition:all .9s ease; 
             width: 100%;
             height: 200px;
+            object-fit: cover;
         }
     }
 
@@ -67,7 +68,7 @@
             font-size: 18px;
             font-weight: bold;
             text-transform: capitalize;
-            color: $light;
+            color: $light-clr;
 
             &:hover{
                 color: $darkest;

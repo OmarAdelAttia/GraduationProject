@@ -10,6 +10,7 @@ import { AuthService } from '../../../components/shared/services/auth/auth.servi
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/internal/operators/map';
+import { NgbRatingConfig } from '@ng-bootstrap/ng-bootstrap';
 
 
 @Component({
@@ -29,6 +30,7 @@ export class MentorDetailsComponent implements OnInit {
 
 
   constructor(
+    config: NgbRatingConfig,
     private activatedRoute: ActivatedRoute,
     private router: Router,
     public authService: AuthService,
@@ -38,6 +40,8 @@ export class MentorDetailsComponent implements OnInit {
     private angularFirestore: AngularFirestore) {
     // this.doctorDoc = angularFirestore.doc('items/1');
     // this.doctor = this.doctorDoc.valueChanges();
+    config.max = 5;
+    config.readonly = true;
   }
 
   ngOnInit(): void {
