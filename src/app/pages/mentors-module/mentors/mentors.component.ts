@@ -104,13 +104,15 @@ export class MentorsComponent implements OnInit {
 
   owlOptions: OwlOptions = {
     loop: true,
-
+    // margin: 10,
+    nav: true,
+      navText: ["<div class='nav-button owl-prev'>‹</div>", "<div class='nav-button owl-next'>›</div>"],
     mouseDrag: true,
     touchDrag: true,
     pullDrag: true,
     dots: true,
     navSpeed: 750,
-    navText: ['&#8249', '&#8250;'],
+    // navText: ['&#8249', '&#8250;'],
     responsive: {
       0: {
         items: 1
@@ -119,13 +121,13 @@ export class MentorsComponent implements OnInit {
         items: 2
       },
       767: {
-        items: 2
+        items: 3
       },
       1024: {
-        items: 3
+        items: 4
       }
     },
-    nav: false
+    // nav: false
   }
 
 }

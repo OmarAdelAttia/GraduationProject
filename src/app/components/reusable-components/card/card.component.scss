@@ -29,10 +29,10 @@
         border-radius: 5px;
 
         img{
-            transition:all .9s ease; 
+            transition:all .9s ease;
             width: 100%;
-            height: 200px;
-            object-fit: cover;
+            height: 170px;
+            // object-fit: cover;
         }
     }
 
@@ -57,7 +57,7 @@
 
         p{
             margin-bottom: 0px;
-            padding-bottom: 0px; 
+            padding-bottom: 0px;
             font-size: 14px;
             letter-spacing: 1px;
             color: #000000;
