@@ -4,7 +4,13 @@
 
     <h2>Doctors</h2>
 
-    <button (click)="all()" class="btn btn-danger">All</button>
+    <ul class="list-inline">
+      <li class="list-inline-item"><button (click)="all()" class="btn btn-danger">All</button></li>
+      <li class="list-inline-item"><button (click)="goldDoctors()" class="btn btn-danger">Gold</button></li>
+      <li class="list-inline-item"><button (click)="silverDoctors()" class="btn btn-danger">Silver</button></li>
+      <li class="list-inline-item"><button (click)="bronzeDoctors()" class="btn btn-danger">Bronze</button></li>
+    </ul>
+
     <owl-carousel-o [options]="owlOptions" (initialized)="owlData($event)">
       <ng-container *ngFor="let doctor of doctorsList" class="my-5">
         <ng-template carouselSlide [slideObject.id]="doctor.id" class="my-5">
@@ -15,7 +21,6 @@
       </ng-container>
     </owl-carousel-o>
 
-    <button (click)="goldDoctors()" class="btn btn-danger">Gold</button>
     <owl-carousel-o [options]="owlOptions" (initialized)="owlData($event)">
       <ng-container *ngFor="let doctor of goldDoctorsList" class="my-5">
         <ng-template carouselSlide [slideObject.id]="doctor.id" class="my-5">
@@ -26,7 +31,6 @@
       </ng-container>
     </owl-carousel-o>
 
-    <button (click)="silverDoctors()" class="btn btn-danger">Silver</button>
     <owl-carousel-o [options]="owlOptions" (initialized)="owlData($event)">
       <ng-container *ngFor="let doctor of silverDoctorsList" class="my-5">
         <ng-template carouselSlide [slideObject.id]="doctor.id" class="my-5">
@@ -37,7 +41,6 @@
       </ng-container>
     </owl-carousel-o>
 
-    <button (click)="bronzeDoctors()" class="btn btn-danger">Bronze</button>
     <owl-carousel-o [options]="owlOptions" (initialized)="owlData($event)">
       <ng-container *ngFor="let doctor of bronzeDoctorsList" class="my-5">
         <ng-template carouselSlide [slideObject.id]="doctor.id" class="my-5">
