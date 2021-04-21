@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
+// angular from stepper
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+
 @Component({
   selector: 'app-checkout',
   templateUrl: './checkout.component.html',
@@ -9,9 +13,24 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class CheckoutComponent implements OnInit {
 
-  constructor(private modalService: NgbModal) { }
+  isLinear = false;
+  firstFormGroup!: FormGroup;
+  secondFormGroup!: FormGroup;
+  thirdFormGroup!: FormGroup;
+
+  constructor(private modalService: NgbModal, private _formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
+    // angular from stepper
+    this.firstFormGroup = this._formBuilder.group({
+      firstCtrl: ['', Validators.required]
+    });
+    this.secondFormGroup = this._formBuilder.group({
+      secondCtrl: ['', Validators.required]
+    });
+    this.thirdFormGroup = this._formBuilder.group({
+      thirdCtrl: ['', Validators.required]
+    });
   }
 
   openVerticallyCentered(content) {
@@ -20,4 +39,6 @@ export class CheckoutComponent implements OnInit {
   userCheckOutForm(checkOutForm) {
     console.log(checkOutForm);
   }
+
+
 }

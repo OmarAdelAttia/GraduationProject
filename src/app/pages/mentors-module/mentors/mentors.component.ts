@@ -44,7 +44,8 @@ export class MentorsComponent implements OnInit {
       this.trainersList = result;
     })
   }
-  all() {
+  allDoctors() {
+    // this.allDoctors;
     console.log(this.doctorsList);
   }
   goldDoctors() {

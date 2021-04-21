@@ -47,7 +47,13 @@ import { ShoppingCartComponent } from './components/reusable-components/shopping
 import { CheckoutComponent } from './components/shared/checkout/checkout.component';
 import { HireButtonComponent } from './components/reusable-components/hire-button/hire-button.component';
 
-
+//Angular Material
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
@@ -77,6 +83,12 @@ import { HireButtonComponent } from './components/reusable-components/hire-butto
     HttpClientModule,
     SharedModule,
 
+    MatStepperModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    MatInputModule,
+    MatIconModule,
+
     AngularFireModule.initializeApp(environment.firebaseConfig), // Required for everything
     AngularFirestoreModule, // Only required for database features
     AngularFireAuthModule, // Only required for auth features,
@@ -84,6 +96,7 @@ import { HireButtonComponent } from './components/reusable-components/hire-butto
 
     NgbModule,
     StoreModule.forRoot({ cart: shopping_cart_reducer }),
+    BrowserAnimationsModule,
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

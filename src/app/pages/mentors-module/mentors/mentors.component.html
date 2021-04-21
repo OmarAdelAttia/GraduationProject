@@ -21,10 +21,10 @@
 
     <h2>Trainers</h2>
 
-    <button (click)="allTrainers()" class="btn btn-danger">All</button>
-    <button (click)="goldTrainers()" class="btn btn-danger">Gold</button>
-    <button (click)="silverTrainers()" class="btn btn-danger">Silver</button>
-    <button (click)="bronzeTrainers()" class="btn btn-danger">Bronze</button>
+    <!-- <button (click)="allTrainers()" class="btn btn-danger">All</button> -->
+    <!-- <button (click)="goldTrainers()" class="btn btn-danger">Gold</button> -->
+    <!-- <button (click)="silverTrainers()" class="btn btn-danger">Silver</button> -->
+    <!-- <button (click)="bronzeTrainers()" class="btn btn-danger">Bronze</button> -->
 
     <owl-carousel-o [options]="owlOptions" (initialized)="owlData($event)">
       <ng-container *ngFor="let trainer of trainersList" class="my-5">
