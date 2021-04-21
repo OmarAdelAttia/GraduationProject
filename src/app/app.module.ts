@@ -49,7 +49,6 @@ import { HireButtonComponent } from './components/reusable-components/hire-butto
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 //Angular Material
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
