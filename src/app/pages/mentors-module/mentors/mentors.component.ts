@@ -29,6 +29,21 @@ export class MentorsComponent implements OnInit {
   silverTrainersList: any = [];
   bronzeTrainersList: any = [];
 
+  show = {
+    allDoctors : true,
+    goldDoctors : false,
+    silverDoctors : false,
+    bronzeDoctors : false
+  }
+
+  display = {
+    allTrainers : true,
+    goldTrainers : false,
+    silverTrainers : false,
+    bronzeTrainers : false
+  }
+
+
   constructor(private doctorsService: DoctorsService, private trainersService: TrainersService) { }
 
   ngOnInit(): void {
@@ -37,31 +52,51 @@ export class MentorsComponent implements OnInit {
       this.doctorsList = result;
       console.log(this.doctorsList);
 
-    })
+    });
 
+    this.doctorsService.doctors.subscribe(result => {
+      this.goldDoctorsList = result.filter(g => g.Category == 'Gold');
+      console.log('g');
+      console.log(this.goldDoctorsList);
+    });
+
+    this.doctorsService.doctors.subscribe(result => {
+      this.silverDoctorsList = result.filter(s => s.Category == 'Silver');
+      console.log('s');
+      console.log(this.silverDoctorsList);
+    });
+
+    this.doctorsService.doctors.subscribe(result => {
+      this.bronzeDoctorsList = result.filter(b => b.Category == 'Bronze');
+      console.log('b');
+      console.log(this.bronzeDoctorsList);
+    });
+
+    // TRAINERS
     this.trainersService.trainers.subscribe(result => {
       this.trainersList = result;
-    })
+    });
+
+    this.trainersService.trainers.subscribe(result => {
+      this.goldTrainersList = result.filter(g => g.Category == 'Gold');
+      console.log('g');
+      console.log(this.goldTrainersList);
+    });
+
+    this.trainersService.trainers.subscribe(result => {
+      this.silverTrainersList = result.filter(s => s.Category == 'Silver');
+      console.log('s');
+      console.log(this.silverTrainersList);
+    });
+
+    this.trainersService.trainers.subscribe(result => {
+      this.bronzeTrainersList = result.filter(b => b.Category == 'Bronze');
+      console.log('b');
+      console.log(this.bronzeTrainersList);
+    });
   }
 
-  all() {
-    console.log(this.doctorsList);
-  }
-  goldDoctors() {
-    this.goldDoctorsList = this.doctorsList.filter(g => g.Category == 'Gold');
-    console.log('g');
-    console.log(this.goldDoctorsList);
-  }
-  silverDoctors() {
-    this.silverDoctorsList = this.doctorsList.filter(s => s.Category == 'Silver')
-    console.log('s');
-    console.log(this.silverDoctorsList);
-  }
-  bronzeDoctors() {
-    this.bronzeDoctorsList = this.doctorsList.filter(b => b.Category == 'Bronze')
-    console.log('b');
-    console.log(this.bronzeDoctorsList);
-  }
+
 
   owlData(e: SlidesOutputData) {
     console.log(e);
