@@ -17,6 +17,8 @@ export class CheckoutComponent implements OnInit {
   firstFormGroup!: FormGroup;
   secondFormGroup!: FormGroup;
   thirdFormGroup!: FormGroup;
+  forthFormGroup!: FormGroup;
+
 
   constructor(private modalService: NgbModal, private _formBuilder: FormBuilder) { }
 
@@ -30,6 +32,9 @@ export class CheckoutComponent implements OnInit {
     });
     this.thirdFormGroup = this._formBuilder.group({
       thirdCtrl: ['', Validators.required]
+    });
+    this.forthFormGroup = this._formBuilder.group({
+      forthCtrl: ['', Validators.required]
     });
   }
 
