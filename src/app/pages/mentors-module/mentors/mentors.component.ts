@@ -29,23 +29,22 @@ export class MentorsComponent implements OnInit {
   silverTrainersList: any = [];
   bronzeTrainersList: any = [];
 
-  images = [944, 1011, 984].map((n) => `https://picsum.photos/id/${n}/900/500`);
-
   constructor(private doctorsService: DoctorsService, private trainersService: TrainersService) { }
 
   ngOnInit(): void {
 
     this.doctorsService.doctors.subscribe(result => {
       this.doctorsList = result;
-    })
+      console.log(this.doctorsList);
 
+    })
 
     this.trainersService.trainers.subscribe(result => {
       this.trainersList = result;
     })
   }
-  allDoctors() {
-    // this.allDoctors;
+
+  all() {
     console.log(this.doctorsList);
   }
   goldDoctors() {

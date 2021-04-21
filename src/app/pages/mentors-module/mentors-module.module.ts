@@ -6,6 +6,9 @@ import { MentorDetailsComponent } from './mentor-details/mentor-details.componen
 import { SharedModule } from '../../components/shared/shared.module';
 import { OwlModule } from 'ngx-owl-carousel';
 
+import { MatTabsModule } from '@angular/material/tabs';
+import {MatCardModule} from '@angular/material/card';
+
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -20,7 +23,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     NgbModule,
     OwlModule,
     CarouselModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatTabsModule,
+    MatCardModule
   ]
 })
 export class MentorsModuleModule { }
