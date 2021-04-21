@@ -104,9 +104,9 @@ export class MentorsComponent implements OnInit {
 
   owlOptions: OwlOptions = {
     loop: true,
-    // margin: 10,
-    nav: true,
-      navText: ["<div class='nav-button owl-prev'>‹</div>", "<div class='nav-button owl-next'>›</div>"],
+    margin: 5,
+    // nav: true,
+    //   navText: ["<div class='nav-button owl-prev'>‹</div>", "<div class='nav-button owl-next'>›</div>"],
     mouseDrag: true,
     touchDrag: true,
     pullDrag: true,
