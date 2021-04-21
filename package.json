@@ -28,6 +28,7 @@
     "firebase": "^8.3.2",
     "jQuery": "^1.7.4",
     "ngx-owl-carousel": "^2.0.7",
+    "ngx-owl-carousel-o": "^5.0.0",
     "rxjs": "~6.6.0",
     "save": "^2.4.0",
     "script-loader": "^0.7.2",

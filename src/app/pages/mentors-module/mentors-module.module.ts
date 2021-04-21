@@ -6,16 +6,21 @@ import { MentorDetailsComponent } from './mentor-details/mentor-details.componen
 import { SharedModule } from '../../components/shared/shared.module';
 import { OwlModule } from 'ngx-owl-carousel';
 
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 @NgModule({
   declarations: [
     MentorsComponent,
-    MentorDetailsComponent
+    MentorDetailsComponent,
   ],
   imports: [
     SharedModule,
     CommonModule,
     NgbModule,
-    OwlModule
+    OwlModule,
+    CarouselModule,
+    BrowserAnimationsModule
   ]
 })
 export class MentorsModuleModule { }

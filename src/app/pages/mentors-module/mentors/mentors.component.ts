@@ -2,8 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { DoctorsService } from '../../../components/shared/services/Apis/doctors.service';
 import { TrainersService } from '../../../components/shared/services/Apis/trainers.service';
 // RxJS v6+
-import { of } from 'rxjs';
-import { map } from 'rxjs/operators';
+// import { of } from 'rxjs';
+// import { map } from 'rxjs/operators';
+
+import { OwlOptions, SlidesOutputData } from 'ngx-owl-carousel-o';
 
 export interface Doctor { name: string; price: number; }
 export interface DoctorId extends Doctor { id: string; }
@@ -14,17 +16,8 @@ export interface DoctorId extends Doctor { id: string; }
   styleUrls: ['./mentors.component.scss']
 })
 
+
 export class MentorsComponent implements OnInit {
-
-  // carouselOptions = {};
-
-  // responsive = {
-  //   0: { items: 1.2 },
-  //   425: { items: 1.2 },
-  //   768: { items: 2.2 },
-  //   1024: { items: 3 },
-  // };
-
 
   doctorsList: any = [];
   goldDoctorsList: any = [];
@@ -42,23 +35,13 @@ export class MentorsComponent implements OnInit {
 
   ngOnInit(): void {
 
-    // this.carouselOptions = {
-    //   margin: 5,
-    //   loop: true,
-    //   nav: true,
-    //   responsiveClass: true,
-    //   responsive: this.responsive,
-    // };
-
     this.doctorsService.doctors.subscribe(result => {
       this.doctorsList = result;
-      // console.log(result);
     })
 
 
     this.trainersService.trainers.subscribe(result => {
       this.trainersList = result;
-      // console.log(this.trainersList);
     })
   }
   all() {
@@ -78,6 +61,36 @@ export class MentorsComponent implements OnInit {
     this.bronzeDoctorsList = this.doctorsList.filter(b => b.Category == 'Bronze')
     console.log('b');
     console.log(this.bronzeDoctorsList);
+  }
+
+  owlData(e: SlidesOutputData) {
+    console.log(e);
+  }
+
+  owlOptions: OwlOptions = {
+    loop: true,
+
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: true,
+    dots: true,
+    navSpeed: 750,
+    navText: ['&#8249', '&#8250;'],
+    responsive: {
+      0: {
+        items: 1
+      },
+      400: {
+        items: 2
+      },
+      767: {
+        items: 2
+      },
+      1024: {
+        items: 3
+      }
+    },
+    nav: false
   }
 
 }
