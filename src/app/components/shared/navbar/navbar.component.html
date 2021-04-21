@@ -37,6 +37,17 @@
           </div>
         </li>
 
+        <li class="nav-item" ngbDropdown>
+          <a class="nav-link" tabindex="0" ngbDropdownToggle id="navbarDropdown1" role="button">
+            Searching about
+          </a>
+          <div ngbDropdownMenu aria-labelledby="navbarDropdown1" class="dropdown-menu">
+            <a ngbDropdownItem href="#" (click)="$event.preventDefault()">Course</a>
+            <a ngbDropdownItem href="#" (click)="$event.preventDefault()">Doctor</a>
+            <a ngbDropdownItem href="#" (click)="$event.preventDefault()">Trainer</a>
+          </div>
+        </li>
+
       </ul>
 
       <form class="form-inline my-2 my-lg-0">
