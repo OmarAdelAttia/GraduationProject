@@ -46,6 +46,7 @@ import { AchievementsComponent } from './components/reusable-components/achievem
 import { ShoppingCartComponent } from './components/reusable-components/shopping-cart/shopping-cart.component';
 import { CheckoutComponent } from './components/shared/checkout/checkout.component';
 import { HireButtonComponent } from './components/reusable-components/hire-button/hire-button.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -84,6 +85,7 @@ import { HireButtonComponent } from './components/reusable-components/hire-butto
 
     NgbModule,
     StoreModule.forRoot({ cart: shopping_cart_reducer }),
+    BrowserAnimationsModule,
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
