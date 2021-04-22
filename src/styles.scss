@@ -43,13 +43,15 @@ $lightest: #e6d5b8;
 body {
     background: white !important;
 
-    .header-txt{
-        font-size: 3rem;
-    }
+    .header{
+      .header-txt{
+        font-size: 1rem;
+      }
 
-    h1{
+      h1{
         font-size: 5rem;
-    }
+      }
+    } 
 
     .rate-txt{
       color: rgb(221, 162, 36);
