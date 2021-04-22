@@ -29,7 +29,7 @@ import { ShoppingComponent } from './pages/shopping-module/shopping/shopping.com
 
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: HomeComponent, pathMatch: "full" },
 
   // LAZY LOADING WORK
 
@@ -56,6 +56,8 @@ const routes: Routes = [
   { path: 'mentor-details/:id', component: MentorDetailsComponent },
   { path: 'courses', component: CoursesComponent },
   { path: 'course-details/:id', component: CourseDetailsComponent },
+  // { path: 'shopping', loadChildren: () => import('./pages/shopping-module/shopping-module.module').then(m => m.ShoppingModuleModule) },
+  { path: 'shopping', component: ShoppingComponent },
   // { path: 'mentor-details', component: MentorDetailsComponent },
 
   { path: 'client', component: ClientComponent },
@@ -66,7 +68,6 @@ const routes: Routes = [
 
   { path: "**", component: NotFoundComponent },
 
-  { path: 'shopping', component: ShoppingComponent }
 
   // , canActivate: [AuthGuard]
 ];

@@ -39,32 +39,32 @@ export class ShoppingComponent implements OnInit {
 
     this.shoppingItemsService.shoppingItems.subscribe(result => {
       this.itemsList = result;
-      // console.log(this.itemsList);
+      console.log(this.itemsList);
 
     });
 
     this.shoppingItemsService.shoppingItems.subscribe(result => {
       this.proteinItemsList = result.filter(p => p.Category == 'Protein');
-      // console.log('p');
-      // console.log(this.proteinItemsList);
+      console.log('p');
+      console.log(this.proteinItemsList);
     });
 
     this.shoppingItemsService.shoppingItems.subscribe(result => {
       this.vitaminItemsList = result.filter(v => v.Category == 'Vitamin');
-      // console.log('v');
-      // console.log(this.vitaminItemsList);
+      console.log('v');
+      console.log(this.vitaminItemsList);
     });
 
     this.shoppingItemsService.shoppingItems.subscribe(result => {
       this.fatLossItemsList = result.filter(fl => fl.Category == 'Fat Loss');
-      // console.log('fl');
-      // console.log(this.fatLossItemsList);
+      console.log('fl');
+      console.log(this.fatLossItemsList);
     });
 
     this.shoppingItemsService.shoppingItems.subscribe(result => {
       this.creatineItemsList = result.filter(c => c.Category == 'Creatine');
-      // console.log('c');
-      // console.log(this.creatineItemsList);
+      console.log('c');
+      console.log(this.creatineItemsList);
     });
 
   }

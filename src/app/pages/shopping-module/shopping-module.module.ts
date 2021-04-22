@@ -11,10 +11,12 @@ import { MatCardModule } from '@angular/material/card';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+// import { ShoppingRoutingModule } from './shopping-routing.module';
+
 
 @NgModule({
   declarations: [
-    ShoppingComponent
+    // ShoppingComponent
   ],
   imports: [
     CommonModule,
@@ -24,7 +26,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatTabsModule,
     MatCardModule,
     CarouselModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    // ShoppingRoutingModule
   ]
 })
 export class ShoppingModuleModule { }

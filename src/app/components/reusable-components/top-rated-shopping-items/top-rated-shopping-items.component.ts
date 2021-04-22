@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TopRatedService } from '../../shared/services/Apis/top-rated.service';
+import { TopShoppingItemsService } from '../../shared/services/Apis/top-shopping-items.service';
 
 @Component({
   selector: 'app-top-rated-shopping-items',
@@ -8,14 +8,14 @@ import { TopRatedService } from '../../shared/services/Apis/top-rated.service';
 })
 export class TopRatedShoppingItemsComponent implements OnInit {
 
-  topMentorsList: any = [];
+  topShoppingItemsList: any = [];
 
-  constructor(private topRatedService: TopRatedService) { }
+  constructor(private topShoppingItemsService: TopShoppingItemsService) { }
 
   ngOnInit(): void {
 
-    this.topRatedService.topRated.subscribe(result => {
-      this.topMentorsList = result;
+    this.topShoppingItemsService.topShoppingItems.subscribe(result => {
+      this.topShoppingItemsList = result;
       // console.log(result);
     })
 

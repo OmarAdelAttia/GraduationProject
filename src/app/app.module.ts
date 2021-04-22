@@ -59,6 +59,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 
+import { CarouselModule } from 'ngx-owl-carousel-o';
+
+
 
 @NgModule({
   declarations: [
@@ -96,6 +99,8 @@ import { MatIconModule } from '@angular/material/icon';
     MatInputModule,
     MatIconModule,
     // MatFormField,
+
+    CarouselModule,
 
     AngularFireModule.initializeApp(environment.firebaseConfig), // Required for everything
     AngularFirestoreModule, // Only required for database features

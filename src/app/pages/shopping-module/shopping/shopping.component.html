@@ -2,7 +2,7 @@
 
     <div class="container-fluid pb-5" style="width: 95%;">
 
-        <h2 class="pt-5 text-center">Doctors</h2>
+        <h2 class="pt-5 text-center">Supplements</h2>
 
         <ul class="list-inline text-center">
             <li class="list-inline-item"><button
@@ -10,17 +10,18 @@
                     class="btn btn-light">All</button></li>
             <li class="list-inline-item"><button
                     (click)="show.proteinItems = !show.proteinItems; show.allItems = false; show.vitaminItems = false; show.fatLossItems = false; show.creatineItems = false"
-                    class="btn btn-light">Protein</button></li>
+                    class="btn btn-light">Proteins</button></li>
             <li class="list-inline-item"><button
                     (click)="show.vitaminItems = !show.vitaminItems; show.allItems = false; show.proteinItems = false; show.fatLossItems = false; show.creatineItems = false"
-                    class="btn btn-light">Silver</button></li>
+                    class="btn btn-light">Vitamins</button></li>
             <li class="list-inline-item"><button
                     (click)="show.fatLossItems = !show.fatLossItems; show.allItems = false; show.proteinItems = false; show.vitaminItems = false; show.creatineItems = false"
-                    class="btn btn-light">Bronze</button></li>
+                    class="btn btn-light">Fat Loss</button></li>
             <li class="list-inline-item"><button
                     (click)="show.creatineItems = !show.creatineItems; show.allItems = false; show.proteinItems = false; show.vitaminItems = false; show.fatLossItems = false"
-                    class="btn btn-light">Bronze</button></li>
+                    class="btn btn-light">Creatine</button></li>
         </ul>
+
 
         <owl-carousel-o *ngIf="show.allItems" [options]="owlOptions" (initialized)="owlData($event)">
             <ng-container *ngFor="let item of itemsList">
@@ -75,4 +76,3 @@
     </div>
 
 </section>
-<!-- <ng-template carouselSlide [slideObject.id]="item.id" class="my-5"></ng-template> -->
