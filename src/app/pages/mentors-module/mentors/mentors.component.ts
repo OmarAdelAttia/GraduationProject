@@ -30,17 +30,17 @@ export class MentorsComponent implements OnInit {
   bronzeTrainersList: any = [];
 
   show = {
-    allDoctors : true,
-    goldDoctors : false,
-    silverDoctors : false,
-    bronzeDoctors : false
+    allDoctors: true,
+    goldDoctors: false,
+    silverDoctors: false,
+    bronzeDoctors: false
   }
 
   display = {
-    allTrainers : true,
-    goldTrainers : false,
-    silverTrainers : false,
-    bronzeTrainers : false
+    allTrainers: true,
+    goldTrainers: false,
+    silverTrainers: false,
+    bronzeTrainers: false
   }
 
 
@@ -50,26 +50,26 @@ export class MentorsComponent implements OnInit {
 
     this.doctorsService.doctors.subscribe(result => {
       this.doctorsList = result;
-      // console.log(this.doctorsList);
+      console.log(this.doctorsList);
 
     });
 
     this.doctorsService.doctors.subscribe(result => {
       this.goldDoctorsList = result.filter(g => g.Category == 'Gold');
-      // console.log('g');
-      // console.log(this.goldDoctorsList);
+      console.log('g');
+      console.log(this.goldDoctorsList);
     });
 
     this.doctorsService.doctors.subscribe(result => {
       this.silverDoctorsList = result.filter(s => s.Category == 'Silver');
-      // console.log('s');
-      // console.log(this.silverDoctorsList);
+      console.log('s');
+      console.log(this.silverDoctorsList);
     });
 
     this.doctorsService.doctors.subscribe(result => {
       this.bronzeDoctorsList = result.filter(b => b.Category == 'Bronze');
-      // console.log('b');
-      // console.log(this.bronzeDoctorsList);
+      console.log('b');
+      console.log(this.bronzeDoctorsList);
     });
 
     // TRAINERS
@@ -99,7 +99,7 @@ export class MentorsComponent implements OnInit {
 
 
   owlData(e: SlidesOutputData) {
-    console.log(e);
+    // console.log(e);
   }
 
   owlOptions: OwlOptions = {

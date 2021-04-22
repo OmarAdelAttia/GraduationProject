@@ -24,6 +24,7 @@ import { SignUpComponent } from './components/authentication/sign-up/sign-up.com
 
 import { ShoppingCartComponent } from './components/reusable-components/shopping-cart/shopping-cart.component';
 import { CheckoutComponent } from './components/shared/checkout/checkout.component';
+import { ShoppingComponent } from './pages/shopping-module/shopping/shopping.component';
 
 
 
@@ -64,6 +65,8 @@ const routes: Routes = [
   { path: 'checkout', component: CheckoutComponent },
 
   { path: "**", component: NotFoundComponent },
+
+  { path: 'shopping', component: ShoppingComponent }
 
   // , canActivate: [AuthGuard]
 ];

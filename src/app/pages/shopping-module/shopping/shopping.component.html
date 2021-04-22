@@ -1,1 +1,78 @@
-<p>shopping works!</p>
+<section class="py-5">
+
+    <div class="container-fluid pb-5" style="width: 95%;">
+
+        <h2 class="pt-5 text-center">Doctors</h2>
+
+        <ul class="list-inline text-center">
+            <li class="list-inline-item"><button
+                    (click)="show.allItems = !show.allItems; show.proteinItems = false; show.vitaminItems = false; show.fatLossItems = false; show.creatineItems = false"
+                    class="btn btn-light">All</button></li>
+            <li class="list-inline-item"><button
+                    (click)="show.proteinItems = !show.proteinItems; show.allItems = false; show.vitaminItems = false; show.fatLossItems = false; show.creatineItems = false"
+                    class="btn btn-light">Protein</button></li>
+            <li class="list-inline-item"><button
+                    (click)="show.vitaminItems = !show.vitaminItems; show.allItems = false; show.proteinItems = false; show.fatLossItems = false; show.creatineItems = false"
+                    class="btn btn-light">Silver</button></li>
+            <li class="list-inline-item"><button
+                    (click)="show.fatLossItems = !show.fatLossItems; show.allItems = false; show.proteinItems = false; show.vitaminItems = false; show.creatineItems = false"
+                    class="btn btn-light">Bronze</button></li>
+            <li class="list-inline-item"><button
+                    (click)="show.creatineItems = !show.creatineItems; show.allItems = false; show.proteinItems = false; show.vitaminItems = false; show.fatLossItems = false"
+                    class="btn btn-light">Bronze</button></li>
+        </ul>
+
+        <owl-carousel-o *ngIf="show.allItems" [options]="owlOptions" (initialized)="owlData($event)">
+            <ng-container *ngFor="let item of itemsList">
+                <ng-template carouselSlide>
+                    <div class="mb-4" style="width: 17rem;">
+                        <app-mentor-card [itemData]="item"></app-mentor-card>
+                    </div>
+                </ng-template>
+            </ng-container>
+        </owl-carousel-o>
+
+        <owl-carousel-o *ngIf="show.proteinItems" [options]="owlOptions" (initialized)="owlData($event)">
+            <ng-container *ngFor="let item of proteinItemsList" class="my-5">
+                <ng-template carouselSlide class="my-5">
+                    <div class="mb-4" style="width: 18rem;">
+                        <app-mentor-card [itemData]="item"></app-mentor-card>
+                    </div>
+                </ng-template>
+            </ng-container>
+        </owl-carousel-o>
+
+        <owl-carousel-o *ngIf="show.vitaminItems" [options]="owlOptions" (initialized)="owlData($event)">
+            <ng-container *ngFor="let item of vitaminItemsList" class="my-5">
+                <ng-template carouselSlide class="my-5">
+                    <div class="mb-4" style="width: 18rem;">
+                        <app-mentor-card [itemData]="item"></app-mentor-card>
+                    </div>
+                </ng-template>
+            </ng-container>
+        </owl-carousel-o>
+
+        <owl-carousel-o *ngIf="show.fatLossItems" [options]="owlOptions" (initialized)="owlData($event)">
+            <ng-container *ngFor="let item of fatLossItemsList" class="my-5">
+                <ng-template carouselSlide class="my-5">
+                    <div class="mb-4" style="width: 18rem;">
+                        <app-mentor-card [itemData]="item"></app-mentor-card>
+                    </div>
+                </ng-template>
+            </ng-container>
+        </owl-carousel-o>
+
+        <owl-carousel-o *ngIf="show.creatineItems" [options]="owlOptions" (initialized)="owlData($event)">
+            <ng-container *ngFor="let item of creatineItemsList" class="my-5">
+                <ng-template carouselSlide class="my-5">
+                    <div class="mb-4" style="width: 18rem;">
+                        <app-mentor-card [itemData]="item"></app-mentor-card>
+                    </div>
+                </ng-template>
+            </ng-container>
+        </owl-carousel-o>
+
+    </div>
+
+</section>
+<!-- <ng-template carouselSlide [slideObject.id]="item.id" class="my-5"></ng-template> -->

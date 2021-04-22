@@ -1,7 +1,7 @@
 <div class="card-flyer d-flex align-items-stretch">
     <div class="text-box">
         <div class="image-box">
-            <a [routerLink]="['/mentor-details' , itemData.id]">
+            <a>
                 <img [src]="itemData.Photo" alt="" />
                 <div class="middle">
                     <div class="text">{{itemData.Price}}</div>
@@ -9,8 +9,7 @@
             </a>
         </div>
         <div class="text-container">
-            <a [routerLink]="['/mentor-details' , itemData.id]" class="mentor-name-a" placement="bottom"
-                [(ngbTooltip)]="itemData.Name">
+            <a class="mentor-name-a" placement="bottom" [(ngbTooltip)]="itemData.Name">
                 {{itemData.Name}}
             </a>
             <ng-template #t let-fill="fill">
