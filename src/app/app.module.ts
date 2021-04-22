@@ -47,6 +47,10 @@ import { AchievementsComponent } from './components/reusable-components/achievem
 import { ShoppingCartComponent } from './components/reusable-components/shopping-cart/shopping-cart.component';
 import { CheckoutComponent } from './components/shared/checkout/checkout.component';
 import { HireButtonComponent } from './components/reusable-components/hire-button/hire-button.component';
+import { ItemCardComponent } from './components/reusable-components/cards/item-card/item-card.component';
+import { MentorCardComponent } from './components/reusable-components/cards/mentor-card/mentor-card.component';
+import { TopRatedShoppingItemsComponent } from './components/reusable-components/top-rated-shopping-items/top-rated-shopping-items.component';
+import { ShoppingComponent } from './pages/shopping-module/shopping/shopping.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 //Angular Material
@@ -56,8 +60,6 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
-import { ItemCardComponent } from './components/reusable-components/cards/item-card/item-card.component';
-import { MentorCardComponent } from './components/reusable-components/cards/mentor-card/mentor-card.component';
 
 
 @NgModule({
@@ -77,6 +79,8 @@ import { MentorCardComponent } from './components/reusable-components/cards/ment
     MentorCardComponent,
     ItemCardComponent,
     MentorCardComponent,
+    TopRatedShoppingItemsComponent,
+    ShoppingComponent,
   ],
   imports: [
     BrowserModule,
