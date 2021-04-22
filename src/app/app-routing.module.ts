@@ -10,6 +10,8 @@ import { NotFoundComponent } from './components/shared/not-found/not-found.compo
 
 import { MentorsComponent } from './pages/mentors-module/mentors/mentors.component';
 import { MentorDetailsComponent } from './pages/mentors-module/mentor-details/mentor-details.component';
+import { CoursesComponent } from './pages/courses-module/courses/courses.component';
+import { CourseDetailsComponent } from './pages/courses-module/course-details/course-details.component';
 
 import { ClientComponent } from './profiles/client-module/client/client.component';
 import { MentorComponent } from './profiles/mentor-module/mentor/mentor.component';
@@ -51,6 +53,8 @@ const routes: Routes = [
 
   { path: 'mentors', component: MentorsComponent },
   { path: 'mentor-details/:id', component: MentorDetailsComponent },
+  { path: 'courses', component: CoursesComponent },
+  { path: 'course-details/:id', component: CourseDetailsComponent },
   // { path: 'mentor-details', component: MentorDetailsComponent },
 
   { path: 'client', component: ClientComponent },

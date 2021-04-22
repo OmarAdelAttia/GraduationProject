@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 // Modules
 import { AuthModuleModule } from './components/authentication/auth-module.module';
 import { MentorsModuleModule } from './pages/mentors-module/mentors-module.module';
+import { CoursesModuleModule } from './pages/courses-module/courses-module.module';
 import { ClientModuleModule } from './profiles/client-module/client-module.module';
 import { MentorModuleModule } from './profiles/mentor-module/mentor-module.module';
 import { SharedModule } from './components/shared/shared.module';
@@ -79,6 +80,7 @@ import { MatIconModule } from '@angular/material/icon';
     ReactiveFormsModule,
     AuthModuleModule,
     MentorsModuleModule,
+    CoursesModuleModule,
     MentorModuleModule,
     ClientModuleModule,
     HttpClientModule,
