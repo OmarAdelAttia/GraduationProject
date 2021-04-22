@@ -4,15 +4,15 @@
             <h2 class="text-center">Our Top Mentors</h2>
             <div class="row">
                 <div *ngFor="let topMentor of topMentorsList" class="col-sm-6 col-md-3">
-                    <app-card [itemData]="topMentor"></app-card>
+                    <app-mentor-card [itemData]="topMentor"></app-mentor-card>
                 </div>
 
                 <!-- <div *ngFor="let xId of x;" class="col-xs-12 col-sm-6 col-md-3 col-md-3">
-                  <app-card [xId]="xId"></app-card>
+                  <app-mentor-card [xId]="xId"></app-mentor-card>
               </div> -->
             </div>
             <div class="seeMore-btn mt-5">
-                <a class="effect1"  [routerLink]="'/mentors'">
+                <a class="effect1" [routerLink]="'/mentors'">
                     Check All Mentors
                     <span class="bg"></span>
                 </a>

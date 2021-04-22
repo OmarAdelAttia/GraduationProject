@@ -56,6 +56,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
+import { ItemCardComponent } from './components/reusable-components/cards/item-card/item-card.component';
+import { MentorCardComponent } from './components/reusable-components/cards/mentor-card/mentor-card.component';
 
 
 @NgModule({
@@ -72,6 +74,9 @@ import { MatIconModule } from '@angular/material/icon';
     ShoppingCartComponent,
     CheckoutComponent,
     HireButtonComponent,
+    MentorCardComponent,
+    ItemCardComponent,
+    MentorCardComponent,
   ],
   imports: [
     BrowserModule,

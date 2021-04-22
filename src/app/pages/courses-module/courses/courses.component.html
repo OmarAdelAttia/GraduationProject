@@ -1,20 +1,30 @@
 <section class="py-5">
-  <div class="container-fluid pb-5"  style="width: 95%;">
+  <div class="container-fluid pb-5" style="width: 95%;">
     <h2 class="pt-5 text-center">Courses</h2>
 
     <ul class="list-inline text-center">
-      <li class="list-inline-item"><button (click)="show.allCourses = !show.allCourses; show.fitness = false; show.nutrition = false; show.lossWeight = false; show.yoga = false" class="btn btn-light">All</button></li>
-      <li class="list-inline-item"><button (click)="show.fitness = !show.fitness; show.allCourses = false; show.nutrition = false; show.lossWeight = false; show.yoga = false" class="btn btn-light">Fitness</button></li>
-      <li class="list-inline-item"><button (click)="show.nutrition = !show.nutrition; show.allCourses = false; show.fitness = false; show.lossWeight = false; show.yoga = false" class="btn btn-light">Nutrition</button></li>
-      <li class="list-inline-item"><button (click)="show.lossWeight = !show.lossWeight; show.allCourses = false; show.fitness = false; show.nutrition = false; show.yoga = false" class="btn btn-light">Loss Weight</button></li>
-      <li class="list-inline-item"><button (click)="show.yoga = !show.yoga; show.allCourses = false; show.fitness = false; show.nutrition = false; show.lossWeight = false" class="btn btn-light">Yoga</button></li>
+      <li class="list-inline-item"><button
+          (click)="show.allCourses = !show.allCourses; show.fitness = false; show.nutrition = false; show.lossWeight = false; show.yoga = false"
+          class="btn btn-light">All</button></li>
+      <li class="list-inline-item"><button
+          (click)="show.fitness = !show.fitness; show.allCourses = false; show.nutrition = false; show.lossWeight = false; show.yoga = false"
+          class="btn btn-light">Fitness</button></li>
+      <li class="list-inline-item"><button
+          (click)="show.nutrition = !show.nutrition; show.allCourses = false; show.fitness = false; show.lossWeight = false; show.yoga = false"
+          class="btn btn-light">Nutrition</button></li>
+      <li class="list-inline-item"><button
+          (click)="show.lossWeight = !show.lossWeight; show.allCourses = false; show.fitness = false; show.nutrition = false; show.yoga = false"
+          class="btn btn-light">Loss Weight</button></li>
+      <li class="list-inline-item"><button
+          (click)="show.yoga = !show.yoga; show.allCourses = false; show.fitness = false; show.nutrition = false; show.lossWeight = false"
+          class="btn btn-light">Yoga</button></li>
     </ul>
 
     <owl-carousel-o *ngIf="show.allCourses" [options]="owlOptions" (initialized)="owlData($event)">
       <ng-container *ngFor="let course of coursesList">
         <ng-template carouselSlide>
-          <div class="mb-4"  style="width: 17rem;">
-            <app-card [itemData]="course"></app-card>
+          <div class="mb-4" style="width: 17rem;">
+            <app-item-card [itemData]="course"></app-item-card>
           </div>
         </ng-template>
       </ng-container>
@@ -23,8 +33,8 @@
     <owl-carousel-o *ngIf="show.fitness" [options]="owlOptions" (initialized)="owlData($event)">
       <ng-container *ngFor="let course of fitnessList">
         <ng-template carouselSlide>
-          <div class="mb-4"  style="width: 17rem;">
-            <app-card [itemData]="course"></app-card>
+          <div class="mb-4" style="width: 17rem;">
+            <app-item-card [itemData]="course"></app-item-card>
           </div>
         </ng-template>
       </ng-container>
@@ -33,8 +43,8 @@
     <owl-carousel-o *ngIf="show.nutrition" [options]="owlOptions" (initialized)="owlData($event)">
       <ng-container *ngFor="let course of nutritionList">
         <ng-template carouselSlide>
-          <div class="mb-4"  style="width: 17rem;">
-            <app-card [itemData]="course"></app-card>
+          <div class="mb-4" style="width: 17rem;">
+            <app-item-card [itemData]="course"></app-item-card>
           </div>
         </ng-template>
       </ng-container>
@@ -43,8 +53,8 @@
     <owl-carousel-o *ngIf="show.lossWeight" [options]="owlOptions" (initialized)="owlData($event)">
       <ng-container *ngFor="let course of lossWeightList">
         <ng-template carouselSlide>
-          <div class="mb-4"  style="width: 17rem;">
-            <app-card [itemData]="course"></app-card>
+          <div class="mb-4" style="width: 17rem;">
+            <app-item-card [itemData]="course"></app-item-card>
           </div>
         </ng-template>
       </ng-container>
@@ -53,8 +63,8 @@
     <owl-carousel-o *ngIf="show.yoga" [options]="owlOptions" (initialized)="owlData($event)">
       <ng-container *ngFor="let course of yogaList">
         <ng-template carouselSlide>
-          <div class="mb-4"  style="width: 17rem;">
-            <app-card [itemData]="course"></app-card>
+          <div class="mb-4" style="width: 17rem;">
+            <app-item-card [itemData]="course"></app-item-card>
           </div>
         </ng-template>
       </ng-container>
