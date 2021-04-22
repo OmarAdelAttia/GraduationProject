@@ -51,9 +51,11 @@
       </ul>
 
       <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2 rounded-pill border-0" placeholder="Search" aria-label="Search">
+        <input name="searching" class="form-control mr-sm-2 rounded-pill border-0" type="text" (keyup)="search()"
+          [(ngModel)]="searchValue" placeholder="Search" aria-label="Search">
         <button class="btn my-2 my-sm-0 border-0 search-btn" type="submit"><i class="fas fa-search"></i></button>
       </form>
+
 
       <ul class="navbar-nav">
         <li class="nav-item">
@@ -81,3 +83,11 @@
     </div>
   </div>
 </nav>
+
+<!-- <ul class="my-5">
+  <li class="my-5">
+    blablabla
+  </li>
+  <li *ngFor="let doctor of results | async">{{doctor.Name}}</li>
+
+</ul> -->

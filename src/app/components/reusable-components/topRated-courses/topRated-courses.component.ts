@@ -19,7 +19,7 @@ export class topRatedCoursesComponent implements OnInit {
 
       this.topRatedList = result;
 
-      console.log(result);
+      // console.log(result);
 
     })
 

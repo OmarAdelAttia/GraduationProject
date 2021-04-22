@@ -17,7 +17,7 @@ export class topRatedMentorsComponent implements OnInit {
 
     this.topRatedService.topRated.subscribe(result => {
       this.topMentorsList = result;
-      console.log(result);
+      // console.log(result);
     })
 
   }

@@ -7,7 +7,7 @@ import { SharedModule } from '../../components/shared/shared.module';
 import { OwlModule } from 'ngx-owl-carousel';
 
 import { MatTabsModule } from '@angular/material/tabs';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
