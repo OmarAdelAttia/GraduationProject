@@ -1,69 +1,17 @@
-<!-- <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
-    {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
-</button> -->
+
 <section class="container my-4 py-4">
-  <h2 class="text-center text-muted pt-5">Fill out your physical info</h2>
+  <h2 class="text-center text-muted pt-5"></h2>
   <div class="row">
     <div class="my-4 col-md-6 col-12">
-      <mat-vertical-stepper [linear]=" isLinear" #stepper>
-        <mat-step [stepControl]="firstFormGroup">
-          <form [formGroup]="firstFormGroup">
-            <ng-template matStepLabel>Enter your height</ng-template>
-            <mat-form-field>
-              <mat-label>Height</mat-label>
-              <input matInput placeholder="cm" formControlName="firstCtrl" required />
-            </mat-form-field>
-            <div>
-              <button mat-button matStepperNext>Next</button>
-            </div>
-          </form>
-        </mat-step>
-        <mat-step [stepControl]="secondFormGroup" label="Enter your weight">
-          <form [formGroup]="secondFormGroup">
-            <mat-form-field>
-              <mat-label>weight</mat-label>
-              <input matInput formControlName="secondCtrl" placeholder="kg" required>
-            </mat-form-field>
-            <div>
-              <button mat-button matStepperPrevious>Back</button>
-              <button mat-button matStepperNext>Next</button>
-            </div>
-          </form>
-        </mat-step>
-        <mat-step [stepControl]="thirdFormGroup" label="Enter your gender">
-          <form [formGroup]="thirdFormGroup">
-            <mat-form-field>
-              <mat-label>Gender</mat-label>
-              <input matInput formControlName="thirdCtrl" required>
-            </mat-form-field>
-            <div>
-              <button mat-button matStepperPrevious>Back</button>
-              <button mat-button matStepperNext>Next</button>
-            </div>
-          </form>
-        </mat-step>
-        <mat-step [stepControl]="forthFormGroup" label="Enter your age">
-          <form [formGroup]="forthFormGroup">
-            <mat-form-field>
-              <mat-label>age</mat-label>
-              <input matInput formControlName="forthCtrl" required>
-            </mat-form-field>
-            <div>
-              <button mat-button matStepperPrevious>Back</button>
-              <button mat-button matStepperNext>Next</button>
-            </div>
-          </form>
-        </mat-step>
-        <mat-step>
-          <ng-template matStepLabel>Done</ng-template>
-          <p>please finish your payment details</p>
-          <div>
-            <!-- <button mat-button matStepperPrevious>Back</button> -->
-            <!-- <button mat-button (click)="stepper.reset()">Reset</button> -->
-            <!-- <button class="btn btn-primary">Choose your payment method</button> -->
-          </div>
-        </mat-step>
-      </mat-vertical-stepper>
+      <div class="media">
+        <img [src]="mentor.Photo" class="align-self-center mr-3 img-fluid" alt="...">
+        <div class="media-body">
+          <h3>{{mentor.Name}}</h3>
+          <h5 class="mt-0">Center-aligned media</h5>
+          <p>She'll turn cold as a freezer. At the eh-end of it all. Stinging like a bee I earned my stripes. Bikinis, zucchinis, Martinis, no weenies. I hope you got a healthy appetite. We can dance, until we die, you and I, will be young forever. We're living the life. We're doing it right. Word on the street, you got somethin' to show me, me.</p>
+          <p class="mb-0">Wanna see the show in 3D, a movie. They say, be afraid you're not like the others, futuristic lover. Open up your heart. So I sat quietly, agreed politely. Last Friday night. Yeah, you're lucky if you're on her plane. I'll be your gift, give you something good to celebrate.</p>
+        </div>
+      </div>
     </div>
     <div class="container my-5 d-flex justify-content-center align-items-center  col-md-6 col-12">
       <div class="row">
