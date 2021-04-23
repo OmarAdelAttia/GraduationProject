@@ -44,7 +44,6 @@ export class NavbarComponent implements OnInit {
 
 
 
-<<<<<<< HEAD
   dataList: any = [];
   filteredDataList: any = [];
 
@@ -66,17 +65,11 @@ export class NavbarComponent implements OnInit {
     this.coursesService.courses.subscribe(courses => this.categories.courses = courses);
 
   }
-=======
-items;
-  constructor(public authService: AuthService,
-     public router: Router, public angularFirestore: AngularFirestore,
-     private store: Store<{cart}>) {
-    this.isCollapsed = true;
-  }
-  ngOnInit(): void {
-    this.items = this.store.select('cart');
-       }
->>>>>>> af766b404afe7fa555cebd112b42ab3d2e3f8ed9
+  items;
+
+  // ngOnInit(): void {
+  //   this.items = this.store.select('cart');
+  //      }
 
   //search bar
   search() {
