@@ -2,7 +2,7 @@
     <div class="text-box">
         <div class="image-box">
             <a [routerLink]="['/mentor-details' , itemData.id]">
-                <img [src]="itemData.Photo" alt="" />
+                <img [src]="itemData.Photo" class="img-fluid" alt="" />
                 <div class="middle">
                     <div class="text">{{itemData.Price}}</div>
                 </div>
@@ -26,8 +26,8 @@
 
             <p class="font-weight-bold cat">Category: <span class="font-weight-normal">{{itemData.Category}}</span>
             </p>
-            <!-- <p class="font-weight-bold">Specialty: <span class="font-weight-normal">{{itemData.Specialized}}</span>
-            </p> -->
+            <p class="font-weight-bold">Specialty: <span class="font-weight-normal">{{itemData.Specialized}}</span>
+            </p>
 
             <div class="row mt-4 d-flex justify-content-center">
                 <a class="main-btn-a" id="future" (click)="toCheckout()">

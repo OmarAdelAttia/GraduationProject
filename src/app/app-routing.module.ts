@@ -54,6 +54,9 @@ const routes: Routes = [
 
   { path: 'mentors', component: MentorsComponent },
   { path: 'mentor-details/:id', component: MentorDetailsComponent },
+  { path: 'checkout/:id', component: CheckoutComponent },
+
+
   { path: 'courses', component: CoursesComponent },
   { path: 'course-details/:id', component: CourseDetailsComponent },
   // { path: 'shopping', loadChildren: () => import('./pages/shopping-module/shopping-module.module').then(m => m.ShoppingModuleModule) },
@@ -64,7 +67,6 @@ const routes: Routes = [
   { path: 'mentor', component: MentorComponent },
 
   { path: 'shopping-cart', component: ShoppingCartComponent },
-  { path: 'checkout', component: CheckoutComponent },
 
   { path: "**", component: NotFoundComponent },
 

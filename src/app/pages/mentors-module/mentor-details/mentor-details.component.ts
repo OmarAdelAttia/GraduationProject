@@ -21,12 +21,13 @@ import { NgbRatingConfig } from '@ng-bootstrap/ng-bootstrap';
 export class MentorDetailsComponent implements OnInit {
 
   activeId;
+  mentor;
   // doctorsList: any = [];
   // doctorDoc: any;
   // doctor: any;
   // doctors: Observable<any[]>;
 
-  mentor;
+
 
 
   constructor(

@@ -60,6 +60,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { CategoriesModalComponent } from './components/reusable-components/categories-modal/categories-modal.component';
 
 
 
@@ -79,6 +80,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     HireButtonComponent,
     TopRatedShoppingItemsComponent,
     ShoppingComponent,
+    CategoriesModalComponent,
   ],
   imports: [
     BrowserModule,

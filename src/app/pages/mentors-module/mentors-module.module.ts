@@ -8,6 +8,8 @@ import { OwlModule } from 'ngx-owl-carousel';
 
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatCardModule } from '@angular/material/card';
+import {MatSidenavModule} from '@angular/material/sidenav';
+
 
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -25,7 +27,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CarouselModule,
     BrowserAnimationsModule,
     MatTabsModule,
-    MatCardModule
+    MatCardModule,
+    MatSidenavModule
   ]
 })
 export class MentorsModuleModule { }

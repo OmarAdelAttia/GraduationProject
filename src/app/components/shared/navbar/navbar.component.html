@@ -101,6 +101,9 @@
         </div>
       </a>
 
+      <a class="text-white" *ngIf="authService.isLoggedIn"><i class="fas fa-shopping-cart" [routerLink]="'/shopping-cart'">{{ (items | async).cartItems.length }}</i></a>
+      <!-- <a  *ngIf="authService.isLoggedIn"><i class="fas fa-comments"></i></a> -->
+
     </div>
   </div>
 </nav>

@@ -1,1 +1,135 @@
-<p>shopping-cart works!</p>
+<section>
+  <div class="container pt-5">
+    <div class="row">
+      <div class="col-md-6 col-12">
+        <div *ngFor="let item of items.cartItems" class="card mb-3" style="max-width: 540px;">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <img [src]="item.Photo" class="img-fluid" alt="" />
+            </div>
+            <div class="col-md-7">
+              <div class="card-body">
+                <h5 class="card-title mentor-name-a">{{ item.Name}}</h5>
+                <p class="card-text">{{item.Price}}</p>
+                <p class="font-weight-bold cat">Category: <span class="font-weight-normal">{{item.Category}}</span>
+                </p>
+
+              </div>
+            </div>
+            <div class="col-md-1">
+              <h5 class="card-title text-danger pt-5" (click)="removeFromShoppingCart(item)"><i class="fas fa-minus-circle"></i></h5>
+            </div>
+          </div>
+        </div>
+        <p>{{ (u | async).cartItems.length }}</p>
+      </div>
+
+      <div class="col-md-6 col-12">
+        <article class="card mb-3">
+
+          <div class="card-header text-center bg-white">
+            <div class="card-logos ">
+              <img src="https://designmodo.com/demo/checkout-panel/img/visa_logo.png" />
+              <img src="https://designmodo.com/demo/checkout-panel/img/mastercard_logo.png" />
+            </div>
+          </div>
+          <div class="card-body ">
+            <form #checkOutForm="ngForm" (ngSubmit)="userCheckOutForm(checkOutForm.value)">
+              <div class="form-group">
+                <label for="username">Full name (on the card)</label>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fa fa-user"></i></span>
+                  </div>
+                  <input type="text" class="form-control" name="username" id="username" required ngModel
+                    #username="ngModel" />
+                </div>
+              </div>
+              <div *ngIf="username.errors && username.submitted" class="alert alert-danger">
+                <div *ngIf="username.errors.required">This Field Is Required</div>
+              </div>
+              <div class="form-group">
+                <label for="cardNumber">Card number</label>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fa fa-credit-card"></i></span>
+                  </div>
+                  <input type="text" class="form-control" name="cardNumber" id="cardNumber" required minlength="4"
+                    ngModel #cardNumber="ngModel" />
+                </div>
+              </div>
+              <div *ngIf="cardNumber.errors && cardNumber.submitted" class="alert alert-danger">
+                <div *ngIf="cardNumber.errors.required">This Field Is Required</div>
+                <div *ngIf="cardNumber.errors.minlength">This Field Is 8</div>
+              </div>
+              <div class="row">
+                <div class="col-sm-8">
+                  <div class="form-group">
+                    <label><span class="hidden-xs">Expiration Date</span> </label>
+                    <div class="form-inline">
+                      <select class="form-control" style="width:45%">
+                        <option value="01">January</option>
+                        <option value="02">February </option>
+                        <option value="03">March</option>
+                        <option value="04">April</option>
+                        <option value="05">May</option>
+                        <option value="06">June</option>
+                        <option value="07">July</option>
+                        <option value="08">August</option>
+                        <option value="09">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
+                      </select>
+                      <span style="width:10%; text-align: center"> / </span>
+                      <select class="form-control" style="width:45%">
+                        <option value="16"> 2022</option>
+                        <option value="17"> 2023</option>
+                        <option value="18"> 2024</option>
+                        <option value="19"> 2025</option>
+                        <option value="20"> 2026</option>
+                        <option value="21"> 2027</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="form-group">
+                    <label data-toggle="tooltip" title=""
+                      data-original-title="3 digits code on back side of the card">CVV
+                      <i class="fa fa-question-circle"></i></label>
+                    <input class="form-control" required="" type="text">
+                  </div>
+                </div>
+              </div>
+              <button class="subscribe mt-2 btn  btn-custom text-white  btn-block" type="submit"
+              [routerLink]="'/client'"> Confirm </button>
+
+              <!-- <button class="subscribe mt-2 btn  btn-custom text-white  btn-block" type="submit"
+                (click)="openVerticallyCentered(content)"> Confirm </button>
+              <ng-template #content let-modal>
+                <div class="modal-header">
+                  <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <P>You have successfully contracted with your mentor,
+                    please go to your profile to start your conversation
+                  </P>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-light" [routerLink]="'/client'"
+                    (click)="modal.close('Close click')">OK</button>
+                </div>
+              </ng-template> -->
+            </form>
+          </div>
+        </article>
+      </div>
+    </div>
+
+
+
+  </div>
+</section>

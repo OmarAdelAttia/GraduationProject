@@ -14,6 +14,7 @@ export function shopping_cart_reducer(state = INITIAL_STATE, action) {
     };
 
     case 'REMOVE_FROM_CART':
+      console.log(action.payload);
     return {
       cartItems: action.payload,
     };

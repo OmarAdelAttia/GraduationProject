@@ -25,13 +25,13 @@ export class MentorCardComponent implements OnInit {
     // console.log(this.itemData);
 
   }
-
+  // [routerLink]="['/mentor-details' , itemData.id]"
   toCheckout() {
     if (!this.authService.isLoggedIn) {
       this.router.navigate(['sign-in']);
       return false;
     } else {
-      this.router.navigate(['./checkout'])
+      this.router.navigate(['./checkout', this.itemData.id])
       return true;
     }
 
