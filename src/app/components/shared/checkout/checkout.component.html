@@ -2,7 +2,7 @@
     {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
 </button> -->
 <section class="container my-4 py-4">
-  <h2 class="text-center pt-5">Fill out your physical info</h2>
+  <h2 class="text-center text-muted pt-5">Fill out your physical info</h2>
   <div class="row">
     <div class="my-4 col-md-6 col-12">
       <mat-vertical-stepper [linear]=" isLinear" #stepper>
@@ -144,7 +144,7 @@
                   </div>
                 </div>
               </div>
-              <button class="subscribe mt-2 btn btn-primary btn-block" type="submit"
+              <button class="subscribe mt-2 btn  btn-custom text-white  btn-block" type="submit"
                 (click)="openVerticallyCentered(content)"> Confirm </button>
               <ng-template #content let-modal>
                 <div class="modal-header">

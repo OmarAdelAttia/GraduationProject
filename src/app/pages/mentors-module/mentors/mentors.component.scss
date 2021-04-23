@@ -133,10 +133,37 @@ body {
 a {
   text-decoration: none;
 }
-
+h2 {
+  text-shadow: 2px 8px 6px rgb(0 0 0 / 20%), 0px -5px 35px rgb(255 255 255 / 30%)
+}
+ul {
+  margin-bottom: -1rem;
+}
 h3 {
   font-family: $open-sans;
   font-weight: 300;
+}
+.owl-carousel .nav-button {
+  height: 47px;
+  position: absolute;
+  background-color: brown ;
+  width: 26px;
+  cursor: pointer;
+  top: 100px !important;
+}
+ .owl-prev{
+  // background: url(nav-icon.png) no-repeat scroll 0 0;
+  left: -33px;
+}
+owl-carousel-o .owl-next{
+  // background: url(nav-icon.png) no-repeat scroll -24px 0px;
+  right: -33px;
+}
+owl-carousel-o .owl-prev:hover{
+ background-position: 0px -53px;
+}
+owl-carousel-o .owl-next:hover{
+background-position: -24px -53px;
 }
 
 .row {

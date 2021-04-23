@@ -2,24 +2,24 @@
 
   <div class="container-fluid pb-5" style="width: 95%;">
 
-    <h2 class="pt-5 text-center">Doctors</h2>
+    <h2 class="text-center text-muted">Doctors</h2>
 
     <ul class="list-inline text-center">
       <li class="list-inline-item"><button
           (click)="show.allDoctors = !show.allDoctors; show.goldDoctors = false; show.silverDoctors = false; show.bronzeDoctors = false"
-          class="btn btn-light">All</button></li>
+          class="btn btn-info">All</button></li>
       <li class="list-inline-item"><button
           (click)="show.goldDoctors = !show.goldDoctors; show.allDoctors = false; show.silverDoctors = false; show.bronzeDoctors = false"
-          class="btn btn-light">Gold</button></li>
+          class="btn btn-info">Gold</button></li>
       <li class="list-inline-item"><button
           (click)="show.silverDoctors = !show.silverDoctors; show.allDoctors = false; show.goldDoctors = false; show.bronzeDoctors = false"
-          class="btn btn-light">Silver</button></li>
+          class="btn btn-info">Silver</button></li>
       <li class="list-inline-item"><button
           (click)="show.bronzeDoctors = !show.bronzeDoctors; show.allDoctors = false; show.goldDoctors = false; show.silverDoctors = false"
-          class="btn btn-light">Bronze</button></li>
+          class="btn btn-info">Bronze</button></li>
     </ul>
 
-    <owl-carousel-o *ngIf="show.allDoctors" [options]="owlOptions" (initialized)="owlData($event)">
+    <owl-carousel-o  *ngIf="show.allDoctors" [options]="owlOptions" (initialized)="owlData($event)">
       <ng-container *ngFor="let doctor of doctorsList">
         <ng-template carouselSlide>
           <div class="mb-4" style="width: 17rem;">
@@ -63,21 +63,21 @@
 
   <div class="container-fluid pb-5" style=" width: 95%;">
 
-    <h2 class="pt-5 text-center">Trainers</h2>
+    <h2 class="pt-5 text-center text-muted">Trainers</h2>
 
     <ul class="list-inline text-center">
       <li class="list-inline-item"><button
           (click)="display.allTrainers = !display.allTrainers; display.goldTrainers = false; display.silverTrainers = false; display.bronzeTrainers = false"
-          class="btn btn-light">All</button></li>
+          class="btn btn-info">All</button></li>
       <li class="list-inline-item"><button
           (click)="display.goldTrainers = !display.goldTrainers; display.allTrainers = false; display.silverTrainers = false; display.bronzeTrainers = false"
-          class="btn btn-light">Gold</button></li>
+          class="btn btn-info">Gold</button></li>
       <li class="list-inline-item"><button
           (click)="display.silverTrainers = !display.silverTrainers; display.allTrainers = false; display.goldTrainers = false; display.bronzeTrainers = false"
-          class="btn btn-light">Silver</button></li>
+          class="btn btn-info">Silver</button></li>
       <li class="list-inline-item"><button
           (click)="display.bronzeTrainers = !display.bronzeTrainers; display.allTrainers = false; display.goldTrainers = false; display.silverTrainers = false"
-          class="btn btn-light">Bronze</button></li>
+          class="btn btn-info">Bronze</button></li>
     </ul>
 
     <owl-carousel-o *ngIf="display.allTrainers" [options]="owlOptions" (initialized)="owlData($event)">
