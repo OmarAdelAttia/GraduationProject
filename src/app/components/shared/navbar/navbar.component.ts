@@ -2,6 +2,11 @@ import { Component, HostListener, OnInit } from "@angular/core";
 //import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AuthService } from '../services/auth/auth.service';
 import { Router } from '@angular/router';
+import { DoctorsService } from '../services/Apis/doctors.service';
+import { TrainersService } from '../services/Apis/trainers.service';
+import { ShoppingItemsService } from '../services/Apis/shopping-items.service';
+import { CoursesService } from '../services/Apis/courses.service';
+
 
 //search bar 
 import { AngularFirestore } from '@angular/fire/firestore';
@@ -19,22 +24,56 @@ export class NavbarComponent implements OnInit {
 
   //search bar
   searchValue: string = "";
-  results: any;
+  // category: string = "doctors";
+  category: string = "keyword";
+
+  categories = {
+    doctors: [],
+    trainers: [],
+    courses: [],
+    supplements: [],
+  }
+
+  routeMaping = {
+    doctors: 'mentor-details',
+    trainers: 'mentor-details',
+    courses: 'course-details',
+  }
 
 
-  constructor(public authService: AuthService, public router: Router, public angularFirestore: AngularFirestore) {
+
+  dataList: any = [];
+  filteredDataList: any = [];
+
+  constructor(
+    public authService: AuthService,
+    public router: Router,
+    public angularFirestore: AngularFirestore,
+    private doctorsService: DoctorsService,
+    private trainersService: TrainersService,
+    private coursesService: CoursesService,
+    private shoppingItemsService: ShoppingItemsService) {
     this.isCollapsed = true;
   }
-  ngOnInit(): void { }
+  ngOnInit(): void {
+
+    this.doctorsService.doctors.subscribe(doctors => this.categories.doctors = doctors);
+    this.trainersService.trainers.subscribe(trainers => this.categories.trainers = trainers);
+    this.shoppingItemsService.shoppingItems.subscribe(supplements => this.categories.supplements = supplements);
+    this.coursesService.courses.subscribe(courses => this.categories.courses = courses);
+
+  }
 
   //search bar
   search() {
-    // console.log(this.searchValue);
-    this.results = this.angularFirestore
-      .collection(`Doctors`, ref => ref
-        .where('Name', '>=', this.searchValue)
-        .where('Name', '<=', this.searchValue))
-      .valueChanges();
+    const searchedItem = this.categories[this.category].find((item) => item.Name.toLowerCase().includes(this.searchValue.toLocaleLowerCase()))
+
+    if (!searchedItem) return alert('What you are looing for is  not found');
+
+    const { id } = searchedItem;
+
+    const redirectTo = `${this.routeMaping[this.category]}/${id}`;
+    this.router.navigate([redirectTo])
   }
 
 

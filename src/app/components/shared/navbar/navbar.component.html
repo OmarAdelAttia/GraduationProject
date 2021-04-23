@@ -40,7 +40,7 @@
             <a ngbDropdownItem href="#" (click)="$event.preventDefault()">German</a>
           </div>
         </li>
-
+        <!-- 
         <li class="nav-item" ngbDropdown>
           <a class="nav-link" tabindex="0" ngbDropdownToggle id="navbarDropdown1" role="button">
             Searching about
@@ -50,15 +50,33 @@
             <a ngbDropdownItem href="#" (click)="$event.preventDefault()">Doctor</a>
             <a ngbDropdownItem href="#" (click)="$event.preventDefault()">Trainer</a>
           </div>
-        </li>
+        </li> -->
 
       </ul>
 
-      <form class="form-inline my-2 my-lg-0">
-        <input name="searching" class="form-control mr-sm-2 rounded-pill border-0" type="text" (keyup)="search()"
-          [(ngModel)]="searchValue" placeholder="Search" aria-label="Search">
+      <form class="form-inline my-2 my-lg-0" (ngSubmit)="search()">
+        <input name="searching" class="form-control mr-sm-2 rounded-pill border-0" type="text" [(ngModel)]="searchValue"
+          placeholder="Search" aria-label="Search">
         <button class="btn my-2 my-sm-0 border-0 search-btn" type="submit"><i class="fas fa-search"></i></button>
+        <div class="form-group">
+          <select class="form-control" id="exampleFormControlSelect1" name="category" [(ngModel)]="category">
+            <option value="keyword">keyword</option>
+            <option value="doctors">Doctors</option>
+            <option value="trainers">Trainers</option>
+            <option value="courses">Courses</option>
+            <!-- <option value="supplements">Supplements</option> -->
+          </select>
+        </div>
       </form>
+
+      <!-- <a class="nav-link mt-3" *ngIf="authService.isLoggedIn">
+        <div class="form-group mr-3">
+          <select class="form-control" type="button">
+            <option value="user" (click)="navigateToProfile()">USER</option>
+            <option value="logout" (click)="authService.SignOut()">Log Out</option>
+          </select>
+        </div>
+      </a> -->
 
 
       <ul class="navbar-nav">
@@ -72,12 +90,11 @@
 
       <a class="nav-link" *ngIf="authService.isLoggedIn">
         <div class="btn-group mr-3">
-          <button type="button" (click)="navigateToProfile()" class="btn btn-primary">USER</button>
+          <button type="button" (click)="navigateToProfile()" class="btn">USER</button>
           <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
             <button class="btn btn-primary dropdown-toggle-split" ngbDropdownToggle></button>
             <div class="dropdown-menu" ngbDropdownMenu>
-              <button ngbDropdownItem>One</button>
-              <button ngbDropdownItem>Two</button>
+              <button ngbDropdownItem>profile</button>
               <button ngbDropdownItem (click)="authService.SignOut()">Log Out</button>
             </div>
           </div>

@@ -1,38 +1,63 @@
-@import '../../../../styles.scss';
+@import "../../../../styles.scss";
 
 .nav-link {
   color: #ffffff !important;
 }
 
-nav{
+nav {
   transition: 0.5s;
 
-  form{
-    input{
+  form {
+    select {
+      background-color: #99a8b2;
+      color: #fff;
+      border-color: #99a8b2;
+    }
+    input {
       background-color: rgba(255, 255, 255, 0.664);
 
-      &:focus{
+      &:focus {
         background-color: #fff;
       }
 
-      &:focus .search-btn{
+      &:focus .search-btn {
         color: $light;
       }
     }
 
-    .search-btn{
+    .search-btn {
       color: $dark;
       position: relative;
       right: 48px;
-    
-      &:hover{
+
+      &:hover {
         background-color: transparent;
+      }
+    }
+  }
+  a {
+    div {
+      button {
+        background-color: #99a8b2;
+        color: #fff;
+        border-color: #99a8b2;
+      }
+      div {
+        button {
+          background-color: #99a8b2;
+          color: #fff;
+          border-color: #99a8b2;
+        }
+        div {
+          background-color: #99a8b2;
+          color: #fff;
+          border-color: #99a8b2;
+        }
       }
     }
   }
 }
 
-.fixed{
+.fixed {
   background-color: $darkest;
 }
-
