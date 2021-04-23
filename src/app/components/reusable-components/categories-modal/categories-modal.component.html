@@ -1,0 +1,33 @@
+<ng-template #longContent let-modal>
+    <div class="modal-header">
+        <h2 class="modal-title"><b>Best Way To Choose Your Mentor</b></h2>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <p class="text-center mb-4">We have 3 catergories for you to choose from, each category is designed for a
+            specific need. That's to help you know which mentor to choose and which package you need.</p>
+        <div class="my-3">
+            <h3><b>Bronze Category:</b></h3>
+            <p>If your goal is to just lead a healthy life if you need a mentor to guide you throw your day-to-day
+                dietary decisions or your workout routines. This should be very useful if you want to keep your diet in
+                check and keep healthy or if you have a chronic disease and want to manage it with a healthy diet.</p>
+        </div>
+        <div class="my-3">
+            <h3><b>Silver Category:</b></h3>
+            <p>If your goal is to get in shape and you need a mentor to help you through this journey. This should be
+                useful if you want to gain or lose weight and want some professional guidance.</p>
+        </div>
+        <div class="my-3">
+            <h3><b>Gold Category:</b></h3>
+            <p>If you're an athlete and you have very specific dietary and fitness needs, you will find doctors and
+                trainers from the gold category are your best choice to have your day-to-day professional guidance.</p>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    </div>
+</ng-template>
+
+<a class="text-center" (click)="openScrollableContent(longContent)">Know How To Choose Your Mentor</a>
