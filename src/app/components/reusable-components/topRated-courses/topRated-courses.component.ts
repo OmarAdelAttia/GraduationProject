@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { TopCoursesService } from '../../shared/services/Apis/top-courses.service'
 
+
+
 @Component({
   selector: 'app-topRated-courses',
   templateUrl: './topRated-courses.component.html',
@@ -11,7 +13,8 @@ export class topRatedCoursesComponent implements OnInit {
 
   topRatedList: any = [];
 
-  constructor(private topCoursesService: TopCoursesService) { }
+  constructor(private topCoursesService: TopCoursesService,
+    ) { }
 
   ngOnInit(): void {
 
@@ -22,6 +25,8 @@ export class topRatedCoursesComponent implements OnInit {
       // console.log(result);
 
     })
+
+
 
   }
 

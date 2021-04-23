@@ -5,19 +5,19 @@
     <ul class="list-inline text-center">
       <li class="list-inline-item"><button
           (click)="show.allCourses = !show.allCourses; show.fitness = false; show.nutrition = false; show.lossWeight = false; show.yoga = false"
-          class="btn btn-light">All</button></li>
+          class="btn btn-info">All</button></li>
       <li class="list-inline-item"><button
           (click)="show.fitness = !show.fitness; show.allCourses = false; show.nutrition = false; show.lossWeight = false; show.yoga = false"
-          class="btn btn-light">Fitness</button></li>
+          class="btn btn-info">Fitness</button></li>
       <li class="list-inline-item"><button
           (click)="show.nutrition = !show.nutrition; show.allCourses = false; show.fitness = false; show.lossWeight = false; show.yoga = false"
-          class="btn btn-light">Nutrition</button></li>
+          class="btn btn-info">Nutrition</button></li>
       <li class="list-inline-item"><button
           (click)="show.lossWeight = !show.lossWeight; show.allCourses = false; show.fitness = false; show.nutrition = false; show.yoga = false"
-          class="btn btn-light">Lose Weight</button></li>
+          class="btn btn-info">Lose Weight</button></li>
       <li class="list-inline-item"><button
           (click)="show.yoga = !show.yoga; show.allCourses = false; show.fitness = false; show.nutrition = false; show.lossWeight = false"
-          class="btn btn-light">Yoga</button></li>
+          class="btn btn-info">Yoga</button></li>
     </ul>
 
     <owl-carousel-o *ngIf="show.allCourses" [options]="owlOptions" (initialized)="owlData($event)">

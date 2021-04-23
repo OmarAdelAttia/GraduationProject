@@ -1,0 +1,20 @@
+@import "../../../../styles.scss";
+
+.mentor-name-a {
+  margin-top: 0px;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: capitalize;
+  color: $light-clr;
+  display: inline-block;
+  white-space: nowrap;
+  max-width: 219px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: relative;
+
+  &:hover {
+    color: $darkest;
+    text-decoration: underline;
+  }
+}

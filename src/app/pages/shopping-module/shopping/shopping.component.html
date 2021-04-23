@@ -7,19 +7,19 @@
         <ul class="list-inline text-center">
             <li class="list-inline-item"><button
                     (click)="show.allItems = !show.allItems; show.proteinItems = false; show.vitaminItems = false; show.fatLossItems = false; show.creatineItems = false"
-                    class="btn btn-light">All</button></li>
+                    class="btn btn-info">All</button></li>
             <li class="list-inline-item"><button
                     (click)="show.proteinItems = !show.proteinItems; show.allItems = false; show.vitaminItems = false; show.fatLossItems = false; show.creatineItems = false"
-                    class="btn btn-light">Proteins</button></li>
+                    class="btn btn-info">Proteins</button></li>
             <li class="list-inline-item"><button
                     (click)="show.vitaminItems = !show.vitaminItems; show.allItems = false; show.proteinItems = false; show.fatLossItems = false; show.creatineItems = false"
-                    class="btn btn-light">Vitamins</button></li>
+                    class="btn btn-info">Vitamins</button></li>
             <li class="list-inline-item"><button
                     (click)="show.fatLossItems = !show.fatLossItems; show.allItems = false; show.proteinItems = false; show.vitaminItems = false; show.creatineItems = false"
-                    class="btn btn-light">Fat Loss</button></li>
+                    class="btn btn-info">Fat Loss</button></li>
             <li class="list-inline-item"><button
                     (click)="show.creatineItems = !show.creatineItems; show.allItems = false; show.proteinItems = false; show.vitaminItems = false; show.fatLossItems = false"
-                    class="btn btn-light">Creatine</button></li>
+                    class="btn btn-info">Creatine</button></li>
         </ul>
 
 
@@ -27,7 +27,7 @@
             <ng-container *ngFor="let item of itemsList">
                 <ng-template carouselSlide>
                     <div class="mb-4" style="width: 17rem;">
-                        <app-mentor-card [itemData]="item"></app-mentor-card>
+                        <app-item-card [itemData]="item"></app-item-card>
                     </div>
                 </ng-template>
             </ng-container>
@@ -37,7 +37,7 @@
             <ng-container *ngFor="let item of proteinItemsList" class="my-5">
                 <ng-template carouselSlide class="my-5">
                     <div class="mb-4" style="width: 18rem;">
-                        <app-mentor-card [itemData]="item"></app-mentor-card>
+                        <app-item-card [itemData]="item"></app-item-card>
                     </div>
                 </ng-template>
             </ng-container>
@@ -47,7 +47,7 @@
             <ng-container *ngFor="let item of vitaminItemsList" class="my-5">
                 <ng-template carouselSlide class="my-5">
                     <div class="mb-4" style="width: 18rem;">
-                        <app-mentor-card [itemData]="item"></app-mentor-card>
+                        <app-item-card [itemData]="item"></app-item-card>
                     </div>
                 </ng-template>
             </ng-container>
@@ -57,7 +57,7 @@
             <ng-container *ngFor="let item of fatLossItemsList" class="my-5">
                 <ng-template carouselSlide class="my-5">
                     <div class="mb-4" style="width: 18rem;">
-                        <app-mentor-card [itemData]="item"></app-mentor-card>
+                        <app-item-card [itemData]="item"></app-item-card>
                     </div>
                 </ng-template>
             </ng-container>
@@ -67,7 +67,7 @@
             <ng-container *ngFor="let item of creatineItemsList" class="my-5">
                 <ng-template carouselSlide class="my-5">
                     <div class="mb-4" style="width: 18rem;">
-                        <app-mentor-card [itemData]="item"></app-mentor-card>
+                        <app-item-card [itemData]="item"></app-item-card>
                     </div>
                 </ng-template>
             </ng-container>

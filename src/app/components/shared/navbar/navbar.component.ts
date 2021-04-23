@@ -3,7 +3,9 @@ import { Component, HostListener, OnInit } from "@angular/core";
 import { AuthService } from '../services/auth/auth.service';
 import { Router } from '@angular/router';
 
-//search bar 
+import { Store } from '@ngrx/store';
+
+//search bar
 import { AngularFirestore } from '@angular/fire/firestore';
 
 
@@ -21,11 +23,15 @@ export class NavbarComponent implements OnInit {
   searchValue: string = "";
   results: any;
 
-
-  constructor(public authService: AuthService, public router: Router, public angularFirestore: AngularFirestore) {
+items;
+  constructor(public authService: AuthService,
+     public router: Router, public angularFirestore: AngularFirestore,
+     private store: Store<{cart}>) {
     this.isCollapsed = true;
   }
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.items = this.store.select('cart');
+       }
 
   //search bar
   search() {

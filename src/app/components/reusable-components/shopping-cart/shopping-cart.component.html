@@ -1,1 +1,25 @@
-<p>shopping-cart works!</p>
+<section>
+  <div class="container pt-5">
+    <div *ngFor="let item of items.cartItems" class="card mb-3" style="max-width: 540px;">
+      <div class="row no-gutters">
+        <div class="col-md-4">
+          <img [src]="item.Photo" class="img-fluid" alt="" />
+        </div>
+        <div class="col-md-7">
+          <div class="card-body">
+            <h5 class="card-title mentor-name-a">{{ item.Name}}</h5>
+            <p class="card-text">{{item.Price}}</p>
+            <p class="font-weight-bold cat">Category: <span class="font-weight-normal">{{item.Category}}</span>
+            </p>
+
+          </div>
+        </div>
+        <div class="col-md-1">
+          <h5 class="card-title text-danger pt-5" (click)="removeFromShoppingCart(item)"><i class="fas fa-minus-circle"></i></h5>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</section>
