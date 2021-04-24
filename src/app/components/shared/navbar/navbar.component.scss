@@ -84,7 +84,8 @@ nav {
 }
 
 // Mobile
-@media (min-width: 320px) and (max-width: 425px) {
+
+@media (min-width: 320px) and (max-width: 426px) {
   nav {
     form {
       .search-btn {
@@ -97,8 +98,10 @@ nav {
     }
   }
 }
+
 // Tablet
-@media (min-width: 426px) and (max-width: 768px) {
+
+@media (min-width: 426px) and (max-width: 575px) {
   nav {
     form {
       .search-btn {
@@ -107,6 +110,20 @@ nav {
         right: 0;
         top: -6px;
         left: unset;
+      }
+    }
+  }
+}
+
+@media (min-width: 575px) and (max-width: 768px) {
+  nav {
+    form {
+      .search-btn {
+        color: $dark;
+        position: absolute;
+        //right: 0;
+        // top: -6px;
+        //left: unset;
       }
     }
   }
