@@ -60,8 +60,8 @@ export class MentorDetailsComponent implements OnInit {
 
       this.trainersService.getTrainer(params.id).subscribe(trainer => {
         this.mentor = trainer;
-        // console.log(trainer)
-        // console.log(this.mentor)
+        console.log(trainer)
+        console.log(this.mentor)
       });
 
 
@@ -69,7 +69,7 @@ export class MentorDetailsComponent implements OnInit {
       this.topRatedService.getTopRated(params.id).subscribe(topRated => {
         this.mentor = topRated;
         // console.log(topRated)
-        console.log(this.mentor)
+        // console.log(this.mentor)
       });
 
       // console.log(this.activeId);
