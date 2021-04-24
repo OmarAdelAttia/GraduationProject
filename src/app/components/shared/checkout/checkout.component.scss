@@ -2,5 +2,26 @@
   background-color: #1f6f8b;
 }
 h2 {
-  text-shadow: 2px 8px 6px rgb(0 0 0 / 20%), 0px -5px 35px rgb(255 255 255 / 30%)
+  text-shadow: 2px 8px 6px rgb(0 0 0 / 20%),
+    0px -5px 35px rgb(255 255 255 / 30%);
+}
+
+.item {
+  .item_img {
+    display: block !important;
+    img {
+      width: 50% !important;
+    }
+  }
+  .item_details {
+    display: block !important;
+    h3 {
+      font-size: 2rem;
+      font-weight: 900;
+    }
+    h4 {
+      font-size: 1.3rem;
+      font-weight: 500;
+    }
+  }
 }
