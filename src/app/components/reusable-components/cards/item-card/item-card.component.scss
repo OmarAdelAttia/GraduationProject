@@ -29,15 +29,15 @@
   .image-box {
     background: #ffffff;
     overflow: hidden;
-    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.5);
-    border-radius: 5px;
+    border-radius: 5px 5px 0 0;
     position: relative;
+    height: 185px;
+    width: 100%;
 
     img {
       transition: all 0.9s ease;
       width: 100%;
-      // height: 200px;
-      height: 150px;
+      height: 100%;
       object-fit: cover;
     }
   }
@@ -51,37 +51,37 @@
     backface-visibility: hidden;
   }
 
-  .middle {
-    transition: 0.5s ease;
-    opacity: 0;
-    position: absolute;
-    top: 9%;
-    right: -9%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    text-align: center;
-  }
+  // .middle {
+  //   transition: 0.5s ease;
+  //   opacity: 0;
+  //   position: absolute;
+  //   top: 9%;
+  //   right: -9%;
+  //   transform: translate(-50%, -50%);
+  //   -ms-transform: translate(-50%, -50%);
+  //   text-align: center;
+  // }
 
-  .text {
-    background-color: $light-clr;
-    color: $darkest;
-    font-size: 20px;
-    font-weight: 600;
-    padding: 3px 5px;
-  }
+  // .text {
+  //   background-color: $light-clr;
+  //   color: $darkest;
+  //   font-size: 20px;
+  //   font-weight: 600;
+  //   padding: 3px 5px;
+  // }
 
-  &:hover .image-box img {
-    opacity: 0.7;
-    -webkit-transform: scale(1.15);
-    -moz-transform: scale(1.15);
-    -ms-transform: scale(1.15);
-    -o-transform: scale(1.15);
-    transform: scale(1.15);
-  }
+  // &:hover .image-box img {
+  //   opacity: 0.7;
+  //   -webkit-transform: scale(1.15);
+  //   -moz-transform: scale(1.15);
+  //   -ms-transform: scale(1.15);
+  //   -o-transform: scale(1.15);
+  //   transform: scale(1.15);
+  // }
 
   .text-box {
     .text-container {
-      padding: 30px 18px;
+      padding: 15px 18px;
 
       p {
         margin-bottom: 0px;
@@ -96,22 +96,28 @@
         font-size: 16px;
         font-weight: 500;
         text-transform: capitalize;
-        color: $light-clr;
+        color: $darkest;
         display: inline-block;
         white-space: nowrap;
-        max-width: 219px;
+        word-wrap: break-word;
+        max-width: 174px;
+        width:100%;
         overflow: hidden;
         text-overflow: ellipsis;
         position: relative;
 
         &:hover {
-          color: $darkest;
+          color: $light-clr;
           text-decoration: underline;
         }
       }
 
       .rate-txt {
         color: rgb(255, 187, 0);
+      }
+
+      .price-tag{
+        font-size: 1.3rem;
       }
     }
   }

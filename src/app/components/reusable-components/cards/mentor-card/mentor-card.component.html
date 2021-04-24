@@ -1,8 +1,8 @@
-<div class="card-flyer d-flex align-items-stretch">
+<div class="card-flyer">
     <div class="text-box">
         <div class="image-box">
             <a [routerLink]="['/mentor-details' , itemData.id]">
-                <img [src]="itemData.Photo" class="img-fluid" alt="" />
+                <img [src]="itemData.Photo" alt="" />
                 <div class="middle">
                     <div class="text">{{itemData.Price}}</div>
                 </div>
@@ -29,8 +29,10 @@
             <p class="font-weight-bold">Specialty: <span class="font-weight-normal">{{itemData.Specialized}}</span>
             </p>
 
-            <div class="row mt-4 d-flex justify-content-center">
-                <a class="main-btn-a" id="future" (click)="toCheckout()">
+            <div class="row mt-3 d-flex justify-content-around align-items-baseline">
+                <p class="font-weight-bold price-tag">{{ itemData.Price }}
+                </p>
+                <a class="main-btn-a mb-2" id="future" (click)="toCheckout()">
                     Hire Now
                 </a>
             </div>

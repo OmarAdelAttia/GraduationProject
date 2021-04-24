@@ -3,9 +3,9 @@
         <div class="image-box">
             <a>
                 <img [src]="itemData.Photo" alt="" />
-                <div class="middle">
+                <!-- <div class="middle">
                     <div class="text">{{itemData.Price}}</div>
-                </div>
+                </div> -->
             </a>
         </div>
         <div class="text-container">
@@ -25,11 +25,14 @@
 
             <p class="font-weight-bold cat">Category: <span class="font-weight-normal">{{itemData.Category}}</span>
             </p>
+
             <!-- <p class="font-weight-bold">Specialty: <span class="font-weight-normal">{{itemData.Specialized}}</span>
             </p> -->
 
-            <div class="row mt-4 d-flex justify-content-center">
-                <a class="main-btn-a" id="future" (click)="addToShoppingCart(itemData)">
+            <div class="row mt-3 d-flex justify-content-around align-items-baseline">
+                <p class="font-weight-bold price-tag">{{ itemData.Price }}
+                </p>
+                <a class="main-btn-a mb-2" id="future" (click)="addToShoppingCart(itemData)">
                     Buy Now
                 </a>
             </div>
