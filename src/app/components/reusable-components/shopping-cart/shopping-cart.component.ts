@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { removeFromCart } from '../../shared/services/store/cart.action';
+import { map } from 'rxjs/operators';
+import { CurrencyPipe } from '@angular/common';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -10,19 +12,30 @@ import { removeFromCart } from '../../shared/services/store/cart.action';
 export class ShoppingCartComponent implements OnInit {
 
   items;
-  u;
+  itemsCount;
   constructor(private store: Store<{cart}>) { }
 
   ngOnInit(): void {
     this.store.select('cart').subscribe((data) => {
       this.items = data;
-      // console.log(this.items.length);
+
+      console.log(this.items.cartItems.Price);
 
     })
 
-    this.u = this.store.select('cart');
+
+
+    this.itemsCount = this.store.select('cart');
 
   }
+
+  // getTotal() {
+  //   return this.items.cartItems.map((x: []) => {
+  //     return x.reduce((prev, curr ) => {
+  //       return prev + curr.Price;
+  //     }, 0);
+  //   });
+  // }
 
   removeFromShoppingCart = (item) => {
     let arrayItems = this.items.cartItems.filter(x => x.id != item.id);
