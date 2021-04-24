@@ -1,89 +1,97 @@
-<div class="col-12 d-flex justify-content-center align-items-center">
-  <div class="card my-5" style="width: 40rem;">
-    <div class="card-body p-5">
-      <form [formGroup]="signUpForm" (ngSubmit)="userSignUpForm()">
-        <!-- (ngSubmit)="userSignUpForm()" -->
-        <div class="form-group pb-2">
-          <label for="name">Name</label>
-          <input type="text" formControlName="name" class="form-control" />
+<section>
+  <div class="container pt-5">
+    <h2 class="text-center">Sign Up</h2>
+    <div class="col-12 d-flex justify-content-center align-items-center">
+
+      <div class="card my-5" style="width: 40rem;">
+        <div class="card-body p-5">
+          <form [formGroup]="signUpForm" (ngSubmit)="userSignUpForm()">
+            <!-- (ngSubmit)="userSignUpForm()" -->
+            <div class="form-group pb-2">
+              <label for="name">Name</label>
+              <input type="text" formControlName="name" class="form-control" />
+            </div>
+            <div *ngIf="signUpControls.name.errors">
+              <div *ngIf="signUpControls.name.errors.required  && signUpControls.name.touched">
+                <div class="alert alert-danger">This Field Is Required</div>
+              </div>
+            </div>
+
+
+            <div class="form-group pb-2">
+              <label for="username">User Name</label>
+              <input type="text" formControlName="username" class="form-control" />
+            </div>
+            <div *ngIf="signUpControls.username.errors">
+              <div *ngIf="signUpControls.username.errors.required && signUpControls.username.touched">
+                <div class="alert alert-danger">This Field Is Required</div>
+              </div>
+
+            </div>
+
+
+            <div class="form-group pb-2">
+              <label for="email">Email address</label>
+              <input type="text" formControlName="email" class="form-control" #emailSignUp />
+            </div>
+            <div *ngIf="signUpControls.email.errors">
+              <div *ngIf="signUpControls.email.errors.required && signUpControls.email.touched">
+                <div class="alert alert-danger">This Field Is Required</div>
+              </div>
+              <div *ngIf="signUpControls.email.errors.pattern && signUpControls.email.touched">
+                <div class="alert alert-danger">Invalid Email</div>
+              </div>
+            </div>
+
+            <div class="form-group pb-2">
+              <label for="password">Password</label>
+              <input type="password" formControlName="password" class="form-control" #passwordSignUp />
+            </div>
+            <div *ngIf="signUpControls.password.errors">
+              <div *ngIf="signUpControls.password.errors.required && signUpControls.password.touched">
+                <div class="alert alert-danger">This Field Is Required</div>
+              </div>
+
+              <div *ngIf="signUpControls.password.errors.minlength && signUpControls.password.errors.touched">
+                <div class="alert alert-danger"> Must contain at least 8 Character!</div>
+              </div>
+            </div>
+
+
+            <div class="form-group">
+              <label for="confirmPassword">Confirm password</label>
+              <input type="password" formControlName="confirmPassword" class="form-control" />
+            </div>
+            <div *ngIf="signUpControls.confirmPassword.errors">
+              <div *ngIf="signUpControls.confirmPassword.errors.required && signUpControls.confirmPassword.touched">
+                <div class="alert alert-danger">This Field Is Required</div>
+              </div>
+
+            </div>
+
+            <div class="pb-2">
+              <div class="custom-control custom-radio">
+                <input type="radio" id="customRadio1" formControlName="role" name="role" value="client"
+                  class="custom-control-input" #roleSignUp />
+                <label class="custom-control-label" for="customRadio1">I'm a Neo</label>
+              </div>
+              <div class="custom-control custom-radio">
+                <input type="radio" id="customRadio2" formControlName="role" name="role" value="mentor"
+                  class="custom-control-input" #roleSignUp />
+                <label class="custom-control-label" for="customRadio2">I'm a Neo Mentor</label>
+              </div>
+            </div>
+
+            <button class="btn btn-custom text-white btn-lg btn-block my-4"
+              (click)="authService.SignUp(emailSignUp.value,passwordSignUp.value, signUpControls.role.value)">Sign Up</button>
+
+            <a [routerLink]="'/sign-in'" class="d-flex justify-content-center link-custom">I Already Have an Account</a>
+
+          </form>
         </div>
-        <div *ngIf="signUpControls.name.errors">
-          <div *ngIf="signUpControls.name.errors.required  && signUpForm.submitted">
-            <div class="alert alert-danger">This Field Is Required</div>
-          </div>
-        </div>
-
-
-        <div class="form-group pb-2">
-          <label for="username">User Name</label>
-          <input type="text" formControlName="username" class="form-control" />
-        </div>
-        <div *ngIf="signUpControls.username.errors">
-          <div *ngIf="signUpControls.username.errors.required && signUpForm.submitted">
-            <div class="alert alert-danger">This Field Is Required</div>
-          </div>
-
-        </div>
-
-
-        <div class="form-group pb-2">
-          <label for="email">Email address</label>
-          <input type="text" formControlName="email" class="form-control" #emailSignUp />
-        </div>
-        <div *ngIf="signUpControls.email.errors">
-          <div *ngIf="signUpControls.email.errors.required && signUpForm.submitted">
-            <div class="alert alert-danger">This Field Is Required</div>
-          </div>
-          <div *ngIf="signUpControls.email.errors.pattern && signUpForm.submitted">
-            <div class="alert alert-danger">Invalid Email</div>
-          </div>
-        </div>
-
-        <div class="form-group pb-2">
-          <label for="password">Password</label>
-          <input type="password" formControlName="password" class="form-control" #passwordSignUp />
-        </div>
-        <div *ngIf="signUpControls.password.errors">
-          <div *ngIf="signUpControls.password.errors.required && signUpForm.submitted">
-            <div class="alert alert-danger">This Field Is Required</div>
-          </div>
-
-          <div *ngIf="signUpControls.password.errors.minlength && signUpForm.submitted">
-            <div class="alert alert-danger"> Must contain at least 8 Character!</div>
-          </div>
-        </div>
-
-
-        <div class="form-group">
-          <label for="confirmPassword">Confirm password</label>
-          <input type="password" formControlName="confirmPassword" class="form-control" />
-        </div>
-        <div *ngIf="signUpControls.confirmPassword.errors">
-          <div *ngIf="signUpControls.confirmPassword.errors.required && signUpForm.submitted">
-            <div class="alert alert-danger">This Field Is Required</div>
-          </div>
-
-        </div>
-
-        <div class="pb-2">
-          <div class="custom-control custom-radio">
-            <input type="radio" id="customRadio1" formControlName="role" name="role" value="client"
-              class="custom-control-input" #roleSignUp />
-            <label class="custom-control-label" for="customRadio1">I'm a Neo</label>
-          </div>
-          <div class="custom-control custom-radio">
-            <input type="radio" id="customRadio2" formControlName="role" name="role" value="mentor"
-              class="custom-control-input" #roleSignUp />
-            <label class="custom-control-label" for="customRadio2">I'm a Neo Mentor</label>
-          </div>
-        </div>
-
-        <button class="btn btn-custom text-white btn-lg btn-block my-4"
-          (click)="authService.SignUp(emailSignUp.value,passwordSignUp.value, signUpControls.role.value)">Sign Up</button>
-
-        <a [routerLink]="'/sign-in'" class="d-flex justify-content-center link-custom">I Already Have an Account</a>
-
-      </form>
+      </div>
     </div>
   </div>
-</div>
+
+</section>
+
