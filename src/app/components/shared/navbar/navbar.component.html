@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top" [ngClass]="{'fixed': isScrolled}">
-  <div class="container">
+<nav class="navbar navbar-expand-xl navbar-dark fixed-top" [ngClass]="{'fixed': isScrolled}">
+  <div class="container-fluid">
     <a class="navbar-brand" routerLink="/">
       <h3 class="col-md-6 col-12"><i class="fas fa-running"></i>NeoFit</h3>
     </a>
@@ -16,8 +16,6 @@
           <a class="nav-link" routerLink="/">Home</a>
         </li>
 
-
-
         <li class="nav-item">
           <a class="nav-link" [routerLink]="'/mentors'">mentors</a>
         </li>
@@ -30,7 +28,7 @@
           <a class="nav-link" [routerLink]="'/shopping'">Supplements</a>
         </li>
 
-        <li class="nav-item" ngbDropdown>
+        <!-- <li class="nav-item" ngbDropdown>
           <a class="nav-link" tabindex="0" ngbDropdownToggle id="navbarDropdown1" role="button">
             languages
           </a>
@@ -39,7 +37,7 @@
             <a ngbDropdownItem href="#" (click)="$event.preventDefault()">Arabic</a>
             <a ngbDropdownItem href="#" (click)="$event.preventDefault()">German</a>
           </div>
-        </li>
+        </li> -->
         <!-- 
         <li class="nav-item" ngbDropdown>
           <a class="nav-link" tabindex="0" ngbDropdownToggle id="navbarDropdown1" role="button">
@@ -85,24 +83,41 @@
             Log In
           </a>
         </li>
+        <li>
+          <a class="nav-link mx-2" *ngIf="authService.isLoggedIn">
+            <!-- <div class="btn-group mr-3">
+              <button type="button" (click)="navigateToProfile()" class="btn">USER</button>
+              <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
+                <button class="btn btn-primary dropdown-toggle-split" ngbDropdownToggle></button>
+                <div class="dropdown-menu" ngbDropdownMenu>
+                  <button ngbDropdownItem>profile</button>
+                  <button ngbDropdownItem (click)="authService.SignOut()">Log Out</button>
+                </div>
+              </div>
+            </div> -->
+            <div class="user">
+              <img src="../../../../assets/img/user-image.png" alt="">
+              <span>
+                User Name
+              </span>
+            </div>
+          </a>
+        </li>
       </ul>
 
 
-      <a class="nav-link" *ngIf="authService.isLoggedIn">
-        <div class="btn-group mr-3">
-          <button type="button" (click)="navigateToProfile()" class="btn">USER</button>
-          <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
-            <button class="btn btn-primary dropdown-toggle-split" ngbDropdownToggle></button>
-            <div class="dropdown-menu" ngbDropdownMenu>
-              <button ngbDropdownItem>profile</button>
-              <button ngbDropdownItem (click)="authService.SignOut()">Log Out</button>
-            </div>
-          </div>
-        </div>
+      <a class="nav-link" *ngIf="authService.isLoggedIn" (click)="authService.SignOut()">
+        <i class="far fa-comments fa-lg"></i>
       </a>
 
-      <a class="text-white" *ngIf="authService.isLoggedIn"><i class="fas fa-shopping-cart"
-          [routerLink]="'/shopping-cart'">{{ (items | async).cartItems.length }}</i></a>
+      <a class="nav-link" *ngIf="authService.isLoggedIn"><i class="fas fa-shopping-cart"
+        [routerLink]="'/shopping-cart'">{{ (items | async).cartItems.length }}</i></a>
+
+        <a class="nav-link" *ngIf="authService.isLoggedIn" (click)="authService.SignOut()">
+          <i class="fas fa-sign-out-alt fa-lg"></i>
+        </a>
+
+      
       <!-- <a  *ngIf="authService.isLoggedIn"><i class="fas fa-comments"></i></a> -->
 
     </div>

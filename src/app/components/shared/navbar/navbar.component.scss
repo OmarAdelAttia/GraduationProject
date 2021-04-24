@@ -1,8 +1,24 @@
 @import "../../../../styles.scss";
 
 .nav-link {
-  color: #ffffff !important;
-  font-size: 100;
+  font-size: small;
+  color: #fff !important;
+
+  &:hover{
+    color: $lightest !important;
+  }
+
+  &:active{
+    color: $lightest;
+  }
+
+  .user{
+    img{
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+    }
+  }
 }
 
 nav {
