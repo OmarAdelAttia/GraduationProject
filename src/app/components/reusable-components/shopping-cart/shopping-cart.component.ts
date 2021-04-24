@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { removeFromCart } from '../../shared/services/store/cart.action';
 import { map } from 'rxjs/operators';
-import { CurrencyPipe } from '@angular/common';
+
 
 @Component({
   selector: 'app-shopping-cart',

@@ -54,8 +54,10 @@ export class NavbarComponent implements OnInit {
     private doctorsService: DoctorsService,
     private trainersService: TrainersService,
     private coursesService: CoursesService,
-    private shoppingItemsService: ShoppingItemsService) {
+    private shoppingItemsService: ShoppingItemsService,
+    private store: Store<{cart}>) {
     this.isCollapsed = true;
+
   }
   ngOnInit(): void {
 
@@ -64,12 +66,11 @@ export class NavbarComponent implements OnInit {
     this.shoppingItemsService.shoppingItems.subscribe(supplements => this.categories.supplements = supplements);
     this.coursesService.courses.subscribe(courses => this.categories.courses = courses);
 
+
+    this.items = this.store.select('cart');
   }
   items;
 
-  // ngOnInit(): void {
-  //   this.items = this.store.select('cart');
-  //      }
 
   //search bar
   search() {
