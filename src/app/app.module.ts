@@ -28,6 +28,7 @@ import { HttpClientModule } from '@angular/common/http';
 // Store
 import { StoreModule } from '@ngrx/store';
 import { shopping_cart_reducer } from './components/shared/services/store/cart.reducer';
+import { hire_reducer } from './components/shared/services/hiring/hire.reducer';
 
 // bootstrap
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -61,6 +62,7 @@ import { MatIconModule } from '@angular/material/icon';
 
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { CategoriesModalComponent } from './components/reusable-components/categories-modal/categories-modal.component';
+import { ChattingComponent } from './components/reusable-components/chatting/chatting.component';
 
 
 
@@ -81,6 +83,7 @@ import { CategoriesModalComponent } from './components/reusable-components/categ
     TopRatedShoppingItemsComponent,
     ShoppingComponent,
     CategoriesModalComponent,
+    ChattingComponent,
   ],
   imports: [
     BrowserModule,
@@ -110,7 +113,7 @@ import { CategoriesModalComponent } from './components/reusable-components/categ
     AngularFireStorageModule,  // Only required for storage features
 
     NgbModule,
-    StoreModule.forRoot({ cart: shopping_cart_reducer }),
+    StoreModule.forRoot({ cart: shopping_cart_reducer, list: hire_reducer }),
     BrowserAnimationsModule,
   ],
   providers: [AuthService],

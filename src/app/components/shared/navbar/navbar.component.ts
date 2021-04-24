@@ -26,8 +26,8 @@ export class NavbarComponent implements OnInit {
 
   //search bar
   searchValue: string = "";
-  // category: string = "doctors";
-  category: string = "keyword";
+  category: string = "doctors";
+  // category: string = "keyword";
 
   categories = {
     doctors: [],
@@ -55,7 +55,7 @@ export class NavbarComponent implements OnInit {
     private trainersService: TrainersService,
     private coursesService: CoursesService,
     private shoppingItemsService: ShoppingItemsService,
-    private store: Store<{cart}>) {
+    private store: Store<{ cart }>) {
     this.isCollapsed = true;
 
   }

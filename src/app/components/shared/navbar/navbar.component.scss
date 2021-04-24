@@ -6,20 +6,20 @@
   transition: 0.5s;
   padding: 0.5rem 0.3rem;
 
-  &:hover{
+  &:hover {
     color: $light-clr !important;
   }
 }
 
-.user{
+.user {
   transition: 0.5s;
-  img{
+  img {
     height: 35px;
     width: 35px;
     border-radius: 50%;
   }
 
-  &:hover{
+  &:hover {
     background-color: #345858;
   }
 }
@@ -81,4 +81,33 @@ nav {
 
 .fixed {
   background-color: $darkest;
+}
+
+// Mobile
+@media (min-width: 320px) and (max-width: 425px) {
+  nav {
+    form {
+      .search-btn {
+        color: $dark;
+        position: absolute;
+        right: 0;
+        left: unset;
+        top: -6px;
+      }
+    }
+  }
+}
+// Tablet
+@media (min-width: 426px) and (max-width: 768px) {
+  nav {
+    form {
+      .search-btn {
+        color: $dark;
+        position: absolute;
+        right: 0;
+        top: -6px;
+        left: unset;
+      }
+    }
+  }
 }

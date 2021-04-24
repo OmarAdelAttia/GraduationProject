@@ -55,26 +55,18 @@
       <form class="form-inline my-2 my-lg-0" (ngSubmit)="search()">
         <input name="searching" class="form-control mr-sm-2 rounded-pill border-0" type="text" [(ngModel)]="searchValue"
           placeholder="Search" aria-label="Search">
-        <button class="btn my-2 my-sm-0 border-0 search-btn" type="submit"><i class="fas fa-search"></i></button>
+        <!-- <button class="btn my-2 my-sm-0 border-0 search-btn" type="submit"><i class="fas fa-search"></i></button>
         <div class="form-group">
-          <select class="form-control" id="exampleFormControlSelect1" name="category" [(ngModel)]="category">
+          <select class="form-control mt-3 mt-lg-0" id="exampleFormControlSelect1" name="category"
+            [(ngModel)]="category">
             <option value="keyword">keyword</option>
             <option value="doctors">Doctors</option>
             <option value="trainers">Trainers</option>
-            <option value="courses">Courses</option>
-            <!-- <option value="supplements">Supplements</option> -->
-          </select>
-        </div>
+            <option value="courses">Courses</option> -->
+        <!-- <option value="supplements">Supplements</option> -->
+        <!-- </select>
+        </div> -->
       </form>
-
-      <!-- <a class="nav-link mt-3" *ngIf="authService.isLoggedIn">
-        <div class="form-group mr-3">
-          <select class="form-control" type="button">
-            <option value="user" (click)="navigateToProfile()">USER</option>
-            <option value="logout" (click)="authService.SignOut()">Log Out</option>
-          </select>
-        </div>
-      </a> -->
 
 
       <ul class="navbar-nav">
@@ -84,24 +76,14 @@
           </a>
         </li>
         <li>
-          
-            <!-- <div class="btn-group mr-3">
-              <button type="button" (click)="navigateToProfile()" class="btn">USER</button>
-              <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
-                <button class="btn btn-primary dropdown-toggle-split" ngbDropdownToggle></button>
-                <div class="dropdown-menu" ngbDropdownMenu>
-                  <button ngbDropdownItem>profile</button>
-                  <button ngbDropdownItem (click)="authService.SignOut()">Log Out</button>
-                </div>
-              </div>
-            </div> -->
-            <a class="nav-link mx-2 user rounded-pill" *ngIf="authService.isLoggedIn">
-              <img src="../../../../assets/img/user-image.png" alt="">
-              <span class="ml-1">
-                User Name
-              </span>
-            </a>
-          
+
+          <a class="nav-link mx-2 user rounded-pill" *ngIf="authService.isLoggedIn">
+            <img src="../../../../assets/img/user-image.png" alt="">
+            <span class="ml-1">
+              User Name
+            </span>
+          </a>
+
         </li>
       </ul>
 
@@ -111,23 +93,14 @@
       </a>
 
       <a class="nav-link" *ngIf="authService.isLoggedIn"><i class="fas fa-shopping-cart"
-        [routerLink]="'/shopping-cart'">{{ (items | async).cartItems.length }}</i></a>
+          [routerLink]="'/shopping-cart'">{{ (items | async).cartItems.length }}</i></a>
 
-        <a class="nav-link" *ngIf="authService.isLoggedIn" (click)="authService.SignOut()">
-          <i class="fas fa-sign-out-alt fa-lg"></i>
-        </a>
+      <a class="nav-link" *ngIf="authService.isLoggedIn" (click)="authService.SignOut()">
+        <i class="fas fa-sign-out-alt fa-lg"></i>
+      </a>
 
-      
-      <!-- <a  *ngIf="authService.isLoggedIn"><i class="fas fa-comments"></i></a> -->
+
 
     </div>
   </div>
 </nav>
-
-<!-- <ul class="my-5">
-  <li class="my-5">
-    blablabla
-  </li>
-  <li *ngFor="let doctor of results | async">{{doctor.Name}}</li>
-
-</ul> -->

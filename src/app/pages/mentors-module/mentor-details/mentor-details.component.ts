@@ -12,6 +12,8 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/internal/operators/map';
 import { NgbRatingConfig } from '@ng-bootstrap/ng-bootstrap';
 
+import { Store } from '@ngrx/store';
+import { hireMentor } from '../../../components/shared/services/hiring/hire.action';
 
 @Component({
   selector: 'app-mentor-details',
@@ -28,10 +30,11 @@ export class MentorDetailsComponent implements OnInit {
   // doctors: Observable<any[]>;
 
 
-
+mentors;
 
   constructor(
     config: NgbRatingConfig,
+    private store: Store<{ list }>,
     private activatedRoute: ActivatedRoute,
     private router: Router,
     public authService: AuthService,
@@ -92,19 +95,27 @@ export class MentorDetailsComponent implements OnInit {
 
     // })
 
-
-
-  }
-
-  toCheckout() {
-    if (!this.authService.isLoggedIn) {
-      this.router.navigate(['sign-in']);
-      return false;
-    } else {
-      this.router.navigate(['./checkout'])
-      return true;
-    }
+    this.store.select('list').subscribe((data) => {
+      this.mentors = data;
+    })
 
   }
+
+  hireTheMentor(prof) {
+    this.mentors.hireList.find(m => m.id == prof.id);
+    this.store.dispatch(new hireMentor(prof));
+    this.router.navigate(['./checkout'])
+  }
+
+  // toCheckout() {
+  //   if (!this.authService.isLoggedIn) {
+  //     this.router.navigate(['sign-in']);
+  //     return false;
+  //   } else {
+  //     this.router.navigate(['./checkout'])
+  //     return true;
+  //   }
+
+  // }
 
 }
