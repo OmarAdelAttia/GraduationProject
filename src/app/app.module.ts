@@ -62,6 +62,7 @@ import { MatIconModule } from '@angular/material/icon';
 
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { CategoriesModalComponent } from './components/reusable-components/categories-modal/categories-modal.component';
+import { ChattingComponent } from './components/reusable-components/chatting/chatting.component';
 
 
 
@@ -82,6 +83,7 @@ import { CategoriesModalComponent } from './components/reusable-components/categ
     TopRatedShoppingItemsComponent,
     ShoppingComponent,
     CategoriesModalComponent,
+    ChattingComponent,
   ],
   imports: [
     BrowserModule,
