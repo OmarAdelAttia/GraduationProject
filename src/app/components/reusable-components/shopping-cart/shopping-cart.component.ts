@@ -13,13 +13,15 @@ export class ShoppingCartComponent implements OnInit {
 
   items;
   itemsCount;
-  constructor(private store: Store<{cart}>) { }
+  totalPrice;
+  constructor(private store: Store<{ cart }>) { }
 
   ngOnInit(): void {
     this.store.select('cart').subscribe((data) => {
       this.items = data;
 
-      console.log(this.items.cartItems.Price);
+      // console.log(this.items.cartItems.Price);
+      this.totalPrice = this.items.cartItems.reduce((acc, curr) => acc + +curr.Price.slice(1), 0)
 
     })
 
@@ -43,7 +45,7 @@ export class ShoppingCartComponent implements OnInit {
   }
 
   userCheckOutForm(checkOutForm) {
-    console.log(checkOutForm);
+    // console.log(checkOutForm);
   }
 
 }

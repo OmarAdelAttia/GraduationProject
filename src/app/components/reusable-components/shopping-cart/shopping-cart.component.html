@@ -3,9 +3,9 @@
     <div class="row">
       <div class="col-md-6 col-12">
         <div class="card" class="bg-danger text-white text-center mb-3">
-          <h5 class="card-title">{{ (itemsCount | async).cartItems.length }}  Items in Cart</h5>
+          <h5 class="card-title">{{ (itemsCount | async).cartItems.length }} Items in Cart</h5>
           <h4>Total</h4>
-          <h4>5$</h4>
+          <h4>{{totalPrice | currency}}</h4>
         </div>
         <div *ngFor="let item of items.cartItems" class="card mb-3" style="max-width: 540px;">
           <div class="row no-gutters">
