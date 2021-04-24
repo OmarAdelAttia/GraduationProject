@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { removeFromCart } from '../../shared/services/store/cart.action';
 import { map } from 'rxjs/operators';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 
 @Component({
@@ -14,7 +15,8 @@ export class ShoppingCartComponent implements OnInit {
   items;
   itemsCount;
   totalPrice;
-  constructor(private store: Store<{ cart }>) { }
+  constructor(private modalService: NgbModal,
+    private store: Store<{ cart }>) { }
 
   ngOnInit(): void {
     this.store.select('cart').subscribe((data) => {
@@ -42,6 +44,10 @@ export class ShoppingCartComponent implements OnInit {
   removeFromShoppingCart = (item) => {
     let arrayItems = this.items.cartItems.filter(x => x.id != item.id);
     this.store.dispatch(new removeFromCart(arrayItems))
+  }
+
+  openVerticallyCentered(content) {
+    this.modalService.open(content, { centered: true });
   }
 
   userCheckOutForm(checkOutForm) {
