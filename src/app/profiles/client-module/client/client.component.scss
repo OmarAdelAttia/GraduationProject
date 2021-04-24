@@ -103,7 +103,7 @@ section {
       color: #333;
     }
   }
-  .physical_info {
+  .history_info {
     font-weight: 600 !important;
     font-size: 1.2rem !important;
     color: #000 !important;
@@ -120,20 +120,20 @@ section {
       }
     }
   }
-  .histroy_info {
+  .physical_info {
     font-weight: 600 !important;
     font-size: 1.2rem !important;
     color: #000 !important;
     p {
-      color: #1f6f8b !important;
-      font-size: 1rem !important;
-      font-weight: 500 !important;
-      margin-top: 10% !important;
+      color: #1f6f8b;
+      font-size: 1rem;
+      font-weight: 500;
+      margin-top: 10%;
       span {
-        color: #1f6f8b !important;
-        font-size: 0.8rem !important;
-        font-weight: 400 !important;
-        margin-top: 10% !important;
+        color: #1f6f8b;
+        font-size: 0.8rem;
+        font-weight: 400;
+        margin-top: 10%;
       }
     }
   }
