@@ -2,12 +2,14 @@
 
 .nav-link {
   color: #ffffff !important;
+  font-size: 100;
 }
 
 nav {
   transition: 0.5s;
 
   form {
+    position: relative;
     select {
       background-color: #99a8b2;
       color: #fff;
@@ -27,8 +29,8 @@ nav {
 
     .search-btn {
       color: $dark;
-      position: relative;
-      right: 48px;
+      position: absolute;
+      left: 165px;
 
       &:hover {
         background-color: transparent;
