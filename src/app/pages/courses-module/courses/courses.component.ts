@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CoursesService } from '../../../components/shared/services/Apis/courses.service';
 
-import { OwlOptions, SlidesOutputData } from 'ngx-owl-carousel-o';
 
 @Component({
   selector: 'app-courses',
@@ -59,36 +58,5 @@ export class CoursesComponent implements OnInit {
     })
   }
 
-  owlData(e: SlidesOutputData) {
-    // console.log(e);
-  }
-
-  owlOptions: OwlOptions = {
-    loop: true,
-    margin: 5,
-    // nav: true,
-    //   navText: ["<div class='nav-button owl-prev'>‹</div>", "<div class='nav-button owl-next'>›</div>"],
-    mouseDrag: true,
-    touchDrag: true,
-    pullDrag: true,
-    dots: true,
-    navSpeed: 750,
-    // navText: ['&#8249', '&#8250;'],
-    responsive: {
-      0: {
-        items: 1
-      },
-      400: {
-        items: 2
-      },
-      767: {
-        items: 3
-      },
-      1024: {
-        items: 4
-      }
-    },
-    // nav: false
-  }
 
 }

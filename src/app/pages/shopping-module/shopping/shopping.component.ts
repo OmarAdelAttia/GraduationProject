@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ShoppingItemsService } from '../../../components/shared/services/Apis/shopping-items.service';
-import { OwlOptions, SlidesOutputData } from 'ngx-owl-carousel-o';
 
 export interface ShoppingItem { name: string; price: number; }
 export interface ShoppingItemId extends ShoppingItem { id: string; }
@@ -26,12 +25,6 @@ export class ShoppingComponent implements OnInit {
     creatineItems: false,
   }
 
-  // display = {
-  //   allTrainers: true,
-  //   goldTrainers: false,
-  //   silverTrainers: false,
-  //   bronzeTrainers: false
-  // }
 
   constructor(private shoppingItemsService: ShoppingItemsService) { }
 
@@ -69,37 +62,5 @@ export class ShoppingComponent implements OnInit {
 
   }
 
-
-  owlData(e: SlidesOutputData) {
-    console.log(e);
-  }
-
-  owlOptions: OwlOptions = {
-    loop: true,
-    margin: 5,
-    // nav: true,
-    //   navText: ["<div class='nav-button owl-prev'>‹</div>", "<div class='nav-button owl-next'>›</div>"],
-    mouseDrag: true,
-    touchDrag: true,
-    pullDrag: true,
-    dots: true,
-    navSpeed: 750,
-    // navText: ['&#8249', '&#8250;'],
-    responsive: {
-      0: {
-        items: 1
-      },
-      400: {
-        items: 2
-      },
-      767: {
-        items: 3
-      },
-      1024: {
-        items: 4
-      }
-    },
-    // nav: false
-  }
 
 }
