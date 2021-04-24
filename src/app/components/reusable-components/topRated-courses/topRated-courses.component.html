@@ -1,7 +1,7 @@
 <section class="card-color py-5">
     <div id="cards_landscape_wrap-2">
         <div class="container">
-            <h2 class="text-center">Check Our Courses </h2>
+            <h2 class="text-center">Our Top Courses </h2>
             <div class="row">
                 <div *ngFor="let topRated of topRatedList;" class="col-lg-3 col-sm-6 col-10 mx-auto">
                     <app-item-card [itemData]="topRated"></app-item-card>
@@ -9,7 +9,7 @@
             </div>
             <div class="seeMore-btn mt-5">
                 <a class="effect1" [routerLink]="'/courses'">
-                    Check All Courses
+                    Check More Courses
                     <span class="bg"></span>
                 </a>
             </div>

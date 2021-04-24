@@ -3,21 +3,24 @@
 .nav-link {
   font-size: small;
   color: #fff !important;
+  transition: 0.5s;
+  padding: 0.5rem 0.3rem;
 
   &:hover{
-    color: $lightest !important;
+    color: $light-clr !important;
+  }
+}
+
+.user{
+  transition: 0.5s;
+  img{
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
   }
 
-  &:active{
-    color: $lightest;
-  }
-
-  .user{
-    img{
-      height: 40px;
-      width: 40px;
-      border-radius: 50%;
-    }
+  &:hover{
+    background-color: #345858;
   }
 }
 
