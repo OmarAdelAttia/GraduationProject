@@ -84,7 +84,7 @@
           </a>
         </li>
         <li>
-          <a class="nav-link mx-2" *ngIf="authService.isLoggedIn">
+          
             <!-- <div class="btn-group mr-3">
               <button type="button" (click)="navigateToProfile()" class="btn">USER</button>
               <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
@@ -95,13 +95,13 @@
                 </div>
               </div>
             </div> -->
-            <div class="user">
+            <a class="nav-link mx-2 user rounded-pill" *ngIf="authService.isLoggedIn">
               <img src="../../../../assets/img/user-image.png" alt="">
-              <span>
+              <span class="ml-1">
                 User Name
               </span>
-            </div>
-          </a>
+            </a>
+          
         </li>
       </ul>
 
