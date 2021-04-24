@@ -2,35 +2,6 @@
   <div class="container pt-5">
     <div class="row">
       <div class="col-md-6 col-12">
-        <div class="card" class="bg-danger text-white text-center mb-3">
-          <h5 class="card-title">{{ (itemsCount | async).cartItems.length }} Items in Cart</h5>
-          <h4>Total</h4>
-          <h4>{{totalPrice | currency}}</h4>
-        </div>
-        <div *ngFor="let item of items.cartItems" class="card mb-3" style="max-width: 540px;">
-          <div class="row no-gutters">
-            <div class="col-md-4">
-              <img [src]="item.Photo" class="img-fluid" alt="" />
-            </div>
-            <div class="col-md-7">
-              <div class="card-body">
-                <h5 class="card-title mentor-name-a">{{ item.Name}}</h5>
-                <p class="card-text">{{item.Price}}</p>
-                <p class="font-weight-bold cat">Category: <span class="font-weight-normal">{{item.Category}}</span>
-                </p>
-
-              </div>
-            </div>
-            <div class="col-md-1">
-              <h5 class="card-title text-danger pt-5" (click)="removeFromShoppingCart(item)"><i
-                  class="fas fa-minus-circle"></i></h5>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="col-md-6 col-12">
         <article class="card mb-3">
 
           <div class="card-header text-center bg-white">
@@ -132,6 +103,36 @@
           </div>
         </article>
       </div>
+      <div class="col-md-6 col-12">
+        <div class="card" class="bg-danger text-white text-center p-3 mb-3">
+          <h5 class="card-title">{{ (itemsCount | async).cartItems.length }} Items in the Cart</h5>
+          <h4>Total Amount</h4>
+          <h4>{{totalPrice | currency}}</h4>
+        </div>
+        <div *ngFor="let item of items.cartItems" class="card mb-3" style="max-width: 540px;">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <img [src]="item.Photo" class="img-fluid" alt="" />
+            </div>
+            <div class="col-md-7">
+              <div class="card-body">
+                <h5 class="card-title mentor-name-a">{{ item.Name}}</h5>
+                <p class="card-text">{{item.Price}}</p>
+                <p class="font-weight-bold cat">Category: <span class="font-weight-normal">{{item.Category}}</span>
+                </p>
+
+              </div>
+            </div>
+            <div class="col-md-1">
+              <h5 class="card-title text-danger pt-5" (click)="removeFromShoppingCart(item)"><i
+                  class="fas fa-minus-circle"></i></h5>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
     </div>
 
 
