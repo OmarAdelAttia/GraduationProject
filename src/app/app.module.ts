@@ -28,6 +28,7 @@ import { HttpClientModule } from '@angular/common/http';
 // Store
 import { StoreModule } from '@ngrx/store';
 import { shopping_cart_reducer } from './components/shared/services/store/cart.reducer';
+import { hire_reducer } from './components/shared/services/hiring/hire.reducer';
 
 // bootstrap
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -110,7 +111,7 @@ import { CategoriesModalComponent } from './components/reusable-components/categ
     AngularFireStorageModule,  // Only required for storage features
 
     NgbModule,
-    StoreModule.forRoot({ cart: shopping_cart_reducer }),
+    StoreModule.forRoot({ cart: shopping_cart_reducer, list: hire_reducer }),
     BrowserAnimationsModule,
   ],
   providers: [AuthService],

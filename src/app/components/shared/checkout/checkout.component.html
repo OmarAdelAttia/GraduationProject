@@ -107,12 +107,12 @@
       </div>
 
       <div class=" col-md-6 col-12">
-        <div class=" item">
+        <div class=" item" *ngFor="let mentor of mentors.hireList">
           <div class="item_img">
             <img [src]="mentor.Photo" class="align-self-center mr-3 img-fluid" alt="...">
           </div>
           <div class="media-body item_details mt-4">
-            <h3>{{mentor.Name}}</h3>
+             <h3>{{mentor.Name}}</h3>
             <h4>{{mentor.Specialized}}</h4>
             <p>{{mentor.Category}} | {{ mentor.Price }}</p>
           </div>

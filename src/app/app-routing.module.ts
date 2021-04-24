@@ -54,7 +54,7 @@ const routes: Routes = [
 
   { path: 'mentors', component: MentorsComponent },
   { path: 'mentor-details/:id', component: MentorDetailsComponent },
-  { path: 'checkout/:id', component: CheckoutComponent },
+  { path: 'checkout', component: CheckoutComponent },
 
 
   { path: 'courses', component: CoursesComponent },
