@@ -1,17 +1,30 @@
 <section class="py-5">
   <div class="container">
-
     <ul ngbNav #nav="ngbNav" class="nav-tabs">
       <li ngbNavItem>
         <a ngbNavLink>
-          <h2 class="text-center text-muted">Doctors</h2>
+          <p class="text-center">Doctors</p>
         </a>
-
         <ng-template ngbNavContent>
+          <div ngbDropdown class="d-inline-block d-flex justify-content-end mt-5">
+            <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Category</button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+              <button
+              (click)="show.allDoctors = !show.allDoctors; show.goldDoctors = false; show.silverDoctors = false; show.bronzeDoctors = false"
+              class="btn btn-info" ngbDropdownItem>All</button>
+              <button
+              (click)="show.goldDoctors = !show.goldDoctors; show.allDoctors = false; show.silverDoctors = false; show.bronzeDoctors = false"
+              class="btn btn-info" ngbDropdownItem>Gold</button>
+              <button
+              (click)="show.silverDoctors = !show.silverDoctors; show.allDoctors = false; show.goldDoctors = false; show.bronzeDoctors = false"
+              class="btn btn-info" ngbDropdownItem>Silver</button>
+                <button
+                (click)="show.bronzeDoctors = !show.bronzeDoctors; show.allDoctors = false; show.goldDoctors = false; show.silverDoctors = false"
+                class="btn btn-info" ngbDropdownItem>Bronze</button>
+            </div>
+          </div>
           <div class="container pb-5">
-
-
-            <ul class="list-inline text-center">
+            <!-- <ul class="list-inline text-center">
               <li class="list-inline-item"><button
                   (click)="show.allDoctors = !show.allDoctors; show.goldDoctors = false; show.silverDoctors = false; show.bronzeDoctors = false"
                   class="btn btn-info">All</button></li>
@@ -24,8 +37,7 @@
               <li class="list-inline-item"><button
                   (click)="show.bronzeDoctors = !show.bronzeDoctors; show.allDoctors = false; show.goldDoctors = false; show.silverDoctors = false"
                   class="btn btn-info">Bronze</button></li>
-            </ul>
-
+            </ul> -->
             <div class="row" *ngIf="show.allDoctors">
               <div *ngFor="let doctor of doctorsList" class="col-lg-3 col-sm-6 col-10 mx-auto">
                 <app-mentor-card [itemData]="doctor"></app-mentor-card>
@@ -56,15 +68,28 @@
 
       <li ngbNavItem>
         <a ngbNavLink>
-          <h2 class="text-center text-muted">Trainers</h2>
+          <p class="text-center">Trainers</p>
         </a>
-
         <ng-template ngbNavContent>
+          <div ngbDropdown class="d-inline-block d-flex justify-content-end mt-5">
+            <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Category</button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+              <button
+              (click)="display.allTrainers = !display.allTrainers; display.goldTrainers = false; display.silverTrainers = false; display.bronzeTrainers = false"
+              class="btn btn-info" ngbDropdownItem>All</button>
+              <button
+              (click)="display.goldTrainers = !display.goldTrainers; display.allTrainers = false; display.silverTrainers = false; display.bronzeTrainers = false"
+              class="btn btn-info" ngbDropdownItem>Gold</button>
+              <button
+              (click)="display.silverTrainers = !display.silverTrainers; display.allTrainers = false; display.goldTrainers = false; display.bronzeTrainers = false"
+              class="btn btn-info" ngbDropdownItem>Silver</button>
+                <button
+                (click)="display.bronzeTrainers = !display.bronzeTrainers; display.allTrainers = false; display.goldTrainers = false; display.silverTrainers = false"
+                class="btn btn-info" ngbDropdownItem>Bronze</button>
+            </div>
+          </div>
           <div class="container pb-5">
-
-
-
-            <ul class="list-inline text-center">
+            <!-- <ul class="list-inline text-center">
               <li class="list-inline-item"><button
                   (click)="display.allTrainers = !display.allTrainers; display.goldTrainers = false; display.silverTrainers = false; display.bronzeTrainers = false"
                   class="btn btn-info">All</button></li>
@@ -77,8 +102,7 @@
               <li class="list-inline-item"><button
                   (click)="display.bronzeTrainers = !display.bronzeTrainers; display.allTrainers = false; display.goldTrainers = false; display.silverTrainers = false"
                   class="btn btn-info">Bronze</button></li>
-            </ul>
-
+            </ul> -->
             <div class="row" *ngIf="display.allTrainers">
               <div *ngFor="let trainer of trainersList" class="col-lg-3 col-sm-6 col-10 mx-auto">
                 <app-mentor-card [itemData]="trainer"></app-mentor-card>
@@ -102,10 +126,6 @@
                 <app-mentor-card [itemData]="trainer"></app-mentor-card>
               </div>
             </div>
-
-
-
-
           </div>
         </ng-template>
       </li>
