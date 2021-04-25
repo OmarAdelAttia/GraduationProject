@@ -11,7 +11,6 @@ import { NotFoundComponent } from './components/shared/not-found/not-found.compo
 import { MentorsComponent } from './pages/mentors-module/mentors/mentors.component';
 import { MentorDetailsComponent } from './pages/mentors-module/mentor-details/mentor-details.component';
 import { CoursesComponent } from './pages/courses-module/courses/courses.component';
-import { CourseDetailsComponent } from './pages/courses-module/course-details/course-details.component';
 
 import { ClientComponent } from './profiles/client-module/client/client.component';
 import { MentorComponent } from './profiles/mentor-module/mentor/mentor.component';
@@ -32,42 +31,21 @@ import { ChattingComponent } from './components/reusable-components/chatting/cha
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: "full" },
 
-  // LAZY LOADING WORK
-
-  // {path: 'authentication',
-  // loadChildren: () => import('./components/authentication/auth-module.module')
-  // .then(m => m.AuthModuleModule)},
-
-  // {path: 'mentors-module',
-  // loadChildren: () => import('./pages/mentors-module/mentors-module.module')
-  // .then(m => m.MentorsModuleModule)},
-
-  // {path: 'client-module',
-  // loadChildren: () => import('./profiles/client-module/client-module.module')
-  // .then(m => m.ClientModuleModule)},
-
-  // {path: 'mentor-module',
-  // loadChildren: () => import('./profiles/mentor-module/mentor-module.module')
-  // .then(m => m.MentorModuleModule)},
-
   { path: 'sign-in', component: SignInComponent },
   { path: 'sign-up', component: SignUpComponent },
 
   { path: 'mentors', component: MentorsComponent },
   { path: 'mentor-details/:id', component: MentorDetailsComponent },
-  { path: 'checkout', component: CheckoutComponent },
+  { path: 'checkout', component: CheckoutComponent, canActivate: [AuthGuard] },
 
 
   { path: 'courses', component: CoursesComponent },
-  { path: 'course-details/:id', component: CourseDetailsComponent },
-  // { path: 'shopping', loadChildren: () => import('./pages/shopping-module/shopping-module.module').then(m => m.ShoppingModuleModule) },
   { path: 'shopping', component: ShoppingComponent },
-  // { path: 'mentor-details', component: MentorDetailsComponent },
 
   { path: 'client', component: ClientComponent },
   { path: 'mentor', component: MentorComponent },
 
-  { path: 'shopping-cart', component: ShoppingCartComponent },
+  { path: 'shopping-cart', component: ShoppingCartComponent, canActivate: [AuthGuard]  },
 
   { path: "chatting", component: ChattingComponent },
 

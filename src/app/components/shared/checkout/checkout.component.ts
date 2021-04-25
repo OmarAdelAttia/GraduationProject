@@ -5,12 +5,6 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Store } from '@ngrx/store';
 
 
-import { TopRatedService } from '../../../components/shared/services/Apis/top-rated.service';
-import { DoctorsService } from '../../../components/shared/services/Apis/doctors.service';
-import { TrainersService } from '../../../components/shared/services/Apis/trainers.service';
-
-
-
 @Component({
   selector: 'app-checkout',
   templateUrl: './checkout.component.html',
@@ -20,10 +14,7 @@ export class CheckoutComponent implements OnInit {
 
 mentors;
   constructor(private modalService: NgbModal,
-    private store: Store<{ list }>,
-    public topRatedService: TopRatedService,
-    private doctorsService: DoctorsService,
-    private trainersService: TrainersService,) { }
+    private store: Store<{ list }>) { }
 
   ngOnInit(): void {
     this.store.select('list').subscribe((data) => {

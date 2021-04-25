@@ -5,13 +5,12 @@
       <div class="card my-5" style="width: 30rem;">
         <div class="card-body p-5">
           <form #signInForm="ngForm" (ngSubmit)="userSignInForm(signInForm.value)">
-            <!-- (ngSubmit)="userSignInForm(signInForm.value)" -->
 
             <div class="form-group pb-2">
               <label for="email">Email Address</label>
               <input type="text" class="form-control" id="email" name="email" required ngModel #email="ngModel"
                 pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" />
-              <!-- #email -->
+
             </div>
             <div *ngIf="email.errors && email.touched" class="alert alert-danger">
               <div *ngIf="email.errors.required">This Field Is Required</div>
@@ -23,7 +22,7 @@
               <label for="password">Password</label>
               <input type="password" class="form-control" id="password" name="password" required ngModel
                 #password="ngModel" />
-              <!-- #password -->
+
             </div>
             <div *ngIf="password.errors && password.touched" class="alert alert-danger">
               <div *ngIf="password.errors.required">This Field Is Required</div>
@@ -33,7 +32,7 @@
               (click)="authService.SignIn(email.value,password.value)">Log In</button>
           </form>
 
-          <a [routerLink]="'/sign-up'"  class="d-flex justify-content-center link-custom">Create a New Account</a>
+          <a [routerLink]="'/sign-up'" class="d-flex justify-content-center link-custom">Create a New Account</a>
         </div>
       </div>
     </div>

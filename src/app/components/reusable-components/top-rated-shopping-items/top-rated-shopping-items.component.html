@@ -6,10 +6,6 @@
                 <div *ngFor="let topShoppingItem of topShoppingItemsList" class="col-lg-3 col-sm-6 col-10 mx-auto">
                     <app-item-card [itemData]="topShoppingItem"></app-item-card>
                 </div>
-
-                <!-- <div *ngFor="let xId of x;" class="col-xs-12 col-sm-6 col-md-3 col-md-3">
-                  <app-mentor-card [xId]="xId"></app-mentor-card>
-              </div> -->
             </div>
             <div class="seeMore-btn mt-5">
                 <a class="effect1" [routerLink]="'/shopping'">

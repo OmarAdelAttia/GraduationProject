@@ -31,8 +31,6 @@ export class SignUpComponent implements OnInit {
 
   userSignUpForm() {
     console.log(this.signUpForm.value);
-    console.log("u");
-
   }
 
 }

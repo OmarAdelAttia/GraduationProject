@@ -28,28 +28,6 @@
           <a class="nav-link" [routerLink]="'/shopping'">Supplements</a>
         </li>
 
-        <!-- <li class="nav-item" ngbDropdown>
-          <a class="nav-link" tabindex="0" ngbDropdownToggle id="navbarDropdown1" role="button">
-            languages
-          </a>
-          <div ngbDropdownMenu aria-labelledby="navbarDropdown1" class="dropdown-menu">
-            <a ngbDropdownItem href="#" (click)="$event.preventDefault()">English</a>
-            <a ngbDropdownItem href="#" (click)="$event.preventDefault()">Arabic</a>
-            <a ngbDropdownItem href="#" (click)="$event.preventDefault()">German</a>
-          </div>
-        </li> -->
-        <!-- 
-        <li class="nav-item" ngbDropdown>
-          <a class="nav-link" tabindex="0" ngbDropdownToggle id="navbarDropdown1" role="button">
-            Searching about
-          </a>
-          <div ngbDropdownMenu aria-labelledby="navbarDropdown1" class="dropdown-menu">
-            <a ngbDropdownItem href="#" (click)="$event.preventDefault()">Course</a>
-            <a ngbDropdownItem href="#" (click)="$event.preventDefault()">Doctor</a>
-            <a ngbDropdownItem href="#" (click)="$event.preventDefault()">Trainer</a>
-          </div>
-        </li> -->
-
       </ul>
 
       <form class="form-inline my-2 my-lg-0" (ngSubmit)="search()">
@@ -77,7 +55,7 @@
         </li>
         <li>
 
-          <a class="nav-link mx-2 user rounded-pill" *ngIf="authService.isLoggedIn">
+          <a class="nav-link mx-2 user rounded-pill" *ngIf="authService.isLoggedIn" [routerLink]="'/client'">
             <img src="../../../../assets/img/user-image.png" alt="">
             <span class="ml-1">
               User Name
@@ -87,8 +65,7 @@
         </li>
       </ul>
 
-
-      <a class="nav-link" *ngIf="authService.isLoggedIn" (click)="authService.SignOut()">
+      <a class="nav-link" *ngIf="authService.isLoggedIn"  [routerLink]="'/chatting'">
         <i class="far fa-comments fa-lg"></i>
       </a>
 

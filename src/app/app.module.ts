@@ -44,7 +44,6 @@ import { FooterComponent } from './components/shared/footer/footer.component';
 import { HeaderComponent } from './components/reusable-components/header/header.component';
 import { topRatedCoursesComponent } from './components/reusable-components/topRated-courses/topRated-courses.component';
 import { topRatedMentorsComponent } from './components/reusable-components/topRated-mentors/topRated-mentors.component';
-import { AchievementsComponent } from './components/reusable-components/achievements/achievements.component';
 import { ShoppingCartComponent } from './components/reusable-components/shopping-cart/shopping-cart.component';
 import { CheckoutComponent } from './components/shared/checkout/checkout.component';
 import { HireButtonComponent } from './components/reusable-components/hire-button/hire-button.component';
@@ -60,7 +59,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 
-import { CarouselModule } from 'ngx-owl-carousel-o';
 import { CategoriesModalComponent } from './components/reusable-components/categories-modal/categories-modal.component';
 import { ChattingComponent } from './components/reusable-components/chatting/chatting.component';
 
@@ -76,7 +74,6 @@ import { ChattingComponent } from './components/reusable-components/chatting/cha
     HeaderComponent,
     topRatedCoursesComponent,
     topRatedMentorsComponent,
-    AchievementsComponent,
     ShoppingCartComponent,
     CheckoutComponent,
     HireButtonComponent,
@@ -104,8 +101,6 @@ import { ChattingComponent } from './components/reusable-components/chatting/cha
     MatInputModule,
     MatIconModule,
     // MatFormField,
-
-    CarouselModule,
 
     AngularFireModule.initializeApp(environment.firebaseConfig), // Required for everything
     AngularFirestoreModule, // Only required for database features

@@ -1,25 +1,11 @@
-
-// Custom Theming for Angular Material
-// For more information: https://material.angular.io/guide/theming
 @import '~@angular/material/theming';
-// Plus imports for other components in your app.
 
-// Include the common styles for Angular Material. We include this here so that you only
-// have to load a single css file for Angular Material in your app.
-// Be sure that you only ever include this mixin once!
 @include mat-core();
-
-// Define the palettes for your theme using the Material Design palettes available in palette.scss
-// (imported above). For each palette, you can optionally specify a default, lighter, and darker
-// hue. Available color palettes: https://material.io/design/color/
 $graduation-primary: mat-palette($mat-indigo);
 $graduation-accent: mat-palette($mat-pink, A200, A100, A400);
 
-// The warn palette is optional (defaults to red).
 $graduation-warn: mat-palette($mat-red);
 
-// Create the theme object. A theme consists of configurations for individual
-// theming systems such as "color" or "typography".
 $graduation-theme: mat-light-theme((
   color: (
     primary: $graduation-primary,
@@ -28,9 +14,7 @@ $graduation-theme: mat-light-theme((
   )
 ));
 
-// Include theme styles for core and each component used in your app.
-// Alternatively, you can import and @include the theme mixins for each component
-// that you are using.
+
 @include angular-material-theme($graduation-theme);
 
 /* You can add global styles to this file, and also import other style files */
@@ -51,7 +35,7 @@ body {
       h1{
         font-size: 5rem;
       }
-    } 
+    }
 
     .rate-txt{
       color: rgb(221, 162, 36);
@@ -88,7 +72,7 @@ body {
             color: #fff;
         }
     }
-    
+
     #future {
         font-size: 14px;
         width: 50%;
@@ -115,7 +99,7 @@ body {
             -ms-flex-pack: center;
                 justify-content: center;
         height: 50%;
-        
+
         .effect1 {
           color: $light-clr;
           text-decoration: none;
@@ -123,19 +107,19 @@ body {
           font-size: 0.4rem;
           position: relative;
           padding: 10px 50px 10px 20px;
-        
+
           -webkit-transition: all 0.3s;
-        
+
           -o-transition: all 0.3s;
-        
+
           transition: all 0.3s;
-        
+
           -webkit-transform: scale(3);
-        
+
               -ms-transform: scale(3);
-        
+
                   transform: scale(3); /*change scale(3) to scale(1)*/
-    
+
                   & .bg {
                     background: $light-clr;
                     width: 9px;
@@ -145,19 +129,19 @@ body {
                     top: 53%;
                     margin-top: -1px;
                     z-index: -1;
-                  
+
                     -webkit-transition: all 0.3s;
-                  
+
                     -o-transition: all 0.3s;
-                  
+
                     transition: all 0.3s;
                   }
-                  
+
                   &:hover {
                     padding-right: 20px;
                     color: #fff;
                   }
-                  
+
                   &:hover .bg {
                     height:70%;
                     width: 70%;
@@ -165,19 +149,19 @@ body {
                     //     -ms-transform: translate(0, -50%);
                             transform: translate(39%, -50%);
                   }
-                  
+
                   & .bg:before, & .bg:after {
                     content: '';
                     height: 1px;
                     width: 6px;
                     background: $light-clr;
                     position: absolute;
-                    right: -1px;      
-                    -webkit-transition: all 0.3s;      
-                    -o-transition: all 0.3s;      
+                    right: -1px;
+                    -webkit-transition: all 0.3s;
+                    -o-transition: all 0.3s;
                     transition: all 0.3s;
                   }
-                  
+
                   & .bg:before {
                     bottom: 2px;
                     -webkit-transform: rotate(45deg);
@@ -190,20 +174,20 @@ body {
                         -ms-transform: rotate(-45deg);
                             transform: rotate(-45deg);
                   }
-                  
+
                   &:hover .bg:before,
                   &:hover .bg:after{
                     right: 0;
                   }
-                  
+
                   &:hover .bg:before{
                     bottom: 6px;
                   }
-                  
+
                   &:hover .bg:after{
                     top: 6px;
                   }
-        }  
+        }
       }
 }
 
